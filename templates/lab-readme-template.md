@@ -15,9 +15,7 @@ By completing this lab, I will:
 
 ## Business Problem Solved
 
-Explain the organizational problem addressed by this lab.
-
-Include:
+Explain:
 
 - The current business or technical challenge
 - The operational risk created by the challenge
@@ -28,7 +26,7 @@ Include:
 
 ## Scenario
 
-Monroe Redstone Technology Group is evaluating Microsoft Azure to support secure, governed, cost-conscious cloud adoption.
+Monroe Redstone Technology Group is evaluating Microsoft Azure to support secure, governed, and cost-conscious cloud adoption.
 
 In this lab, MRTG must:
 
@@ -137,7 +135,7 @@ rg-mrtg-az900-labxx-centralus-001
 +-------------------------------------------------------+
 ```
 
-Update the diagram to represent the resources, identity relationships, network paths, management scopes, or service relationships demonstrated in the lab.
+Update the diagram to represent the resources, identities, network paths, management scopes, or service relationships demonstrated in the lab.
 
 ---
 
@@ -159,7 +157,7 @@ Setting: Value
 Setting: Value
 ```
 
-![Description of the configuration shown](screenshots/01-descriptive-screenshot-name.png)
+![Description of the configuration](screenshots/01-descriptive-screenshot-name.png)
 
 **Screenshot evidence:** The screenshot confirms that the required configuration was entered correctly.
 
@@ -180,7 +178,7 @@ Setting: Value
 Setting: Value
 ```
 
-![Description of the configuration shown](screenshots/02-descriptive-screenshot-name.png)
+![Description of the configuration](screenshots/02-descriptive-screenshot-name.png)
 
 **Screenshot evidence:** The screenshot confirms that the configuration was completed successfully.
 
@@ -193,15 +191,13 @@ Setting: Value
 3. Confirm the expected values.
 4. Record the validation result.
 
-![Description of the validation shown](screenshots/03-descriptive-screenshot-name.png)
+![Description of the validation](screenshots/03-descriptive-screenshot-name.png)
 
 **Screenshot evidence:** The screenshot confirms that the expected result was achieved.
 
 ---
 
 ## Validation
-
-Validation confirms that the configuration was deployed correctly and meets the lab requirements.
 
 | Validation Check | Expected Result | Observed Result | Status |
 |---|---|---|---|
@@ -225,7 +221,7 @@ Validation confirms that the configuration was deployed correctly and meets the 
 
 ### Validation Evidence
 
-![Description of the final validation result](screenshots/04-final-validation.png)
+![Final validation result](screenshots/04-final-validation.png)
 
 **Final validation result:** The required Azure configuration was created, reviewed, and validated successfully.
 
@@ -260,15 +256,13 @@ Describe Azure management and governance
 
 ### How This Lab Supports the Objective
 
-Explain how the completed work demonstrates the selected AZ-900 skills.
-
-Focus on:
+Explain:
 
 - The Azure concepts demonstrated
 - The services examined or configured
 - The business requirements addressed
 - The differences between similar Azure services
-- The decisions a certification candidate should understand
+- The decisions an AZ-900 candidate should understand
 
 ---
 
@@ -278,7 +272,7 @@ By completing this lab, I can now:
 
 - Describe the purpose of the Azure service
 - Identify the business problem addressed by the service
-- Explain where the service fits in Azure architecture
+- Explain where the service fits within Azure architecture
 - Describe its security and governance considerations
 - Explain its cost considerations
 - Compare it with relevant alternatives
@@ -330,7 +324,7 @@ Explain:
 
 ## Governance Notes
 
-Governance considerations for this lab include:
+Governance considerations include:
 
 - Resource naming
 - Resource tagging
@@ -397,7 +391,7 @@ Azure budgets provide monitoring and notifications. They do not automatically st
 Estimated cost: $0.00 to $X.XX
 ```
 
-The actual cost depends on region, service configuration, usage duration, free-service eligibility, and current Azure pricing.
+Actual cost depends on the region, service configuration, usage duration, free-service eligibility, and current Azure pricing.
 
 ---
 
@@ -448,13 +442,13 @@ Describe the outcome.
 
 ## What I Would Do Differently in Production
 
-A production implementation would include additional controls such as:
+A production implementation could include:
 
 - Separate administrator and standard-user accounts
 - Microsoft Entra groups instead of direct user assignments
 - Privileged Identity Management
 - Conditional Access
-- Break-glass accounts
+- Emergency access accounts
 - Formal approval workflows
 - Infrastructure as code
 - Peer review
@@ -464,7 +458,7 @@ A production implementation would include additional controls such as:
 - Private endpoints
 - Network segmentation
 - Centralized logging
-- Security information and event management integration
+- SIEM integration
 - Backup and disaster recovery
 - High-availability design
 - Defined recovery objectives
@@ -472,7 +466,7 @@ A production implementation would include additional controls such as:
 - Formal cost ownership
 - Separate development, testing, and production subscriptions
 
-Explain which controls are relevant to this specific lab and why they were not required for the learning environment.
+Explain which controls apply to this lab and why they were not required in the learning environment.
 
 ---
 
@@ -488,7 +482,7 @@ Key lessons from this lab include:
 
 ### Technical Takeaway
 
-Summarize the most important technical lesson from the lab.
+Summarize the most important technical lesson.
 
 ### Business Takeaway
 

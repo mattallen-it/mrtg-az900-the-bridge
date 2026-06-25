@@ -157,9 +157,11 @@ Setting: Value
 Setting: Value
 ```
 
+<!-- Add the Step 1 screenshot here after uploading it:
 ![Description of the configuration](screenshots/01-descriptive-screenshot-name.png)
+-->
 
-**Screenshot evidence:** The screenshot confirms that the required configuration was entered correctly.
+**Screenshot evidence:** Explain what the screenshot confirms.
 
 ---
 
@@ -178,9 +180,11 @@ Setting: Value
 Setting: Value
 ```
 
+<!-- Add the Step 2 screenshot here after uploading it:
 ![Description of the configuration](screenshots/02-descriptive-screenshot-name.png)
+-->
 
-**Screenshot evidence:** The screenshot confirms that the configuration was completed successfully.
+**Screenshot evidence:** Explain what the screenshot confirms.
 
 ---
 
@@ -191,9 +195,11 @@ Setting: Value
 3. Confirm the expected values.
 4. Record the validation result.
 
+<!-- Add the Step 3 screenshot here after uploading it:
 ![Description of the validation](screenshots/03-descriptive-screenshot-name.png)
+-->
 
-**Screenshot evidence:** The screenshot confirms that the expected result was achieved.
+**Screenshot evidence:** Explain what the screenshot confirms.
 
 ---
 
@@ -221,9 +227,11 @@ Setting: Value
 
 ### Validation Evidence
 
+<!-- Add the final validation screenshot here after uploading it:
 ![Final validation result](screenshots/04-final-validation.png)
+-->
 
-**Final validation result:** The required Azure configuration was created, reviewed, and validated successfully.
+**Final validation result:** Describe whether the required Azure configuration was created, reviewed, and validated successfully.
 
 ---
 
@@ -231,17 +239,15 @@ Setting: Value
 
 ### Exam Domain
 
+Select the applicable exam domain:
+
 ```text
 Describe cloud concepts
 ```
 
-or:
-
 ```text
 Describe Azure architecture and services
 ```
-
-or:
 
 ```text
 Describe Azure management and governance
@@ -432,11 +438,14 @@ Describe the cause.
 
 **Resolution:**
 
-Describe the corrective steps.
+1. Troubleshooting action
+2. Troubleshooting action
+3. Corrective action
+4. Validation action
 
 **Result:**
 
-Describe the outcome.
+Describe the final outcome.
 
 ---
 

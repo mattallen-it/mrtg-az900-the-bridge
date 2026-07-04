@@ -208,14 +208,14 @@ Connect the completed work to the applicable AZ-900 exam objectives and existing
 ## Lab Roadmap
 
 | Lab | Title | Primary Focus | Status |
-|---:|---|---|---|
-| 01 | Azure Environment and Cost Protection | Account security, subscription validation, budgets, naming, tagging, and resource groups | In Progress |
-| 02 | Cloud Computing and Shared Responsibility | Cloud concepts, shared responsibility, consumption models, and serverless computing | Planned |
-| 03 | Cloud Models, Benefits, and Service Types | Public, private, and hybrid cloud; IaaS, PaaS, and SaaS | Planned |
-| 04 | Azure Architecture and Resource Hierarchy | Regions, availability zones, resources, resource groups, subscriptions, and management groups | Planned |
-| 05 | Azure Compute Services | Virtual machines, containers, functions, application hosting, and compute selection | Planned |
-| 06 | Azure Networking Foundation | Virtual networks, subnets, peering, endpoints, routing, security, and DNS | Planned |
-| 07 | Azure Storage Services | Storage accounts, blobs, files, queues, tables, redundancy, and access tiers | Planned |
+|---|---|---|---|
+| 01 | Azure Environment and Cost Protection | Account security, subscription validation, budgets, naming, tagging, and resource groups | Complete |
+| 02 | Cloud Computing and Shared Responsibility | Cloud concepts, shared responsibility, consumption models, and serverless computing | Complete |
+| 03 | Cloud Models, Benefits, and Service Types | Public, private, and hybrid cloud; IaaS, PaaS, and SaaS | Complete |
+| 04 | Azure Architecture and Resource Hierarchy | Regions, availability zones, resources, resource groups, subscriptions, and management groups | Complete |
+| 05 | Azure Compute Services | Virtual machines, containers, functions, application hosting, and compute selection | Complete |
+| 06 | Azure Networking Foundation | Virtual networks, subnets, peering, endpoints, routing, security, and DNS | Complete |
+| 07 | Azure Storage Services | Storage accounts, blobs, files, queues, tables, redundancy, and access tiers | In Progress |
 | 08 | Microsoft Entra ID, RBAC, and Zero Trust | Identity, authentication, authorization, Conditional Access, RBAC, and Zero Trust | Planned |
 | 09 | Azure Cost Management and Resource Organization | Cost analysis, budgets, pricing, tags, and resource organization | Planned |
 | 10 | Azure Governance, Policy, and Compliance | Azure Policy, resource locks, governance, compliance, and Microsoft Purview | Planned |
@@ -538,11 +538,11 @@ This distinction prevents a successful demonstration from being mistaken for a p
 |---|---|
 | Repository initialized | Complete |
 | Project standards defined | Complete |
-| Azure lab account secured | In Progress |
-| Azure subscription configured | Not Started |
-| Cost protections configured | Not Started |
-| Core cloud-concept labs completed | Not Started |
-| Azure architecture labs completed | Not Started |
+| Azure lab account secured | Complete |
+| Azure subscription configured | Complete |
+| Cost protections configured | Complete |
+| Core cloud-concept labs completed | Complete |
+| Azure architecture labs completed | In Progress |
 | Identity and security lab completed | Not Started |
 | Governance and management labs completed | Not Started |
 | Monitoring lab completed | Not Started |

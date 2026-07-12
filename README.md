@@ -215,9 +215,9 @@ Connect the completed work to the applicable AZ-900 exam objectives and existing
 | 04 | Azure Architecture and Resource Hierarchy | Regions, availability zones, resources, resource groups, subscriptions, and management groups | Complete |
 | 05 | Azure Compute Services | Virtual machines, containers, functions, application hosting, and compute selection | Complete |
 | 06 | Azure Networking Foundation | Virtual networks, subnets, peering, endpoints, routing, security, and DNS | Complete |
-| 07 | Azure Storage Services | Storage accounts, blobs, files, queues, tables, redundancy, and access tiers | In Progress |
-| 08 | Microsoft Entra ID, RBAC, and Zero Trust | Identity, authentication, authorization, Conditional Access, RBAC, and Zero Trust | Planned |
-| 09 | Azure Cost Management and Resource Organization | Cost analysis, budgets, pricing, tags, and resource organization | Planned |
+| 07 | Azure Storage Services | Storage accounts, blobs, files, queues, tables, redundancy, and access tiers | Complete |
+| 08 | Microsoft Entra ID, RBAC, and Zero Trust | Identity, authentication, authorization, Conditional Access, RBAC, and Zero Trust | Complete |
+| 09 | Azure Cost Management and Resource Organization | Cost analysis, budgets, pricing, tags, and resource organization | In Progress |
 | 10 | Azure Governance, Policy, and Compliance | Azure Policy, resource locks, governance, compliance, and Microsoft Purview | Planned |
 | 11 | Azure Management and Deployment Tools | Portal, Cloud Shell, CLI, PowerShell, ARM templates, IaC, and Azure Arc | Planned |
 | 12 | Azure Monitoring, Health, and Optimization | Azure Monitor, Log Analytics, alerts, Service Health, Advisor, and Application Insights | Planned |

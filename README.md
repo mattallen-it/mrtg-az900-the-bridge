@@ -542,9 +542,9 @@ This distinction prevents a successful demonstration from being mistaken for a p
 | Azure subscription configured | Complete |
 | Cost protections configured | Complete |
 | Core cloud-concept labs completed | Complete |
-| Azure architecture labs completed | In Progress |
-| Identity and security lab completed | Not Started |
-| Governance and management labs completed | Not Started |
+| Azure architecture labs completed | Complete |
+| Identity and security lab completed | Complete |
+| Governance and management labs completed | In Progress |
 | Monitoring lab completed | Not Started |
 | Capstone completed | Not Started |
 | AZ-900 exam preparation review completed | Not Started |

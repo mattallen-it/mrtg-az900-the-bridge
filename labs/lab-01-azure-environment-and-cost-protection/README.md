@@ -2,19 +2,21 @@
 
 ## Objective
 
-Establish a secure, organized, and cost-conscious Microsoft Azure lab environment for the MRTG Azure Fundamentals series.
+Establish a secure, organized, governed, and cost-conscious Microsoft Azure lab environment for the **MRTG Azure Fundamentals: The Bridge** project.
 
 By completing this lab, I:
 
 - Secured the dedicated MRTG Microsoft account
 - Activated and validated an Azure subscription
-- Reviewed free-service and credit usage
+- Reviewed Azure credit and free-service usage
 - Established subscription-level cost visibility
 - Created a monthly Azure budget
-- Configured budget alert thresholds
+- Configured budget notification thresholds
 - Defined resource naming and tagging standards
 - Created the first governed Azure resource group
-- Validated tags, activity logging, and final cost-protection controls
+- Validated tags, administrative activity, and cost-protection controls
+
+This lab established the foundation required for the remaining Azure Fundamentals labs.
 
 ---
 
@@ -28,12 +30,12 @@ Monroe Redstone Technology Group needed an Azure foundation that:
 - Provides visibility into cloud spending
 - Establishes a budget before workloads are deployed
 - Identifies resource ownership and purpose
-- Uses consistent naming and tagging
+- Uses consistent naming and tagging standards
 - Separates lab resources from unrelated environments
 - Supports reliable auditing and cleanup
 - Reduces the risk of unexpected Azure charges
 
-This lab established those controls before deploying compute, networking, storage, identity, or monitoring workloads.
+This lab established those controls before deploying compute, networking, storage, identity, governance, or monitoring workloads.
 
 ---
 
@@ -47,9 +49,9 @@ The organization must:
 
 - Secure its dedicated cloud-operations account
 - Confirm that its Azure subscription is active
-- Configure cost monitoring and budget alerts
+- Configure cost monitoring and budget notifications
 - Establish naming and tagging standards
-- Create an organized resource-group structure
+- Create an organized resource group structure
 - Verify that no unexpected billable resources are running
 - Document any issues encountered during setup
 
@@ -57,20 +59,20 @@ The completed environment supports the remaining labs in the AZ-900 series.
 
 ---
 
-## Azure Services Used
+## Azure Services and Resources Used
 
-| Azure Service or Feature | Purpose |
+| Azure Service, Resource, or Feature | Purpose |
 |---|---|
-| Microsoft account security | Protects the administrative account used for Azure access |
-| Microsoft Authenticator | Provides additional sign-in verification |
-| Azure portal | Provides the browser-based Azure management interface |
-| Azure subscription | Establishes the billing, access-control, and resource-management boundary |
-| Azure Cost Management | Provides cost visibility, budgets, alerts, and spending review |
-| Azure budgets | Creates spending thresholds and email notifications |
-| Azure Resource Manager | Provides Azure resource deployment and management structure |
-| Azure resource groups | Organizes related Azure resources by purpose and lifecycle |
-| Azure tags | Adds ownership, project, environment, and cleanup metadata |
-| Azure Activity Log | Records administrative operations inside Azure |
+| Microsoft account security | Protected the administrative account used for Azure access |
+| Microsoft Authenticator | Provided additional sign-in verification |
+| Azure Portal | Provided the browser-based Azure management interface |
+| Azure Subscription | Established the billing, access-control, governance, and resource-management boundary |
+| Azure Cost Management | Provided cost visibility, budgets, notifications, and spending review |
+| Azure Budgets | Established monthly spending thresholds and email notifications |
+| Azure Resource Manager | Provided the Azure resource deployment and management hierarchy |
+| Azure Resource Group | Organized related Azure resources by purpose and lifecycle |
+| Azure Tags | Added ownership, project, environment, and cleanup metadata |
+| Azure Activity Log | Recorded subscription and resource management operations |
 
 ---
 
@@ -83,20 +85,20 @@ The dedicated MRTG Microsoft account is the identity used to access the Azure la
 It was secured first because:
 
 - Administrative identity is the starting point for cloud access
-- Account compromise could expose Azure resources and billing
+- Account compromise could expose Azure resources and billing information
 - Two-step verification reduces password-only risk
-- Microsoft Authenticator provides a stronger verification method
-- Recovery options help prevent account lockout
+- Microsoft Authenticator provides an additional verification method
+- Recovery methods help reduce the risk of account lockout
 
 ### Azure Portal
 
-The Azure portal provides a graphical management interface for creating, reviewing, and administering Azure resources.
+The Azure Portal provides a graphical management interface for creating, reviewing, and administering Azure resources.
 
 It was selected because:
 
 - It supports visual exploration of Azure services
 - It is appropriate for foundational AZ-900 labs
-- It exposes subscription, governance, and cost-management features
+- It exposes subscription, governance, and Cost Management features
 - It provides immediate configuration and validation feedback
 
 ### Azure Subscription
@@ -106,7 +108,7 @@ An Azure subscription provides:
 - A billing boundary
 - An access-control scope
 - A resource-deployment boundary
-- A cost-management scope
+- A Cost Management scope
 - A governance scope
 
 The dedicated lab subscription separates MRTG training activity from unrelated Azure environments.
@@ -120,23 +122,23 @@ It was selected to:
 - Establish a cost baseline
 - Review free-service usage
 - Create a monthly budget
-- Configure threshold notifications
-- Identify unexpected resource charges
+- Configure notification thresholds
+- Identify unexpected charges
 - Support cost-conscious deployment decisions
 
-Azure budgets provide alerts. They do not automatically stop resources or prevent charges.
+Azure budgets provide notifications. They do not automatically stop resources or prevent charges.
 
-### Resource Groups
+### Azure Resource Group
 
 Resource groups provide logical containers for resources that share a common purpose or lifecycle.
 
-The first resource group establishes:
+The first resource group established:
 
 - A consistent naming pattern
 - A defined deployment location
 - A common governance scope
 - A centralized cleanup boundary
-- A foundation for subsequent lab resources
+- A foundation for later lab resources
 
 ### Azure Tags
 
@@ -152,26 +154,41 @@ They were selected to support:
 - Management-method tracking
 - Cleanup scheduling
 
-Tags do not provide access control and do not replace Azure RBAC or Azure Policy.
+Tags do not provide access control and do not replace Azure RBAC, Azure Policy, or resource locks.
+
+### Azure Activity Log
+
+The Azure Activity Log records administrative operations performed against Azure resources and subscriptions.
+
+It was reviewed to:
+
+- Confirm that the resource group operation succeeded
+- Validate that Azure recorded the management event
+- Demonstrate basic operational auditing
+- Establish evidence for troubleshooting and accountability
 
 ---
 
 ## Environment
 
-| Component | Configuration |
+| Item | Value |
 |---|---|
 | Organization | Monroe Redstone Technology Group |
 | Project | MRTG Azure Fundamentals: The Bridge |
-| Lab | Lab 01 |
-| Microsoft account | Dedicated MRTG cloud-operations account |
-| Account display name | MRTG Cloud Operations |
+| Lab | Lab 01 - Azure Environment and Cost Protection |
+| Cloud Platform | Microsoft Azure |
+| Management Interface | Azure Portal |
+| Administrative Identity | Dedicated MRTG cloud-operations account |
+| Account Display Name | MRTG Cloud Operations |
+| Authentication Protection | Microsoft Authenticator and two-step verification |
 | Subscription | `MRTG-AZ900-Lab-Subscription` |
-| Primary region | `Central US` |
+| Primary Region | `Central US` |
 | Environment | Lab |
-| Management interface | Azure portal |
-| Authentication protection | Microsoft Authenticator and two-step verification |
-| Budget | `$10.00` monthly |
-| Documentation platform | GitHub |
+| Monthly Budget | `$10.00` |
+| Resource Group | `rg-mrtg-az900-lab01-centralus-001` |
+| Documentation Platform | GitHub |
+| Learning Platform | Microsoft Learn |
+| Estimated Cost | `$0.00` |
 
 ### Resource Naming Convention
 
@@ -201,37 +218,33 @@ rg-mrtg-az900-lab01-centralus-001
 
 ## Architecture / Concept Diagram
 
-```text
-+-----------------------------------------------------------+
-| Dedicated MRTG Microsoft Account                          |
-| Display Name: MRTG Cloud Operations                       |
-| Two-Step Verification + Microsoft Authenticator           |
-+-----------------------------+-----------------------------+
-                              |
-                              | Authenticated access
-                              v
-+-----------------------------------------------------------+
-| Microsoft Azure Tenant                                    |
-|                                                           |
-|  +-----------------------------------------------------+  |
-|  | MRTG-AZ900-Lab-Subscription                        |  |
-|  |                                                     |  |
-|  |  +----------------------+  +---------------------+  |  |
-|  |  | Cost Management      |  | Activity Log        |  |  |
-|  |  |                      |  |                     |  |  |
-|  |  | Monthly Budget: $10  |  | Administrative     |  |  |
-|  |  | Alert Thresholds     |  | Operations          |  |  |
-|  |  +----------------------+  +---------------------+  |  |
-|  |                                                     |  |
-|  |  +------------------------------------------------+ |  |
-|  |  | rg-mrtg-az900-lab01-centralus-001             | |  |
-|  |  |                                                | |  |
-|  |  | Region: Central US                             | |  |
-|  |  | Standard MRTG Tags                             | |  |
-|  |  | Initial Resources: None                        | |  |
-|  |  +------------------------------------------------+ |  |
-|  +-----------------------------------------------------+  |
-+-----------------------------------------------------------+
+```mermaid
+flowchart TD
+    Account[Dedicated MRTG Microsoft Account]
+    Auth[Microsoft Authenticator and Two-Step Verification]
+    Tenant[Microsoft Azure Tenant]
+    Subscription[MRTG-AZ900-Lab-Subscription]
+    Cost[Azure Cost Management]
+    Budget[$10 Monthly Budget]
+    Alerts[Budget Notification Thresholds]
+    Activity[Azure Activity Log]
+    RG[rg-mrtg-az900-lab01-centralus-001]
+    Tags[Standard MRTG Tags]
+    Resources[No Billable Workloads]
+
+    Account --> Auth
+    Auth --> Tenant
+    Tenant --> Subscription
+
+    Subscription --> Cost
+    Cost --> Budget
+    Budget --> Alerts
+
+    Subscription --> Activity
+    Subscription --> RG
+
+    RG --> Tags
+    RG --> Resources
 ```
 
 ---
@@ -245,20 +258,20 @@ rg-mrtg-az900-lab01-centralus-001
 3. Confirmed that security verification methods were configured.
 4. Confirmed that two-step verification was enabled.
 5. Confirmed that Microsoft Authenticator sign-in notifications were active.
-6. Confirmed that passwordless account mode remained off for this lab.
-7. Verified that sensitive recovery details were not exposed in the documentation.
+6. Confirmed that passwordless account mode remained disabled for this lab.
+7. Verified that sensitive recovery information was not exposed in the documentation.
 
 ![Microsoft account security overview](screenshots/01-microsoft-account-security-overview.png)
 
-**Screenshot evidence:** The security overview confirms that account proofing methods are configured and up to date.
+**Validation:** The security overview confirmed that account verification methods were configured and current.
 
 ![Two-step verification enabled](screenshots/02-two-step-verification-enabled.png)
 
-**Screenshot evidence:** Two-step verification is enabled for the dedicated MRTG account.
+**Validation:** Two-step verification was enabled for the dedicated MRTG account.
 
 ![Microsoft Authenticator method confirmed](screenshots/03-authenticator-method-confirmed.png)
 
-**Screenshot evidence:** Microsoft Authenticator sign-in notification is active and up to date.
+**Validation:** Microsoft Authenticator sign-in notification was active and current.
 
 ---
 
@@ -266,47 +279,47 @@ rg-mrtg-az900-lab01-centralus-001
 
 1. Opened the Azure account registration workflow.
 2. Selected personal-use registration for the lab subscription.
-3. Entered accurate profile, phone, and notification information.
+3. Entered the required profile, phone, and notification information.
 4. Redacted personal information from documentation screenshots.
 5. Completed the Azure registration process.
 6. Confirmed access to the Azure welcome screen.
 
 ![Azure account registration started](screenshots/04-azure-account-registration-started.png)
 
-**Screenshot evidence:** Azure registration was started with personal fields redacted.
+**Validation:** Azure registration was started with personal fields redacted.
 
 ![Azure account registration completed](screenshots/05-azure-account-registration-completed.png)
 
-**Screenshot evidence:** Azure registration completed and the Azure welcome screen appeared.
+**Validation:** Azure registration completed and the Azure welcome screen appeared.
 
 ---
 
 ### Step 3: Sign In to the Azure Portal
 
-1. Opened the Azure portal.
+1. Opened the Azure Portal.
 2. Signed in with the dedicated MRTG Microsoft account.
-3. Completed the required identity-verification challenge.
-4. Confirmed that the Azure portal loaded successfully.
+3. Completed the required identity verification.
+4. Confirmed that the Azure Portal loaded successfully.
 5. Verified that the account context displayed the MRTG lab environment.
 
-![Azure portal signed in](screenshots/06-azure-portal-signed-in.png)
+![Azure Portal signed in](screenshots/06-azure-portal-signed-in.png)
 
-**Screenshot evidence:** The Azure portal home page confirms successful access to the MRTG Azure environment.
+**Validation:** The Azure Portal home page confirmed successful access to the MRTG Azure environment.
 
 ---
 
 ### Step 4: Validate the Azure Subscription
 
-1. Searched for **Subscriptions** in the Azure portal.
+1. Searched for **Subscriptions** in the Azure Portal.
 2. Opened the subscription list.
 3. Confirmed that one Azure subscription was available.
-4. Confirmed that the subscription status was active.
+4. Confirmed that the subscription status was Active.
 5. Confirmed that the account role was Owner.
 6. Redacted the subscription ID and directory details.
 
 ![Active Azure subscription](screenshots/07-active-azure-subscription.png)
 
-**Screenshot evidence:** The Azure subscription exists, the role is Owner, and the subscription status is Active.
+**Validation:** The subscription existed, the role was Owner, and the subscription status was Active.
 
 ---
 
@@ -322,37 +335,38 @@ MRTG-AZ900-Lab-Subscription
 
 ![Azure subscription renamed](screenshots/08-subscription-renamed.png)
 
-**Screenshot evidence:** The subscription was renamed to `MRTG-AZ900-Lab-Subscription` and remained active.
+**Validation:** The subscription was renamed to `MRTG-AZ900-Lab-Subscription` and remained Active.
 
 ---
 
 ### Step 6: Review Free-Service and Credit Usage
 
 1. Opened the subscription overview.
-2. Reviewed spending rate and forecast.
+2. Reviewed the spending rate and forecast.
 3. Reviewed free-service usage.
-4. Confirmed that no active resource usage was emitted yet.
+4. Confirmed that no active resource usage was present.
 5. Confirmed that Microsoft Defender for Cloud coverage was not upgraded.
-6. Confirmed that the current cost and forecast both showed `0.00`.
+6. Confirmed that the current cost and forecast both displayed `0.00`.
 
-![Azure free service usage overview](screenshots/09-free-service-usage-overview.png)
+![Azure free-service usage overview](screenshots/09-free-service-usage-overview.png)
 
-**Screenshot evidence:** The subscription overview showed current cost at `0.00`, forecast at `0.00`, available free services, no active resource usage, and no Defender upgrade enabled.
+**Validation:** The subscription overview showed current cost at `0.00`, forecast at `0.00`, available free services, no active resource usage, and no Defender upgrade enabled.
 
 ---
 
 ### Step 7: Review Cost Analysis
 
 1. Opened **Cost Management**.
-2. Selected **Cost analysis**.
-3. Confirmed the scope was set to `MRTG-AZ900-Lab-Subscription`.
+2. Selected **Cost Analysis**.
+3. Confirmed that the scope was set to `MRTG-AZ900-Lab-Subscription`.
 4. Attempted to load the current-month accumulated-cost view.
-5. Observed that Cost Analysis was unavailable for this subscription view.
-6. Documented the issue and continued using Cost Management overview and budget validation evidence.
+5. Observed that Cost Analysis was unavailable in the selected subscription view.
+6. Documented the issue.
+7. Continued using the Cost Management overview and budget pages for cost validation.
 
-![Cost analysis unavailable](screenshots/10-cost-analysis-unavailable.png)
+![Cost Analysis unavailable](screenshots/10-cost-analysis-unavailable.png)
 
-**Screenshot evidence:** Cost Analysis displayed an unavailable state, which was documented as a troubleshooting item.
+**Validation:** Cost Analysis displayed an unavailable state, and the limitation was documented without blocking the lab.
 
 ---
 
@@ -373,17 +387,17 @@ Expiration date: 2028-05-31
 
 ![Azure budget configuration](screenshots/11-budget-configuration.png)
 
-**Screenshot evidence:** The budget configuration shows a monthly budget named `mrtg-az900-monthly-budget` with a budget amount of `10.00`.
+**Validation:** The configuration showed a monthly budget named `mrtg-az900-monthly-budget` with a budget amount of `$10.00`.
 
 ---
 
-### Step 9: Configure Budget Alerts
+### Step 9: Configure Budget Notifications
 
-1. Opened the budget alert configuration screen.
-2. Added actual-cost alert thresholds.
-3. Added a forecasted-cost alert threshold.
-4. Added the alert recipient email address.
-5. Redacted the recipient email address before documentation.
+1. Opened the budget notification configuration.
+2. Added actual-cost notification thresholds.
+3. Added a forecasted-cost notification threshold.
+4. Added the recipient email address.
+5. Redacted the recipient email address before publishing the screenshot.
 
 ```text
 Actual cost: 50 percent
@@ -392,9 +406,9 @@ Actual cost: 100 percent
 Forecasted cost: 100 percent
 ```
 
-![Azure budget alerts configured](screenshots/12-budget-alerts-configured.png)
+![Azure budget notifications configured](screenshots/12-budget-alerts-configured.png)
 
-**Screenshot evidence:** The budget includes actual-cost alerts at 50, 80, and 100 percent, plus a forecasted-cost alert at 100 percent.
+**Validation:** The budget included actual-cost thresholds at 50, 80, and 100 percent and a forecasted-cost threshold at 100 percent.
 
 ---
 
@@ -409,7 +423,7 @@ Forecasted cost: 100 percent
 
 ![Azure budget created](screenshots/13-budget-created.png)
 
-**Screenshot evidence:** The budget exists, is monthly, has a budget amount of `10`, evaluated spend is `0`, and progress is `0.00%`.
+**Validation:** The monthly budget existed with a `$10.00` amount, `0` evaluated spend, and `0.00%` progress.
 
 ---
 
@@ -427,7 +441,7 @@ Region: Central US
 
 ![Resource group configuration](screenshots/14-resource-group-configuration.png)
 
-**Screenshot evidence:** The resource group configuration shows the correct subscription, resource group name, and region.
+**Validation:** The resource group configuration showed the correct subscription, name, and region.
 
 ---
 
@@ -436,7 +450,7 @@ Region: Central US
 1. Opened the **Tags** tab during resource group creation.
 2. Added all required MRTG tags.
 3. Confirmed that tag names did not include trailing colons.
-4. Confirmed that tag names used no spaces for `CostCenter` and `ManagedBy`.
+4. Confirmed that `CostCenter` and `ManagedBy` contained no spaces.
 
 ```text
 Project: MRTG-AZ900-The-Bridge
@@ -450,7 +464,7 @@ DeleteAfter: 2026-07-31
 
 ![Resource group tags](screenshots/15-resource-group-tags.png)
 
-**Screenshot evidence:** The resource group was configured with the complete MRTG tag set before deployment.
+**Validation:** The resource group was configured with the complete MRTG tag set before deployment.
 
 ---
 
@@ -458,13 +472,13 @@ DeleteAfter: 2026-07-31
 
 1. Opened **Review + create**.
 2. Reviewed the subscription, resource group name, and region.
-3. Reviewed the full tag set.
-4. Confirmed that the configuration was ready to create.
+3. Reviewed the complete tag set.
+4. Confirmed that validation passed.
 5. Created the resource group.
 
 ![Resource group validation passed](screenshots/16-resource-group-validation-passed.png)
 
-**Screenshot evidence:** The final deployment review shows the correct resource group settings and tag configuration.
+**Validation:** The final deployment review showed the correct resource group settings and tag configuration.
 
 ---
 
@@ -473,14 +487,14 @@ DeleteAfter: 2026-07-31
 1. Opened the completed resource group.
 2. Confirmed the resource group name.
 3. Confirmed the subscription name.
-4. Confirmed the location was Central US.
+4. Confirmed that the location was Central US.
 5. Confirmed that no deployments were listed.
-6. Confirmed that no resources existed inside the resource group yet.
+6. Confirmed that no workload resources existed inside the resource group.
 7. Redacted the subscription ID.
 
 ![Resource group created](screenshots/17-resource-group-created.png)
 
-**Screenshot evidence:** The resource group exists in Central US, contains no deployed resources, and displays the expected MRTG tags.
+**Validation:** The resource group existed in Central US, contained no deployed workload resources, and displayed the expected MRTG tags.
 
 ---
 
@@ -493,56 +507,58 @@ DeleteAfter: 2026-07-31
 
 ![Resource group tags validated](screenshots/18-resource-group-tags-validated.png)
 
-**Screenshot evidence:** The deployed resource group retained the full MRTG tag set.
+**Validation:** The deployed resource group retained the complete MRTG tag set.
 
 ---
 
-### Step 16: Review the Activity Log
+### Step 16: Review the Azure Activity Log
 
-1. Opened the resource group **Activity log**.
+1. Opened the resource group **Activity Log**.
 2. Filtered activity to the Lab 01 resource group.
 3. Confirmed that the resource group update operation succeeded.
 4. Verified that Azure recorded the management operation.
 
 ![Resource group Activity Log](screenshots/19-resource-group-activity-log.png)
 
-**Screenshot evidence:** The Activity Log shows a successful `Update resource group` operation for the Lab 01 resource group.
+**Validation:** The Activity Log showed a successful `Update resource group` operation for the Lab 01 resource group.
 
 ---
 
-### Step 17: Perform Final Cost Protection Validation
+### Step 17: Perform Final Cost-Protection Validation
 
 1. Returned to the budget list.
 2. Confirmed that the monthly budget still existed.
-3. Confirmed that the budget amount was `10`.
-4. Confirmed that evaluated spend was `0`.
+3. Confirmed that the budget amount was `$10.00`.
+4. Confirmed that evaluated spend was `$0.00`.
 5. Confirmed that budget progress was `0.00%`.
 6. Confirmed that the resource group contained no billable workloads.
 
-![Final cost protection validation](screenshots/20-final-cost-protection-validation.png)
+![Final cost-protection validation](screenshots/20-final-cost-protection-validation.png)
 
-**Screenshot evidence:** Final cost-protection validation confirms that the budget exists and evaluated spend remains at `0`.
+**Validation:** The final review confirmed that the monthly budget remained active and evaluated spend remained at `$0.00`.
 
 ---
 
 ## Validation
 
-| Validation Check | Expected Result | Observed Result | Status |
-|---|---|---|---|
-| Account access | MRTG account can access the Azure portal | Azure portal loaded successfully | Passed |
-| Account security | Two-step verification and Authenticator are active | Two-step verification and sign-in notification were active | Passed |
-| Subscription status | Azure subscription is active | Subscription status showed Active | Passed |
-| Subscription role | MRTG account has administrative access | Role showed Owner | Passed |
-| Subscription name | Standard MRTG subscription name is displayed | `MRTG-AZ900-Lab-Subscription` was displayed | Passed |
-| Free-service usage | Free-service tracking is visible | Free-service usage panel was visible | Passed |
-| Cost overview | Current cost and forecast are visible | Cost overview showed `0.00` current cost and forecast | Passed |
-| Cost Analysis | Cost Analysis loads current-month data | Cost Analysis was unavailable | Documented |
-| Budget | `$10.00` monthly budget exists | Budget was created successfully | Passed |
-| Budget alerts | 50, 80, and 100 percent alerts exist | Actual and forecasted thresholds were configured | Passed |
-| Resource group | Resource group exists in Central US | Resource group was created successfully | Passed |
-| Tags | All seven MRTG tags are present | All required tags were validated | Passed |
-| Activity Log | Resource group operation is recorded | Successful update operation was recorded | Passed |
-| Final cost state | No unexpected spending is present | Evaluated spend showed `0` and progress showed `0.00%` | Passed |
+| Validation Item | Expected Result | Actual Result |
+|---|---|---|
+| Account access | MRTG account can access the Azure Portal | Passed |
+| Account security | Two-step verification and Microsoft Authenticator are active | Passed |
+| Azure registration | Registration completes successfully | Passed |
+| Subscription status | Subscription is Active | Passed |
+| Subscription role | MRTG identity has Owner access | Passed |
+| Subscription name | Standard MRTG subscription name is displayed | Passed |
+| Free-service usage | Free-service tracking is visible | Passed |
+| Cost overview | Current cost and forecast are visible | Passed |
+| Cost Analysis | Cost Analysis loads current-month information | Documented limitation |
+| Monthly budget | `$10.00` monthly budget exists | Passed |
+| Budget notifications | Required actual and forecast thresholds exist | Passed |
+| Resource group | Resource group exists in Central US | Passed |
+| Tags | All seven MRTG tags are present | Passed |
+| Activity Log | Resource group operation is recorded | Passed |
+| Final cost state | No unexpected spending is present | Passed |
+| Billable workloads | No billable workloads are deployed | Passed |
 
 ---
 
@@ -552,21 +568,23 @@ DeleteAfter: 2026-07-31
 - [x] Two-step verification enabled
 - [x] Microsoft Authenticator configured
 - [x] Azure registration completed
-- [x] Azure portal access confirmed
+- [x] Azure Portal access confirmed
 - [x] Subscription status confirmed
+- [x] Subscription role confirmed
 - [x] Subscription renamed
 - [x] Free-service usage reviewed
 - [x] Cost Management overview reviewed
-- [x] Cost Analysis issue documented
+- [x] Cost Analysis limitation documented
 - [x] Monthly budget created
-- [x] Budget thresholds configured
+- [x] Budget notification thresholds configured
 - [x] Resource group created
 - [x] Required tags applied
 - [x] Tags validated after deployment
-- [x] Activity Log reviewed
+- [x] Azure Activity Log reviewed
 - [x] Final cost validation completed
-- [x] Screenshots sanitized and uploaded
+- [x] Screenshots sanitized
 - [x] No sensitive information committed
+- [x] No billable workload resources deployed
 
 ---
 
@@ -589,30 +607,30 @@ Describe Azure architecture and services
 This lab supports the ability to:
 
 - Describe Azure subscriptions
-- Describe resource groups
-- Describe the hierarchy of resource groups, subscriptions, and management groups
+- Describe Azure resource groups
+- Describe the hierarchy of resources, resource groups, subscriptions, and management groups
 - Describe the purpose of Azure tags
 - Describe Azure Cost Management capabilities
-- Describe the purpose of budgets and alerts
-- Describe factors that can affect costs in Azure
+- Describe the purpose of budgets and notifications
+- Describe factors that can affect Azure costs
 - Describe Azure management tools
-- Describe the purpose of the Azure portal
+- Describe the purpose of the Azure Portal
 - Describe the purpose of the Azure Activity Log
 
 ### How This Lab Supports the Objectives
 
-This lab demonstrates that an Azure subscription is more than a billing account. It is also an access-control, governance, and resource-management boundary.
+This lab demonstrated that an Azure subscription is more than a billing account. It is also an access-control, governance, Cost Management, and resource-management boundary.
 
-The lab provides practical exposure to:
+The lab provided practical exposure to:
 
 - Subscription validation
 - Subscription naming
 - Cost Management review
 - Budget configuration
-- Budget alert thresholds
-- Resource-group organization
+- Budget notification thresholds
+- Resource group organization
 - Resource tagging
-- Azure portal navigation
+- Azure Portal navigation
 - Azure Resource Manager scopes
 - Administrative activity logging
 
@@ -620,18 +638,18 @@ The lab provides practical exposure to:
 
 ## Mini Objective Coverage
 
-By completing this lab, I can now:
+By completing this lab, I can:
 
 - Describe the purpose of an Azure subscription
 - Explain why subscriptions act as billing and access boundaries
-- Describe the purpose of resource groups
+- Describe the purpose of Azure resource groups
 - Explain how Azure tags support organization and cost reporting
 - Use Azure Cost Management to review spending information
-- Explain the difference between a budget alert and a spending limit
-- Identify the role of the Azure portal
+- Explain the difference between a budget notification and a spending limit
+- Identify the role of the Azure Portal
 - Recognize the relationship between identity, subscription access, and governance
 - Explain why cost controls should be established before workloads are deployed
-- Document Azure portal issues without blocking the lab
+- Document Azure Portal issues without blocking a project
 
 ---
 
@@ -639,7 +657,7 @@ By completing this lab, I can now:
 
 This lab begins the Azure IAM lifecycle by securing the identity that controls the subscription.
 
-The dedicated MRTG account acts as the initial administrative identity for the lab environment. Protecting this account is critical because access to the account can provide access to subscription resources, billing information, role assignments, and governance settings.
+The dedicated MRTG account acts as the initial administrative identity for the lab environment. Protecting this account is critical because access to the identity can provide access to subscription resources, billing information, role assignments, and governance settings.
 
 ### On-Premises Connection
 
@@ -660,10 +678,10 @@ The dedicated MRTG account acts as the initial administrative identity for the l
 - Authorization determines what the identity can perform.
 - Subscription ownership provides extensive administrative control.
 - Two-step verification reduces the risk of password-only compromise.
-- Resource groups provide scopes for future role assignments.
-- The Activity Log creates accountability for management operations.
+- Resource groups provide scopes for future Azure RBAC assignments.
+- The Azure Activity Log creates accountability for management operations.
 - Tags provide ownership metadata but do not grant or deny access.
-- Budget alerts help detect unexpected resource activity that could indicate misuse or misconfiguration.
+- Budget notifications can help identify unexpected resource activity or misconfiguration.
 
 ### Sensitive Information Controls
 
@@ -676,11 +694,15 @@ The following information was redacted or avoided in screenshots:
 - Payment-card information
 - Billing addresses
 - Phone numbers
-- Backup email addresses
+- Recovery email addresses
 - Subscription IDs
 - Tenant IDs
+- Directory names
+- `onmicrosoft.com` domains
 - Object IDs
+- Principal IDs
 - Request IDs
+- Correlation IDs
 - Access tokens
 - Security keys
 
@@ -692,23 +714,35 @@ The following information was redacted or avoided in screenshots:
 
 | Decision | Implementation | Reason |
 |---|---|---|
-| Account separation | Dedicated MRTG Microsoft account | Separates lab activity from personal cloud activity |
-| Account protection | Two-step verification and Microsoft Authenticator | Reduces risk of account compromise |
-| Subscription naming | `MRTG-AZ900-Lab-Subscription` | Clearly identifies the subscription purpose |
-| Resource naming | MRTG naming convention | Improves consistency and resource identification |
-| Resource organization | Dedicated Lab 01 resource group | Establishes a logical deployment and cleanup boundary |
-| Primary region | `Central US` | Provides regional consistency across the lab series |
-| Tagging | Seven standard MRTG tags | Supports ownership, reporting, and lifecycle tracking |
-| Cost monitoring | Subscription-level Cost Management | Provides centralized spending visibility |
-| Budget | `$10.00` monthly budget | Provides early notification of unexpected spending |
-| Cleanup date | `2026-07-31` | Establishes a defined resource-review deadline |
-| Audit review | Azure Activity Log | Confirms administrative operations |
+| Account separation | Dedicated MRTG Microsoft account | Separated lab activity from personal cloud activity |
+| Account protection | Two-step verification and Microsoft Authenticator | Reduced the risk of account compromise |
+| Subscription naming | `MRTG-AZ900-Lab-Subscription` | Clearly identified the subscription purpose |
+| Resource naming | MRTG naming convention | Improved consistency and resource identification |
+| Resource organization | Dedicated Lab 01 resource group | Established a logical deployment and cleanup boundary |
+| Primary region | `Central US` | Established regional consistency |
+| Tagging | Seven standard MRTG tags | Supported ownership, reporting, and lifecycle tracking |
+| Cost monitoring | Subscription-level Azure Cost Management | Provided centralized spending visibility |
+| Monthly budget | `$10.00` | Provided early notification of unexpected spending |
+| Cleanup date | `2026-07-31` | Established a defined resource-review deadline |
+| Audit review | Azure Activity Log | Confirmed that administrative operations were recorded |
 
 ### Tagging Limitation
 
 Tags do not automatically inherit from a resource group to its resources unless Azure Policy or automation applies them.
 
-Resources created in later labs must be checked individually for the required tags.
+Resources created in later labs must be reviewed individually for the required tags.
+
+### Subscription Scope
+
+The subscription provides a governance boundary for:
+
+- Azure RBAC
+- Azure Policy
+- Cost Management
+- Budgets
+- Resource deployment
+- Activity logging
+- Resource organization
 
 ---
 
@@ -723,7 +757,7 @@ Resources created in later labs must be checked individually for the required ta
 - Storage capacity
 - Data transfer
 - Transactions
-- Monitoring-data ingestion
+- Monitoring data ingestion
 - Backup and retention
 - Premium security features
 - Resources left deployed after a lab
@@ -733,14 +767,14 @@ Resources created in later labs must be checked individually for the required ta
 - Reviewed Cost Management before deploying workloads
 - Reviewed free-service usage
 - Created a `$10.00` monthly budget
-- Configured multiple alert thresholds
+- Configured multiple notification thresholds
 - Reviewed budget progress after creation
 - Created only an empty resource group
 - Applied cost-ownership tags
 - Added a cleanup date
 - Avoided paid workloads during environment setup
 - Avoided enabling optional premium services
-- Confirmed Microsoft Defender for Cloud was not upgraded
+- Confirmed that Microsoft Defender for Cloud was not upgraded
 
 ### Budget Limitation
 
@@ -758,7 +792,7 @@ The Azure budget created in this lab:
 Estimated cost: $0.00
 ```
 
-Creating an empty resource group and configuring a budget do not create a billable workload. Charges can begin when billable Azure resources or services are deployed.
+Creating an empty resource group and configuring a budget do not create billable workloads. Charges can begin when billable Azure resources or services are deployed.
 
 ---
 
@@ -766,39 +800,49 @@ Creating an empty resource group and configuring a budget do not create a billab
 
 ### Issue 1: Cost Analysis Was Unavailable
 
-**Symptom:**
+**Symptom**
 
-Azure Cost Analysis displayed an `Unable to load` message.
+Azure Cost Analysis displayed an unavailable or unable-to-load message.
 
-**Likely Cause:**
+**Possible Cause**
 
-The subscription offer type did not support the Cost Analysis view at the time of the lab, or the newly created subscription had not fully populated cost-analysis data yet.
+The newly created subscription may not have completed cost-data processing, or the Cost Analysis experience may have been temporarily unavailable for the subscription offer.
 
-**Resolution:**
+**Resolution**
 
-The Cost Management overview and budget pages were used instead. The overview showed current cost as `0.00`, forecast as `0.00`, no active resource usage, and available free-service usage. The budget page confirmed that the budget existed, evaluated spend was `0`, and progress was `0.00%`.
+The Cost Management overview and budget pages were used instead.
 
-**Result:**
+The available interfaces showed:
 
-The lab continued with budget configuration and resource-group creation.
+- Current cost of `0.00`
+- Forecast of `0.00`
+- No active resource usage
+- Available free-service information
+- A successfully created monthly budget
+- Evaluated spend of `0`
+- Budget progress of `0.00%`
+
+**Result**
+
+The issue was documented, and the lab continued without creating billable workloads.
 
 ---
 
 ### Issue 2: Budget Filter Values Did Not Fully Load
 
-**Symptom:**
+**Symptom**
 
 The budget creation page displayed a message stating that some filter values could not be loaded.
 
-**Likely Cause:**
+**Possible Cause**
 
-The Cost Management experience was partially unavailable for the newly created subscription or subscription offer type.
+The Cost Management experience may not have fully populated for the newly created subscription.
 
-**Resolution:**
+**Resolution**
 
-No filters were required for this lab. The budget was created at the subscription scope without additional filters.
+No additional filters were required. The budget was created at the subscription scope.
 
-**Result:**
+**Result**
 
 The budget was created successfully.
 
@@ -806,21 +850,21 @@ The budget was created successfully.
 
 ### Issue 3: Tag Name Formatting Needed Correction
 
-**Symptom:**
+**Symptom**
 
 Initial tag names were entered with trailing colons.
 
-**Likely Cause:**
+**Cause**
 
-The portal visually separates tag names and values with a colon, which made it easy to accidentally include the colon in the tag key.
+The Azure Portal visually separates tag names and values with a colon, making it possible to accidentally include the colon in the tag key.
 
-**Resolution:**
+**Resolution**
 
-The colons were removed from the tag names before creating the resource group.
+The colons were removed before creating the resource group.
 
-**Result:**
+**Result**
 
-The final tags were created with clean tag names:
+The final tags were created with the following standardized names:
 
 ```text
 Project
@@ -838,45 +882,56 @@ DeleteAfter
 
 A production Azure environment would use additional controls, including:
 
-- A verified organizational domain
-- Microsoft Entra work accounts instead of a consumer Outlook account
-- Separate administrator and standard-user identities
-- Microsoft Entra groups for role assignments
-- Least-privilege Azure RBAC
-- Privileged Identity Management
-- Conditional Access
-- Emergency-access accounts
-- Multiple subscriptions for workload separation
-- Management groups
-- Azure Policy enforcement
-- Required-tag policies
-- Automated tag inheritance
-- Resource locks
-- Centralized logging and alerting
-- Formal billing ownership
-- Department-level cost allocation
-- Infrastructure as code
-- Peer-reviewed deployments
-- Formal change management
-- Automated resource-cleanup workflows
+### Identity and Access
 
-The lab uses a simplified design because its purpose is foundational learning and AZ-900 preparation.
+- Use Microsoft Entra work accounts instead of a consumer Microsoft account
+- Use a verified organizational domain
+- Separate administrative and standard-user identities
+- Use Microsoft Entra groups for Azure RBAC assignments
+- Apply least-privilege access
+- Use Privileged Identity Management
+- Configure Conditional Access
+- Maintain emergency-access accounts
+- Perform regular access reviews
+
+### Governance
+
+- Build a formal management group hierarchy
+- Use separate subscriptions for workload separation
+- Apply Azure Policy assignments
+- Require approved tags through policy
+- Use automated tag inheritance where appropriate
+- Apply resource locks to critical resources
+- Document policy exemptions and remediation decisions
+
+### Operations
+
+- Configure centralized logging and alerting
+- Use formal billing ownership
+- Implement department-level cost allocation
+- Use Infrastructure as Code
+- Require peer-reviewed deployments
+- Apply formal change-management procedures
+- Automate resource cleanup
+- Document operational ownership and escalation paths
+
+The lab used a simplified design because its purpose was foundational learning and AZ-900 preparation.
 
 ---
 
 ## Lessons Learned
 
 - Azure governance should begin before workloads are deployed.
-- A subscription is a billing, access-control, and governance boundary.
+- A subscription is a billing, access-control, governance, and resource-management boundary.
 - Resource groups organize resources with a shared purpose or lifecycle.
 - Tags provide useful metadata but do not enforce security.
-- Budget alerts do not automatically stop Azure spending.
+- Budget notifications do not automatically stop Azure spending.
 - Administrative identities require strong authentication protection.
 - Cost and usage data may not appear immediately.
-- Azure portal experiences can vary by subscription type.
+- Azure Portal experiences can vary by subscription state or offer.
 - Consistent naming improves administration and documentation.
-- Azure Activity Log provides evidence of management operations.
-- Every deployed resource requires an ownership and cleanup plan.
+- The Azure Activity Log provides evidence of management operations.
+- Every deployed resource requires an owner and cleanup plan.
 
 ### Technical Takeaway
 
@@ -884,7 +939,7 @@ Azure Resource Manager organizes resources through scopes that include managemen
 
 ### Business Takeaway
 
-Establishing cost visibility, ownership, and organizational standards early reduces financial and operational risk.
+Establishing cost visibility, ownership, and organizational standards before deployment reduces financial and operational risk.
 
 ### Security Takeaway
 
@@ -894,11 +949,11 @@ The identity controlling an Azure subscription must be protected because account
 
 For AZ-900, remember:
 
-- Subscriptions are billing and access boundaries.
+- Subscriptions are billing and access-control boundaries.
 - Resource groups organize related resources.
-- Tags provide metadata.
-- Cost Management provides spending visibility, budgets, and alerts.
-- Budgets do not stop resources or enforce a hard spending cap.
+- Tags provide organizational metadata.
+- Azure Cost Management provides spending visibility, budgets, and notifications.
+- Budgets do not stop resources or enforce a hard spending limit.
 
 ---
 
@@ -909,7 +964,7 @@ For AZ-900, remember:
 | Resource or Configuration | Reason |
 |---|---|
 | MRTG Azure subscription | Required for the remaining labs |
-| Monthly budget | Required for ongoing cost monitoring |
+| Monthly Azure budget | Required for ongoing cost monitoring |
 | MRTG naming standard | Required for project consistency |
 | MRTG tagging standard | Required for governance and cost tracking |
 | `rg-mrtg-az900-lab01-centralus-001` | Retained as the foundational Lab 01 resource group |
@@ -920,13 +975,13 @@ No billable Azure workloads were created during this lab.
 
 ### Cleanup Validation
 
-- [x] No unexpected Azure resources are running
-- [x] No unattached disks exist
-- [x] No unused public IP addresses exist
+- [x] No unexpected Azure resources were running
+- [x] No unattached disks existed
+- [x] No unused public IP addresses existed
 - [x] No premium services were unintentionally enabled
-- [x] The subscription budget remains active
-- [x] Budget progress shows `0.00%`
-- [x] Cost Management was reviewed
+- [x] The monthly budget remained active
+- [x] Budget progress showed `0.00%`
+- [x] Azure Cost Management was reviewed
 - [x] Sensitive registration information was not committed
 - [x] All screenshots were sanitized
 
@@ -934,9 +989,9 @@ No billable Azure workloads were created during this lab.
 
 ## Outcome
 
-This lab established the security, cost-management, naming, tagging, and resource-organization foundation for the MRTG Azure Fundamentals series.
+This lab established the security, Cost Management, naming, tagging, and resource-organization foundation for the **MRTG Azure Fundamentals: The Bridge** project.
 
-The completed environment includes:
+The completed environment included:
 
 - A protected MRTG cloud-operations account
 - Two-step verification
@@ -945,14 +1000,20 @@ The completed environment includes:
 - A standardized subscription name
 - Free-service usage visibility
 - A `$10.00` monthly budget
-- Actual-cost alert thresholds
-- Forecasted-cost alert threshold
+- Actual-cost notification thresholds
+- A forecasted-cost notification threshold
 - A documented naming convention
 - A documented tagging standard
 - A governed Azure resource group
 - A validated tag set
 - An initial administrative audit trail
 - A verified zero-workload cost state
+
+The final evaluated spend remained:
+
+```text
+$0.00
+```
 
 ---
 
@@ -965,21 +1026,105 @@ The completed environment includes:
 | `03-authenticator-method-confirmed.png` | Microsoft Authenticator sign-in notification confirmed |
 | `04-azure-account-registration-started.png` | Azure registration started with sensitive fields redacted |
 | `05-azure-account-registration-completed.png` | Azure welcome screen after registration |
-| `06-azure-portal-signed-in.png` | Azure portal signed in |
+| `06-azure-portal-signed-in.png` | Azure Portal signed in |
 | `07-active-azure-subscription.png` | Active Azure subscription confirmed |
-| `08-subscription-renamed.png` | Subscription renamed to MRTG standard |
+| `08-subscription-renamed.png` | Subscription renamed to the MRTG standard |
 | `09-free-service-usage-overview.png` | Free-service usage and current cost overview |
 | `10-cost-analysis-unavailable.png` | Cost Analysis unavailable state documented |
 | `11-budget-configuration.png` | Monthly budget configuration |
-| `12-budget-alerts-configured.png` | Budget alert thresholds configured |
-| `13-budget-created.png` | Budget successfully created |
+| `12-budget-alerts-configured.png` | Budget notification thresholds configured |
+| `13-budget-created.png` | Monthly budget successfully created |
 | `14-resource-group-configuration.png` | Resource group creation settings |
 | `15-resource-group-tags.png` | Resource group tags configured |
-| `16-resource-group-validation-passed.png` | Resource group review and create page |
-| `17-resource-group-created.png` | Resource group created |
+| `16-resource-group-validation-passed.png` | Resource group validation and creation review |
+| `17-resource-group-created.png` | Resource group successfully created |
 | `18-resource-group-tags-validated.png` | Tags validated after deployment |
-| `19-resource-group-activity-log.png` | Activity Log operation reviewed |
+| `19-resource-group-activity-log.png` | Azure Activity Log operation reviewed |
 | `20-final-cost-protection-validation.png` | Final budget and cost-protection validation |
+
+---
+
+## Screenshots
+
+### Microsoft Account Security Overview
+
+![Microsoft Account Security Overview](screenshots/01-microsoft-account-security-overview.png)
+
+### Two-Step Verification Enabled
+
+![Two-Step Verification Enabled](screenshots/02-two-step-verification-enabled.png)
+
+### Microsoft Authenticator Method Confirmed
+
+![Microsoft Authenticator Method Confirmed](screenshots/03-authenticator-method-confirmed.png)
+
+### Azure Account Registration Started
+
+![Azure Account Registration Started](screenshots/04-azure-account-registration-started.png)
+
+### Azure Account Registration Completed
+
+![Azure Account Registration Completed](screenshots/05-azure-account-registration-completed.png)
+
+### Azure Portal Signed In
+
+![Azure Portal Signed In](screenshots/06-azure-portal-signed-in.png)
+
+### Active Azure Subscription
+
+![Active Azure Subscription](screenshots/07-active-azure-subscription.png)
+
+### Azure Subscription Renamed
+
+![Azure Subscription Renamed](screenshots/08-subscription-renamed.png)
+
+### Azure Free-Service Usage Overview
+
+![Azure Free-Service Usage Overview](screenshots/09-free-service-usage-overview.png)
+
+### Cost Analysis Unavailable
+
+![Cost Analysis Unavailable](screenshots/10-cost-analysis-unavailable.png)
+
+### Azure Budget Configuration
+
+![Azure Budget Configuration](screenshots/11-budget-configuration.png)
+
+### Azure Budget Notifications Configured
+
+![Azure Budget Notifications Configured](screenshots/12-budget-alerts-configured.png)
+
+### Azure Budget Created
+
+![Azure Budget Created](screenshots/13-budget-created.png)
+
+### Resource Group Configuration
+
+![Resource Group Configuration](screenshots/14-resource-group-configuration.png)
+
+### Resource Group Tags
+
+![Resource Group Tags](screenshots/15-resource-group-tags.png)
+
+### Resource Group Validation Passed
+
+![Resource Group Validation Passed](screenshots/16-resource-group-validation-passed.png)
+
+### Resource Group Created
+
+![Resource Group Created](screenshots/17-resource-group-created.png)
+
+### Resource Group Tags Validated
+
+![Resource Group Tags Validated](screenshots/18-resource-group-tags-validated.png)
+
+### Resource Group Activity Log
+
+![Resource Group Activity Log](screenshots/19-resource-group-activity-log.png)
+
+### Final Cost-Protection Validation
+
+![Final Cost-Protection Validation](screenshots/20-final-cost-protection-validation.png)
 
 ---
 
@@ -991,7 +1136,7 @@ The next lab is:
 Lab 02 - Cloud Computing and Shared Responsibility
 ```
 
-The next lab will build on this foundation by examining:
+The next lab builds on this foundation by examining:
 
 - Cloud computing concepts
 - The shared-responsibility model

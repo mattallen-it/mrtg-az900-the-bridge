@@ -2,7 +2,7 @@
 
 ## Objective
 
-The objective of this lab was to understand the core Azure storage services covered by AZ-900 and validate where those services are located in the Azure portal without deploying billable storage resources.
+Document the primary Microsoft Azure storage services and explain how storage type, redundancy, access tier, identity, security, and cost affect Azure storage design.
 
 By completing this lab, I:
 
@@ -12,113 +12,315 @@ By completing this lab, I:
 - Reviewed Azure Queue Storage
 - Reviewed Azure Table Storage
 - Reviewed Azure managed disks
+- Compared Azure storage account types
 - Reviewed storage redundancy options
-- Reviewed storage access tiers
-- Reviewed Azure Storage security strategies
+- Compared blob access tiers
+- Reviewed Azure Storage security controls
 - Reviewed shared access signatures
-- Validated Azure storage service locations in the Azure portal
-- Confirmed that no billable storage resources were deployed
-- Confirmed that evaluated spend remained `$0.00`
+- Validated Azure storage services in the Azure Portal
+- Confirmed that no billable storage resources were created
+- Confirmed that evaluated Azure spend remained `$0.00`
+
+This was a discovery-only lab. No Azure storage resources or configurations were created or modified.
 
 ---
 
 ## Business Problem Solved
 
-Cloud storage is a foundational Azure service. Before deploying workloads, organizations need to understand which storage service fits each data requirement, how storage is protected, how access is controlled, and which storage choices can affect cost.
+Cloud storage is a foundational part of most Azure architectures.
 
-Monroe Redstone Technology Group needed to understand Azure storage before deploying application data, file shares, queues, tables, disks, or storage-backed services.
+Before deploying applications or storing organizational data, cloud administrators must understand:
 
-This lab helped answer:
+- Which storage service fits each data type
+- How storage accounts organize Azure Storage services
+- How data is replicated
+- How frequently data will be accessed
+- How users and applications receive access
+- How public exposure is controlled
+- How stored data is encrypted
+- How storage activity is monitored
+- How storage choices affect cost
+- How data should be retained or deleted
 
-- What is an Azure storage account?
-- What services can a storage account contain?
-- When should Blob Storage be used?
-- When should Azure Files be used?
-- When should Queue Storage be used?
-- When should Table Storage be used?
-- When are Azure managed disks used?
-- How do redundancy options protect data?
-- How do access tiers affect cost?
-- How is Azure Storage secured?
-- What are shared access signatures?
-- Which storage services can create cost if deployed incorrectly?
+Poor storage design can create:
 
-This lab solved the problem of building storage awareness before deployment.
+- Excessive cost
+- Unnecessary public exposure
+- Weak access controls
+- Data-loss risk
+- Inadequate redundancy
+- Overuse of shared keys
+- Long-lived shared access signatures
+- Compliance findings
+- Unmanaged data retention
+- Orphaned disks and snapshots
+
+Monroe Redstone Technology Group needed to understand Azure storage services before deploying application data, file shares, queues, tables, virtual machine disks, or storage-backed workloads.
+
+This lab established the storage knowledge required to make secure, resilient, and cost-conscious design decisions.
 
 ---
 
 ## Scenario
 
-MRTG is preparing to use Azure for future workloads.
+MRTG is preparing to use Microsoft Azure for future workloads.
 
-Before creating storage accounts or uploading data, the cloud operations team needs to understand the storage services available in Azure and how those services support different technical and business requirements.
+Before creating storage accounts or uploading data, the cloud operations team must understand the storage services available in Azure and how each service supports different technical and business requirements.
 
-The team reviewed Azure storage concepts and explored the Azure portal to identify services that would support:
+The team reviews Azure storage concepts and explores the Azure Portal to identify services supporting:
 
-- Object storage
-- Managed file shares
-- Application messaging
-- NoSQL table storage
+- Unstructured object storage
+- Managed cloud file shares
+- Asynchronous application messaging
+- Structured NoSQL data
 - Virtual machine disks
 - Data redundancy
-- Access tiers
-- Storage security
-- Shared access delegation
-- Cost-safe exploration
+- Storage access tiers
+- Identity-based authorization
+- Delegated storage access
+- Encryption
+- Cost-safe service discovery
 
-No Azure storage resources were created in this lab.
+No Azure storage resources are created during this lab.
 
 ---
 
 ## Azure Services and Resources Used
 
-| Service | Purpose |
+| Azure Service, Resource, or Platform | Purpose |
 |---|---|
-| Azure Storage Account | Provides a unique namespace and management boundary for Azure Storage data |
-| Azure Blob Storage | Stores unstructured object data such as documents, images, backups, logs, and media |
-| Azure Files | Provides managed cloud file shares using SMB or NFS |
-| Azure Queue Storage | Stores messages for asynchronous application processing |
-| Azure Table Storage | Provides NoSQL storage for structured, non-relational data |
-| Azure Managed Disks | Provides block-level storage volumes for Azure virtual machines |
-| Storage Redundancy | Protects data through replication options such as LRS, ZRS, GRS, and GZRS |
-| Blob Access Tiers | Balances storage cost against access frequency |
+| Microsoft Learn | Provided certification-aligned Azure Storage instruction |
+| Azure Portal | Supported practical storage-service discovery |
+| Azure Storage Account | Provides a namespace and management boundary for Azure Storage data |
+| Azure Blob Storage | Stores unstructured object data |
+| Azure Files | Provides managed cloud file shares |
+| Azure Queue Storage | Stores messages for asynchronous processing |
+| Azure Table Storage | Stores structured, non-relational data |
+| Azure Managed Disks | Provides block-level storage for Azure virtual machines |
+| Azure Storage Redundancy | Protects data through local, zonal, and geographic replication |
+| Blob Access Tiers | Aligns storage cost with data-access frequency |
+| Microsoft Entra ID | Supports identity-based authorization to Azure Storage |
+| Azure RBAC | Controls management and data access at Azure scopes |
 | Shared Access Signatures | Provides restricted delegated access to storage resources |
-| Azure Cost Management | Validates budget status and confirms no unexpected spend |
+| Azure Cost Management | Supported final spending validation |
+| Azure Budgets | Confirmed that evaluated spend remained `$0.00` |
 
 ---
 
 ## Why These Services Were Used
 
-These services were reviewed because they represent the main Azure storage options covered by AZ-900.
+### Microsoft Learn
 
-| Storage Requirement | Azure Service |
-|---|---|
-| Store files, images, logs, backups, and media | Blob Storage |
-| Provide cloud file shares | Azure Files |
-| Store messages between application components | Queue Storage |
-| Store structured NoSQL data | Table Storage |
-| Provide disks for virtual machines | Managed Disks |
-| Protect data from hardware, datacenter, zone, or regional failures | Storage Redundancy |
-| Reduce storage cost based on access frequency | Blob Access Tiers |
-| Delegate limited access to storage resources | Shared Access Signatures |
-| Control cost during lab work | Cost Management Budgets |
+Microsoft Learn was used as the primary certification-aligned source for Azure Storage concepts.
+
+It provided structured coverage of:
+
+- Storage accounts
+- Storage account types
+- Azure Blob Storage
+- Azure Files
+- Azure Queue Storage
+- Azure Table Storage
+- Azure managed disks
+- Storage redundancy
+- Blob access tiers
+- Storage security
+- Shared access signatures
+
+### Azure Portal
+
+The Azure Portal was used to connect Microsoft Learn concepts to real Azure services.
+
+It supported:
+
+- Blob Storage discovery
+- File Storage discovery
+- Block Storage discovery
+- Azure managed disk discovery
+- Confirmation that no storage resources were deployed
+- Cost Management validation
+
+The Azure Portal was used only for review and validation.
+
+### Azure Storage Account
+
+An Azure storage account provides a unique namespace and management boundary for Azure Storage data.
+
+A general-purpose storage account can contain services such as:
+
+- Blob containers
+- File shares
+- Queues
+- Tables
+
+Storage account configuration can affect:
+
+- Performance
+- Redundancy
+- Region
+- Network access
+- Encryption
+- Authorization
+- Cost
+
+### Azure Blob Storage
+
+Azure Blob Storage was reviewed as Azure object storage for unstructured data.
+
+Common use cases include:
+
+- Documents
+- Images
+- Video
+- Audio
+- Log files
+- Backups
+- Archives
+- Data lakes
+- Static website content
+
+### Azure Files
+
+Azure Files was reviewed as a managed file-sharing service.
+
+It can provide:
+
+- SMB file shares
+- NFS file shares
+- Shared access from multiple systems
+- Hybrid file-sharing scenarios
+- Cloud-hosted replacements for traditional file servers
+- Integration with Azure File Sync
+
+### Azure Queue Storage
+
+Azure Queue Storage was reviewed as a messaging service for asynchronous application communication.
+
+Queues can help:
+
+- Separate application components
+- Store work until it can be processed
+- Support background tasks
+- Improve application resiliency
+- Handle variable workloads
+
+### Azure Table Storage
+
+Azure Table Storage was reviewed as a NoSQL service for structured, non-relational data.
+
+It can support:
+
+- Key-value data
+- High-volume structured records
+- Applications that do not require relational database features
+- Flexible schema designs
+
+### Azure Managed Disks
+
+Azure managed disks were reviewed as block-level storage for Azure virtual machines.
+
+Managed disks can provide:
+
+- Operating system disks
+- Data disks
+- Different performance tiers
+- Snapshot support
+- Redundancy options
+- Platform-managed disk infrastructure
+
+### Azure Storage Redundancy
+
+Storage redundancy was reviewed because it affects:
+
+- Data durability
+- Availability
+- Zone protection
+- Regional recovery
+- Read access to secondary copies
+- Cost
+
+### Blob Access Tiers
+
+Blob access tiers were reviewed because storage cost depends partly on how frequently data is accessed.
+
+The following tiers were compared:
+
+- Hot
+- Cool
+- Cold
+- Archive
+
+### Microsoft Entra ID and Azure RBAC
+
+Microsoft Entra ID and Azure RBAC were reviewed as preferred identity-based access methods for supported Azure Storage scenarios.
+
+Identity-based authorization can reduce dependence on:
+
+- Shared account keys
+- Embedded credentials
+- Broad connection strings
+- Long-lived access tokens
+
+### Shared Access Signatures
+
+Shared access signatures were reviewed as a delegated access method.
+
+A SAS can restrict access by:
+
+- Resource
+- Permission
+- Start time
+- Expiration time
+- Protocol
+- IP address range
+
+SAS tokens must be protected because possession of a valid SAS can provide access within the permissions it grants.
+
+### Azure Cost Management
+
+Azure Cost Management was reviewed because storage costs can increase through:
+
+- Data volume
+- Transactions
+- Retrieval
+- Replication
+- Snapshots
+- Managed disks
+- Network transfer
+- Premium performance tiers
+
+### Azure Budgets
+
+The existing monthly budget provided evidence that:
+
+- The `$10.00` monthly budget remained active
+- Evaluated spend remained `$0.00`
+- Budget progress remained `0.00%`
 
 ---
 
 ## Environment
 
-| Component | Value |
+| Item | Value |
 |---|---|
 | Organization | Monroe Redstone Technology Group |
 | Project | MRTG Azure Fundamentals: The Bridge |
-| Lab | Lab 07 |
+| Lab | Lab 07 - Azure Storage Services |
+| Cloud Platform | Microsoft Azure |
+| Management Interface | Azure Portal |
+| Learning Platform | Microsoft Learn |
 | Subscription | `MRTG-AZ900-Lab-Subscription` |
-| Azure region focus | `Central US` |
-| Resource deployment model | Read-only portal exploration |
-| Cost control | `$10.00` monthly budget |
-| Billable resources created | None |
-| Estimated lab cost | `$0.00` |
-| Documentation platform | GitHub |
+| Regional Focus | `Central US` |
+| New Resource Group | None |
+| Storage Accounts Created | None |
+| Storage Resources Created | None |
+| Managed Disks Created | None |
+| Monthly Budget | `$10.00` |
+| Evaluated Spend | `$0.00` |
+| Budget Progress | `0.00%` |
+| Documentation Platform | GitHub |
+| Lab Type | Discovery-only |
+| Estimated Cost | `$0.00` |
 
 ---
 
@@ -126,18 +328,33 @@ These services were reviewed because they represent the main Azure storage optio
 
 ```mermaid
 flowchart TD
-    StorageAccount[Azure Storage Account] --> Blobs[Blob Storage]
-    StorageAccount --> Files[Azure Files]
-    StorageAccount --> Queues[Queue Storage]
-    StorageAccount --> Tables[Table Storage]
+    Identity[Microsoft Entra ID] --> RBAC[Azure RBAC]
+    RBAC --> StorageAccount[Azure Storage Account]
 
-    Blobs --> AccessTiers[Hot Cool Cold Archive Tiers]
-    StorageAccount --> Redundancy[LRS ZRS GRS GZRS RA Options]
-    StorageAccount --> Security[Encryption RBAC Entra ID SAS Logging]
+    StorageAccount --> Blobs[Azure Blob Storage]
+    StorageAccount --> Files[Azure Files]
+    StorageAccount --> Queues[Azure Queue Storage]
+    StorageAccount --> Tables[Azure Table Storage]
+
+    Blobs --> Tiers[Hot, Cool, Cold, and Archive Tiers]
+
+    StorageAccount --> Redundancy[Storage Redundancy]
+    Redundancy --> LRS[LRS]
+    Redundancy --> ZRS[ZRS]
+    Redundancy --> GRS[GRS]
+    Redundancy --> GZRS[GZRS]
+    Redundancy --> ReadAccess[RA-GRS and RA-GZRS]
+
+    StorageAccount --> Security[Storage Security]
+    Security --> Encryption[Encryption at Rest and in Transit]
+    Security --> SAS[Shared Access Signatures]
+    Security --> Network[Network Access Controls]
+    Security --> Logging[Logging and Monitoring]
 
     Disks[Azure Managed Disks] --> VMs[Azure Virtual Machines]
 
-    Cost[Cost Management Budget] --> Validation[Final Cost Validation]
+    Cost[Azure Cost Management] --> Budget[$10 Monthly Budget]
+    Budget --> Validation[$0.00 Evaluated Spend]
 ```
 
 ---
@@ -146,159 +363,199 @@ flowchart TD
 
 ### Step 1: Review Azure Storage Accounts
 
-1. Reviewed the purpose of Azure storage accounts.
-2. Documented that a storage account provides a unique namespace for Azure Storage data.
-3. Reviewed the relationship between storage accounts, storage services, and redundancy options.
-4. Identified that storage accounts can contain blobs, files, queues, and tables.
+1. Opened Microsoft Learn.
+2. Reviewed the purpose of Azure storage accounts.
+3. Documented that a storage account provides a unique namespace for Azure Storage data.
+4. Reviewed the relationship between storage accounts, storage services, performance, and redundancy.
+5. Identified that general-purpose storage accounts can contain:
+   - Blobs
+   - Files
+   - Queues
+   - Tables
 
 ![Azure storage accounts overview](screenshots/01-azure-storage-accounts-overview.png)
 
-**Screenshot evidence:** Microsoft Learn explains Azure storage accounts, unique namespaces, storage services, and redundancy options.
+**Validation:** Microsoft Learn described Azure storage accounts, unique namespaces, supported services, and redundancy options.
 
 ---
 
 ### Step 2: Review Storage Account Types
 
 1. Reviewed standard and premium storage account types.
-2. Compared supported services for each account type.
-3. Reviewed redundancy options available for each account type.
-4. Documented that standard general-purpose v2 is recommended for most scenarios.
+2. Compared the services supported by each account type.
+3. Reviewed available redundancy options.
+4. Reviewed common usage scenarios.
+5. Documented general-purpose v2 as the recommended standard account type for most Azure Storage scenarios.
 
 ![Storage account types overview](screenshots/02-storage-account-types-overview.png)
 
-**Screenshot evidence:** Microsoft Learn shows storage account types, supported services, redundancy options, and usage scenarios.
+**Validation:** Microsoft Learn displayed Azure storage account types, supported services, redundancy options, and recommended scenarios.
 
 ---
 
 ### Step 3: Review Azure Storage Services
 
-1. Reviewed the main Azure Storage data services.
+1. Reviewed the primary Azure Storage data services.
 2. Identified Blob Storage as object storage.
-3. Identified Azure Files as managed file shares.
+3. Identified Azure Files as managed file storage.
 4. Identified Queue Storage as message storage.
-5. Identified Azure Disks as block-level VM storage.
-6. Identified Azure Tables as NoSQL structured storage.
+5. Identified Table Storage as NoSQL structured storage.
+6. Identified Azure managed disks as block-level virtual machine storage.
 
-![Azure storage services overview](screenshots/03-azure-storage-services-overview.png)
+![Azure Storage services overview](screenshots/03-azure-storage-services-overview.png)
 
-**Screenshot evidence:** Microsoft Learn shows Azure Blobs, Azure Files, Azure Queues, Azure Disks, and Azure Tables.
+**Validation:** Microsoft Learn displayed Azure Blobs, Azure Files, Azure Queues, Azure Tables, and Azure managed disks.
 
 ---
 
 ### Step 4: Review Azure Blob Storage
 
-1. Reviewed Blob Storage as unstructured object storage.
-2. Documented common Blob Storage use cases.
-3. Reviewed how blob data can be accessed over HTTP or HTTPS.
-4. Documented that Blob Storage supports large volumes of text or binary data.
+1. Opened the Azure Blob Storage section.
+2. Documented Blob Storage as unstructured object storage.
+3. Reviewed access through HTTP or HTTPS.
+4. Reviewed common Blob Storage use cases:
+   - Documents
+   - Images
+   - Video
+   - Audio
+   - Backups
+   - Logs
+   - Archives
+   - Analytics data
+5. Documented that Blob Storage supports large volumes of text or binary data.
 
-![Blob storage overview](screenshots/04-blob-storage-overview.png)
+![Azure Blob Storage overview](screenshots/04-blob-storage-overview.png)
 
-**Screenshot evidence:** Microsoft Learn explains Blob Storage use cases, including documents, images, media, backups, archives, and analytics.
+**Validation:** Microsoft Learn described Blob Storage and its common object-storage use cases.
 
 ---
 
 ### Step 5: Review Blob Storage Access Tiers
 
-1. Reviewed the blob access tier model.
-2. Compared hot, cool, cold, and archive tiers.
-3. Documented that tiers balance storage cost against retrieval speed and access frequency.
-4. Reviewed minimum retention considerations for infrequently accessed data.
+1. Opened the blob access-tier section.
+2. Compared:
+   - Hot
+   - Cool
+   - Cold
+   - Archive
+3. Documented how access tiers balance:
+   - Storage cost
+   - Access cost
+   - Retrieval time
+   - Minimum retention period
+4. Connected tier selection to data lifecycle and cost management.
 
-![Blob storage access tiers](screenshots/05-blob-storage-access-tiers.png)
+![Blob Storage access tiers](screenshots/05-blob-storage-access-tiers.png)
 
-**Screenshot evidence:** Microsoft Learn compares hot, cool, cold, and archive access tiers.
+**Validation:** Microsoft Learn compared the Hot, Cool, Cold, and Archive access tiers.
 
 ---
 
 ### Step 6: Review Azure Files
 
-1. Reviewed Azure Files as managed cloud file shares.
-2. Documented SMB and NFS protocol support.
-3. Documented support for Windows, Linux, and macOS clients.
-4. Reviewed Azure Files benefits such as shared access, resiliency, scripting support, and managed infrastructure.
+1. Opened the Azure Files section.
+2. Documented Azure Files as a managed cloud file-sharing service.
+3. Reviewed SMB support.
+4. Reviewed NFS support.
+5. Reviewed access from Windows, Linux, and macOS.
+6. Reviewed benefits such as:
+   - Shared access
+   - Managed infrastructure
+   - Resiliency
+   - Automation support
+   - Hybrid file sharing
 
 ![Azure Files overview](screenshots/06-azure-files-overview.png)
 
-**Screenshot evidence:** Microsoft Learn explains Azure Files, SMB, NFS, shared access, resiliency, and management benefits.
+**Validation:** Microsoft Learn described Azure Files, SMB and NFS support, shared access, resiliency, and management benefits.
 
 ---
 
 ### Step 7: Review Azure Queue Storage
 
-1. Reviewed Azure Queue Storage as a messaging service.
-2. Documented that queues support asynchronous processing.
+1. Opened the Azure Queue Storage section.
+2. Documented Queue Storage as an asynchronous messaging service.
 3. Reviewed authenticated HTTP and HTTPS access.
-4. Documented that Queue Storage is commonly paired with Azure Functions for background processing.
+4. Reviewed how queues separate application producers and consumers.
+5. Documented how Azure Functions can process queue messages.
+6. Connected queue-based design to application resiliency and scalability.
 
-![Queue storage overview](screenshots/07-queue-storage-overview.png)
+![Azure Queue Storage overview](screenshots/07-queue-storage-overview.png)
 
-**Screenshot evidence:** Microsoft Learn explains Queue Storage, asynchronous messages, and integration with background processing.
+**Validation:** Microsoft Learn described Queue Storage, asynchronous messaging, and background-processing scenarios.
 
 ---
 
 ### Step 8: Review Azure Table Storage
 
-1. Reviewed Azure Table Storage as a NoSQL storage option.
-2. Documented support for structured, non-relational data.
-3. Reviewed access from cloud and hybrid environments.
-4. Documented that access uses authenticated calls.
+1. Opened the Azure Table Storage section.
+2. Documented Table Storage as a NoSQL service.
+3. Reviewed support for structured, non-relational data.
+4. Reviewed authenticated access.
+5. Documented that Table Storage is appropriate for large sets of key-value or structured records that do not require relational database features.
 
-![Table storage overview](screenshots/08-table-storage-overview.png)
+![Azure Table Storage overview](screenshots/08-table-storage-overview.png)
 
-**Screenshot evidence:** Microsoft Learn explains Azure Table Storage as a NoSQL store for structured, non-relational data.
-
----
-
-### Step 9: Review Azure Disks
-
-1. Reviewed Azure Disk Storage.
-2. Documented that managed disks provide block-level storage for Azure virtual machines.
-3. Documented that Azure manages the underlying disk infrastructure.
-4. Reviewed how managed disks simplify operations and improve resiliency.
-
-![Azure Disks overview](screenshots/09-azure-disks-overview.png)
-
-**Screenshot evidence:** Microsoft Learn explains Azure managed disks as block-level storage volumes for Azure virtual machines.
+**Validation:** Microsoft Learn described Azure Table Storage as a NoSQL store for structured, non-relational data.
 
 ---
 
-### Step 10: Review Storage Redundancy Overview
+### Step 9: Review Azure Managed Disks
 
-1. Reviewed Azure Storage redundancy concepts.
-2. Documented that redundancy protects data from hardware failures, outages, and regional disasters.
+1. Opened the Azure managed disks section.
+2. Documented managed disks as block-level storage for Azure virtual machines.
+3. Reviewed how Azure manages the underlying storage infrastructure.
+4. Reviewed operating system and data disk use cases.
+5. Connected disk type and performance tier to workload performance and cost.
+
+![Azure managed disks overview](screenshots/09-azure-disks-overview.png)
+
+**Validation:** Microsoft Learn described Azure managed disks as block-level storage for Azure virtual machines.
+
+---
+
+### Step 10: Review Storage Redundancy
+
+1. Opened the Azure Storage redundancy section.
+2. Documented that redundancy protects data from:
+   - Hardware failures
+   - Datacenter failures
+   - Availability zone failures
+   - Regional failures
 3. Reviewed locally redundant storage.
-4. Documented that redundancy affects durability, availability, and cost.
+4. Connected redundancy selection to durability, availability, recovery, and cost.
 
 ![Storage redundancy overview](screenshots/10-storage-redundancy-overview.png)
 
-**Screenshot evidence:** Microsoft Learn explains storage redundancy and locally redundant storage.
+**Validation:** Microsoft Learn described storage redundancy and locally redundant storage.
 
 ---
 
 ### Step 11: Review Zone-Redundant Storage
 
-1. Reviewed zone-redundant storage.
+1. Opened the zone-redundant storage section.
 2. Documented that ZRS replicates data across availability zones in the primary region.
-3. Reviewed how ZRS supports availability when one zone is unavailable.
-4. Documented that ZRS can be useful when data must remain within a country or region.
+3. Reviewed how ZRS can maintain access when one zone becomes unavailable.
+4. Documented that ZRS can support scenarios where data must remain within one region or country.
+5. Connected ZRS to zone-level resilience.
 
-![Zone redundant storage](screenshots/11-zone-redundant-storage.png)
+![Zone-redundant storage](screenshots/11-zone-redundant-storage.png)
 
-**Screenshot evidence:** Microsoft Learn explains zone-redundant storage across availability zones.
+**Validation:** Microsoft Learn described replication across availability zones through zone-redundant storage.
 
 ---
 
-### Step 12: Review Secondary Region Redundancy
+### Step 12: Review Secondary-Region Redundancy
 
-1. Reviewed secondary-region redundancy concepts.
-2. Documented that some redundancy options replicate data to a paired secondary region.
+1. Reviewed secondary-region redundancy.
+2. Documented that geo-redundant options replicate data to a secondary Azure region.
 3. Reviewed failover considerations.
-4. Reviewed recovery point objective considerations.
+4. Reviewed recovery-point considerations.
+5. Documented that recent writes may not be present in the secondary region during a major failure.
 
-![Secondary region redundancy](screenshots/12-secondary-region-redundancy.png)
+![Secondary-region redundancy](screenshots/12-secondary-region-redundancy.png)
 
-**Screenshot evidence:** Microsoft Learn explains secondary-region redundancy and recovery point objective considerations.
+**Validation:** Microsoft Learn described secondary-region replication and recovery-point considerations.
 
 ---
 
@@ -306,216 +563,449 @@ flowchart TD
 
 1. Reviewed geo-redundant storage.
 2. Reviewed geo-zone-redundant storage.
-3. Compared how GRS and GZRS protect data across primary and secondary regions.
-4. Documented that higher redundancy options increase resilience and may affect cost.
+3. Compared:
+   - GRS
+   - GZRS
+4. Documented that GRS replicates data locally in the primary region and to a secondary region.
+5. Documented that GZRS combines zone redundancy in the primary region with geographic replication.
+6. Connected higher redundancy to increased resiliency and potential cost.
 
-![Geo redundant storage options](screenshots/13-geo-redundant-storage-options.png)
+![Geo-redundant storage options](screenshots/13-geo-redundant-storage-options.png)
 
-**Screenshot evidence:** Microsoft Learn shows geo-redundant storage and geo-zone-redundant storage replication models.
-
----
-
-### Step 14: Review Read Access to Secondary Region
-
-1. Reviewed read-access options for secondary-region data.
-2. Documented that RA-GRS and RA-GZRS allow read access to replicated data in the secondary region.
-3. Reviewed the importance of recovery point objective.
-4. Documented that secondary data may not always be fully up to date.
-
-![Read access secondary region](screenshots/14-read-access-secondary-region.png)
-
-**Screenshot evidence:** Microsoft Learn explains read-access geo-redundant storage options and recovery point objective considerations.
+**Validation:** Microsoft Learn displayed geo-redundant and geo-zone-redundant replication models.
 
 ---
 
-### Step 15: Review Azure Storage Security Strategies
+### Step 14: Review Read Access to Secondary-Region Data
 
-1. Reviewed storage security from a defense-in-depth perspective.
+1. Reviewed read-access geo-redundant options.
+2. Compared:
+   - RA-GRS
+   - RA-GZRS
+3. Documented that read-access options permit reads from the secondary endpoint.
+4. Reviewed recovery-point considerations.
+5. Documented that the secondary copy may not contain the most recent writes.
+
+![Read access to secondary region](screenshots/14-read-access-secondary-region.png)
+
+**Validation:** Microsoft Learn described read-access geo-redundant options and secondary-region data considerations.
+
+---
+
+### Step 15: Review Azure Storage Security
+
+1. Opened the Azure Storage security section.
 2. Reviewed encryption at rest.
 3. Reviewed encryption in transit.
-4. Reviewed storage authorization with Microsoft Entra ID and managed identities.
-5. Reviewed RBAC for storage resources.
-6. Reviewed storage analytics and logging.
+4. Reviewed Microsoft Entra ID authorization.
+5. Reviewed managed identities.
+6. Reviewed Azure RBAC.
+7. Reviewed storage analytics and logging.
+8. Connected the controls through a defense-in-depth model.
 
-![Storage security overview](screenshots/15-storage-security-overview.png)
+![Azure Storage security overview](screenshots/15-storage-security-overview.png)
 
-**Screenshot evidence:** Microsoft Learn explains Azure Storage security strategies, including encryption, authorization, RBAC, and analytics.
+**Validation:** Microsoft Learn described Azure Storage encryption, identity-based authorization, Azure RBAC, managed identities, and logging.
 
 ---
 
 ### Step 16: Review Shared Access Signatures
 
-1. Reviewed shared access signatures.
-2. Documented that SAS grants restricted access to Azure Storage resources.
-3. Reviewed user delegation SAS.
-4. Reviewed account-level SAS.
-5. Reviewed service-level SAS.
-6. Reviewed stored access policies.
+1. Opened the shared access signature section.
+2. Documented that SAS provides restricted delegated access.
+3. Reviewed:
+   - User delegation SAS
+   - Service SAS
+   - Account SAS
+   - Stored access policies
+4. Reviewed how permissions and expiration reduce exposure.
+5. Documented that SAS tokens must be protected as sensitive credentials.
 
 ![Shared access signatures overview](screenshots/16-shared-access-signatures-overview.png)
 
-**Screenshot evidence:** Microsoft Learn explains shared access signatures and restricted delegated access to storage resources.
+**Validation:** Microsoft Learn described shared access signatures and restricted delegated access to Azure Storage resources.
 
 ---
 
-### Step 17: Validate Blob Storage in Azure Portal
+### Step 17: Validate Blob Storage in the Azure Portal
 
 1. Opened Azure Storage Center.
-2. Reviewed the Blob Storage portal view.
+2. Opened the Blob Storage view.
 3. Confirmed that no storage accounts existed.
-4. Did not create a storage account.
-5. Documented that blob containers require a storage account before they can be managed.
+4. Did not select **Create**.
+5. Did not create a storage account, blob container, or blob.
+6. Documented that blob containers require a storage account.
 
 ![Storage Center Blob Storage portal](screenshots/17-storage-center-blob-storage-portal.png)
 
-**Screenshot evidence:** The Azure portal shows the Storage Center Blob Storage view with no storage accounts deployed.
+**Validation:** The Azure Portal displayed the Blob Storage view with no storage accounts deployed.
 
 ---
 
-### Step 18: Validate File Storage in Azure Portal
+### Step 18: Validate File Storage in the Azure Portal
 
-1. Opened the File Storage section in Storage Center.
-2. Reviewed Azure Files, File Sync, NetApp Files, and Managed Lustre options.
-3. Confirmed that no storage accounts existed.
-4. Did not create a storage account or file share.
+1. Opened the File Storage section in Azure Storage Center.
+2. Reviewed:
+   - Azure Files
+   - Azure File Sync
+   - Azure NetApp Files
+   - Azure Managed Lustre
+3. Confirmed that no storage accounts or file services were deployed.
+4. Did not create a storage account, file share, synchronization service, or premium file platform.
 
 ![Storage Center File Storage portal](screenshots/18-storage-center-file-storage-portal.png)
 
-**Screenshot evidence:** The Azure portal shows file storage options without deployed storage accounts.
+**Validation:** The Azure Portal displayed file-storage services without deployed storage resources.
 
 ---
 
-### Step 19: Validate Block Storage in Azure Portal
+### Step 19: Validate Block Storage in the Azure Portal
 
-1. Opened the Block Storage section in Storage Center.
-2. Reviewed Azure Disks and Elastic SAN options.
-3. Confirmed that no storage accounts existed.
-4. Did not create disks, storage accounts, or SAN resources.
+1. Opened the Block Storage section in Azure Storage Center.
+2. Reviewed:
+   - Azure managed disks
+   - Azure Elastic SAN
+3. Confirmed that no block-storage resources were deployed.
+4. Did not create disks, snapshots, storage accounts, or SAN resources.
 
 ![Storage Center Block Storage portal](screenshots/19-storage-center-block-storage-portal.png)
 
-**Screenshot evidence:** The Azure portal shows block storage options without deployed storage resources.
+**Validation:** The Azure Portal displayed block-storage options without deployed resources.
 
 ---
 
-### Step 20: Validate Azure Disks in Azure Portal
+### Step 20: Validate Azure Managed Disks in the Azure Portal
 
-1. Opened the Azure Disks portal page.
+1. Opened the Azure managed disks page.
 2. Confirmed that no managed disks existed.
-3. Confirmed that standard, premium, and ultra disk counts were zero.
-4. Reviewed disk type, disk state, redundancy, and regional distribution views.
-5. Did not create any disk resources.
+3. Confirmed that disk counts were zero.
+4. Reviewed available views for:
+   - Disk type
+   - Disk state
+   - Redundancy
+   - Region
+5. Did not create a managed disk or snapshot.
 
-![Azure Disks portal](screenshots/20-azure-disks-portal.png)
+![Azure managed disks portal](screenshots/20-azure-disks-portal.png)
 
-**Screenshot evidence:** The Azure portal shows zero Azure disks deployed.
+**Validation:** The Azure Portal displayed zero managed disks.
 
 ---
 
 ### Step 21: Perform Final Cost Validation
 
 1. Opened Azure Cost Management.
-2. Opened the subscription budget view.
+2. Opened the existing subscription budget.
 3. Confirmed that the monthly budget remained active.
 4. Confirmed that evaluated spend remained `$0.00`.
-5. Confirmed that progress remained `0.00%`.
-6. Confirmed that no billable storage resources were created.
+5. Confirmed that budget progress remained `0.00%`.
+6. Confirmed that no billable storage or supporting resources were created.
+7. Redacted sensitive subscription and scope information.
 
-![Cost management final validation](screenshots/21-cost-management-final-validation.png)
+![Cost Management final validation](screenshots/21-cost-management-final-validation.png)
 
-**Screenshot evidence:** The final Cost Management screenshot shows the budget is active, evaluated spend is `$0.00`, and progress is `0.00%`.
+**Validation:** The final Cost Management review showed the active `$10.00` monthly budget, `$0.00` evaluated spend, and `0.00%` progress.
 
 ---
 
 ## Storage Service Summary
 
-| Service | Primary Use | Example Scenario |
+| Storage Service | Primary Use | Example Scenario |
 |---|---|---|
-| Storage Account | Namespace and management boundary | Central location for Azure Storage services |
-| Blob Storage | Object storage | Images, documents, backups, logs, media, archives |
-| Azure Files | Managed file shares | Shared files for cloud or hybrid workloads |
-| Queue Storage | Message storage | Asynchronous messages between application components |
-| Table Storage | NoSQL structured data | Simple key-value or structured non-relational data |
-| Managed Disks | VM block storage | Operating system and data disks for Azure VMs |
-| Access Tiers | Cost optimization | Hot, cool, cold, and archive data |
-| Redundancy | Data durability and availability | LRS, ZRS, GRS, GZRS, RA-GRS, RA-GZRS |
-| SAS | Delegated access | Time-limited access to storage resources |
+| Azure Storage Account | Namespace and management boundary | Central configuration boundary for Azure Storage services |
+| Azure Blob Storage | Unstructured object storage | Documents, images, logs, backups, media, and archives |
+| Azure Files | Managed file shares | Shared files for cloud and hybrid workloads |
+| Azure Queue Storage | Asynchronous message storage | Messages between application components |
+| Azure Table Storage | Structured NoSQL data | High-volume key-value or non-relational records |
+| Azure Managed Disks | Virtual machine block storage | Operating system and data disks |
+| Blob Access Tiers | Storage cost optimization | Hot, Cool, Cold, and Archive data |
+| Storage Redundancy | Data durability and availability | LRS, ZRS, GRS, GZRS, RA-GRS, and RA-GZRS |
+| Shared Access Signatures | Restricted delegated access | Time-limited access to selected storage resources |
 
 ---
 
-## Storage Mental Model
+## Storage Selection Mental Model
 
 ```text
-Storage Account
-The management boundary and namespace for Azure Storage data.
+Azure Storage Account
+Use as the namespace and management boundary for Azure Storage data.
 
-Blob Storage
-Object storage for unstructured data.
+Azure Blob Storage
+Use for unstructured object data.
 
 Azure Files
-Managed cloud file shares using SMB or NFS.
+Use for managed SMB or NFS file shares.
 
-Queue Storage
-Message storage for asynchronous application processing.
+Azure Queue Storage
+Use for asynchronous application messages.
 
-Table Storage
-NoSQL storage for structured, non-relational data.
+Azure Table Storage
+Use for structured, non-relational data.
 
-Managed Disks
-Block-level storage for Azure virtual machines.
+Azure Managed Disks
+Use as block storage for Azure virtual machines.
 
-Redundancy
-How Azure copies data for durability and availability.
+Storage Redundancy
+Use to determine how and where Azure replicates data.
 
-Access Tiers
-How Azure balances storage cost and access frequency.
+Blob Access Tiers
+Use to align storage cost with access frequency.
 
-SAS
-A way to grant limited, delegated access to storage resources.
+Shared Access Signature
+Use for restricted and time-limited delegated access.
 ```
 
 ---
 
-## Redundancy Options Reviewed
+## Storage Account Types
 
-| Redundancy Option | Description |
+| Account Type | Typical Use |
 |---|---|
-| LRS | Replicates data within a single datacenter in the primary region |
-| ZRS | Replicates data across availability zones in the primary region |
-| GRS | Replicates data to a secondary region |
-| GZRS | Combines zone redundancy in the primary region with geo-replication to a secondary region |
-| RA-GRS | Provides read access to geo-replicated secondary-region data |
-| RA-GZRS | Provides read access to geo-zone-replicated secondary-region data |
+| Standard general-purpose v2 | Recommended standard account for blobs, files, queues, and tables |
+| Premium block blob | High-performance block and append blob workloads |
+| Premium file share | High-performance Azure Files workloads |
+| Premium page blob | Page blobs and specialized high-performance workloads |
+
+Storage account availability, supported services, redundancy options, and performance features depend on the selected account type.
+
+---
+
+## Blob Types
+
+Azure Blob Storage supports different blob types.
+
+| Blob Type | Primary Use |
+|---|---|
+| Block blob | Documents, images, video, backups, and general object data |
+| Append blob | Append-focused workloads such as logging |
+| Page blob | Random read-and-write workloads such as virtual hard disks |
 
 ---
 
 ## Access Tier Summary
 
-| Access Tier | Best For | Cost Pattern |
+| Access Tier | Best Fit | General Cost Pattern |
 |---|---|---|
-| Hot | Frequently accessed data | Higher storage cost, lower access cost |
-| Cool | Infrequently accessed data stored for at least 30 days | Lower storage cost, higher access cost |
-| Cold | Infrequently accessed data stored for at least 90 days | Lower storage cost, higher access cost |
-| Archive | Rarely accessed long-term data | Lowest storage cost, highest retrieval latency and access cost |
+| Hot | Frequently accessed data | Higher storage cost and lower access cost |
+| Cool | Infrequently accessed data | Lower storage cost and higher access cost |
+| Cold | Rarely accessed data that still requires online access | Lower storage cost and higher access cost |
+| Archive | Long-term data that can tolerate rehydration delay | Lowest storage cost and highest retrieval delay |
+
+### Tier Selection Considerations
+
+Access-tier selection should consider:
+
+- How frequently data is accessed
+- How quickly data must be retrieved
+- Minimum retention periods
+- Read and write transaction cost
+- Retrieval cost
+- Early deletion charges
+- Data lifecycle
+- Compliance requirements
+
+Lifecycle management can move supported blob data between tiers based on rules.
+
+---
+
+## Storage Redundancy Options
+
+| Redundancy Option | Protection Scope | Secondary Read Access |
+|---|---|---|
+| LRS | Replication within one primary-region datacenter | No |
+| ZRS | Replication across availability zones in the primary region | No |
+| GRS | Local replication plus asynchronous replication to a secondary region | No |
+| GZRS | Zone replication in the primary region plus replication to a secondary region | No |
+| RA-GRS | GRS with read access to the secondary endpoint | Yes |
+| RA-GZRS | GZRS with read access to the secondary endpoint | Yes |
+
+### Redundancy Selection Considerations
+
+Redundancy selection should consider:
+
+- Data criticality
+- Availability requirements
+- Zone-failure requirements
+- Regional disaster requirements
+- Recovery objectives
+- Data residency
+- Application read behavior
+- Supported account type
+- Service availability
+- Cost
+
+Higher redundancy does not replace:
+
+- Backup
+- Versioning
+- Soft delete
+- Application-level recovery
+- Access control
+- Data-retention planning
+
+Replication can copy accidental deletion, corruption, or unauthorized changes to additional replicas.
+
+---
+
+## Azure Storage Security Model
+
+Azure Storage security should use multiple layers.
+
+```mermaid
+flowchart TD
+    Identity[Microsoft Entra ID] --> Authorization[Azure RBAC and Data Roles]
+    Authorization --> Storage[Azure Storage]
+
+    Network[Network Access Controls] --> Storage
+    Private[Private Endpoints] --> Storage
+    Encryption[Encryption at Rest and in Transit] --> Storage
+    SAS[Restricted SAS Access] --> Storage
+    Keys[Key and Secret Protection] --> Storage
+    Logging[Logging and Monitoring] --> Storage
+    Governance[Azure Policy, Tags, and Locks] --> Storage
+```
+
+### Authentication and Authorization
+
+Preferred controls can include:
+
+- Microsoft Entra ID
+- Azure RBAC
+- Storage data roles
+- Managed identities
+- Workload identities
+
+Shared keys and connection strings should be protected and avoided when identity-based authorization meets the requirement.
+
+### Network Security
+
+Storage network controls can include:
+
+- Public network-access settings
+- Selected virtual networks
+- IP restrictions
+- Service endpoints
+- Private endpoints
+- Azure Firewall
+- DNS controls
+
+### Encryption
+
+Azure Storage supports encryption at rest.
+
+Secure transfer helps protect data in transit through HTTPS.
+
+Additional encryption requirements may depend on:
+
+- Data classification
+- Regulatory requirements
+- Key ownership
+- Customer-managed key requirements
+- Application architecture
+
+### Logging and Monitoring
+
+Storage activity can be monitored through supported Azure logging and monitoring capabilities.
+
+Logs can support:
+
+- Security investigations
+- Access review
+- Troubleshooting
+- Compliance evidence
+- Usage analysis
+- Incident response
+
+---
+
+## Shared Access Signatures
+
+A shared access signature provides delegated access to Azure Storage.
+
+### SAS Types
+
+| SAS Type | Description |
+|---|---|
+| User delegation SAS | Secured through Microsoft Entra credentials and limited to supported blob services |
+| Service SAS | Grants access to a resource within one storage service |
+| Account SAS | Grants access across one or more services in a storage account |
+
+### SAS Security Requirements
+
+A SAS should be:
+
+- Limited to required permissions
+- Limited to required resources
+- Short-lived
+- Restricted to HTTPS
+- Restricted by IP address when appropriate
+- Stored securely
+- Removed or rotated when no longer needed
+- Avoided when identity-based access is more appropriate
+
+A SAS token should be treated as sensitive because it can authorize access without requiring the recipient to authenticate separately.
+
+---
+
+## Managed Disk Considerations
+
+Managed disks support Azure virtual machines.
+
+Common disk categories can include:
+
+- Standard HDD
+- Standard SSD
+- Premium SSD
+- Premium SSD v2
+- Ultra Disk
+
+Disk selection can affect:
+
+- Performance
+- Input/output operations
+- Throughput
+- Availability
+- Redundancy
+- Cost
+
+Managed disks can continue generating charges even when a virtual machine is stopped or deleted if the disks are retained.
+
+Disk cleanup must include review of:
+
+- Operating system disks
+- Data disks
+- Snapshots
+- Images
+- Unattached disks
 
 ---
 
 ## Validation
 
-| Validation Check | Expected Result | Actual Result | Status |
-|---|---|---|---|
-| Azure storage accounts reviewed | Storage account concepts understood | Storage accounts and account types reviewed | Passed |
-| Azure Storage services reviewed | Main storage services identified | Blobs, Files, Queues, Tables, and Disks reviewed | Passed |
-| Blob Storage reviewed | Blob use cases understood | Object storage and access tiers reviewed | Passed |
-| Azure Files reviewed | File share use cases understood | SMB, NFS, and managed file shares reviewed | Passed |
-| Queue Storage reviewed | Queue use cases understood | Asynchronous message storage reviewed | Passed |
-| Table Storage reviewed | Table use cases understood | NoSQL structured storage reviewed | Passed |
-| Azure Disks reviewed | Disk use cases understood | Managed disks and block storage reviewed | Passed |
-| Redundancy reviewed | Redundancy options understood | LRS, ZRS, GRS, GZRS, and read-access options reviewed | Passed |
-| Storage security reviewed | Security strategies understood | Encryption, RBAC, Entra ID, SAS, and analytics reviewed | Passed |
-| Storage Center reviewed | Portal page accessible | Storage Center opened and reviewed | Passed |
-| Azure Disks portal reviewed | Portal page accessible | Zero disks displayed | Passed |
-| Cost validation completed | No unexpected spend | Budget showed `$0.00` evaluated spend and `0.00%` progress | Passed |
+| Validation Item | Expected Result | Actual Result |
+|---|---|---|
+| Azure storage accounts | Storage account purpose is reviewed | Passed |
+| Storage account types | Standard and premium options are reviewed | Passed |
+| Azure Storage services | Blobs, Files, Queues, Tables, and Disks are identified | Passed |
+| Azure Blob Storage | Object-storage use cases are reviewed | Passed |
+| Blob access tiers | Hot, Cool, Cold, and Archive tiers are compared | Passed |
+| Azure Files | Managed file-share use cases are reviewed | Passed |
+| Azure Queue Storage | Asynchronous messaging is reviewed | Passed |
+| Azure Table Storage | Structured NoSQL storage is reviewed | Passed |
+| Azure managed disks | Virtual machine block storage is reviewed | Passed |
+| Storage redundancy | LRS, ZRS, GRS, GZRS, and read-access options are reviewed | Passed |
+| Storage security | Encryption, identity, Azure RBAC, and monitoring are reviewed | Passed |
+| Shared access signatures | Delegated storage access is reviewed | Passed |
+| Blob Storage portal view | No storage accounts are deployed | Passed |
+| File Storage portal view | No file-storage resources are deployed | Passed |
+| Block Storage portal view | No block-storage resources are deployed | Passed |
+| Managed Disks portal view | No managed disks are deployed | Passed |
+| Storage resources | No billable storage resources are created | Passed |
+| Supporting resources | No storage dependencies are created | Passed |
+| Monthly budget | Existing budget remains active | Passed |
+| Evaluated spend | Spend remains `$0.00` | Passed |
+| Budget progress | Progress remains `0.00%` | Passed |
+| Estimated cost | Lab remains within the `$0.00` estimate | Passed |
 
 ---
 
@@ -530,20 +1020,27 @@ A way to grant limited, delegated access to storage resources.
 - [x] Reviewed Azure Queue Storage
 - [x] Reviewed Azure Table Storage
 - [x] Reviewed Azure managed disks
-- [x] Reviewed storage redundancy
+- [x] Reviewed locally redundant storage
 - [x] Reviewed zone-redundant storage
-- [x] Reviewed secondary-region redundancy
-- [x] Reviewed geo-redundant storage options
+- [x] Reviewed geo-redundant storage
+- [x] Reviewed geo-zone-redundant storage
 - [x] Reviewed read-access redundancy options
-- [x] Reviewed Azure Storage security strategies
+- [x] Reviewed Azure Storage security
+- [x] Reviewed Microsoft Entra ID authorization
+- [x] Reviewed Azure RBAC for storage
 - [x] Reviewed shared access signatures
-- [x] Validated Storage Center Blob Storage view
-- [x] Validated Storage Center File Storage view
-- [x] Validated Storage Center Block Storage view
-- [x] Validated Azure Disks portal view
+- [x] Opened the Blob Storage view in the Azure Portal
+- [x] Opened the File Storage view
+- [x] Opened the Block Storage view
+- [x] Opened the Azure managed disks page
+- [x] Did not create a storage account
 - [x] Did not create storage resources
-- [x] Validated evaluated spend remained `$0.00`
+- [x] Did not create managed disks
+- [x] Validated that the monthly budget remained active
+- [x] Validated that evaluated spend remained `$0.00`
+- [x] Validated that budget progress remained `0.00%`
 - [x] Sanitized screenshots before upload
+- [x] Avoided exposing sensitive account, tenant, subscription, or storage information
 
 ---
 
@@ -571,90 +1068,273 @@ This lab supports the ability to:
 - Describe Azure Queue Storage
 - Describe Azure Table Storage
 - Describe Azure managed disks
-- Describe storage redundancy options
-- Describe storage access tiers
+- Describe Azure Storage redundancy options
+- Describe Azure Blob Storage access tiers
 - Describe Azure Storage security concepts
+- Describe Microsoft Entra authorization for storage
+- Describe Azure RBAC for storage
 - Describe shared access signatures
-- Describe storage-related cost considerations
-- Describe how Azure Cost Management validates spend
+- Describe storage cost considerations
+- Describe how Azure Cost Management supports spending validation
+
+### How This Lab Supports the Objectives
+
+This lab connected Azure Storage concepts to practical Azure Portal service discovery.
+
+It demonstrated:
+
+- How storage accounts organize Azure Storage services
+- How storage services support different data types
+- How access tiers align cost with data-access frequency
+- How redundancy affects durability and availability
+- How Microsoft Entra ID and Azure RBAC support storage authorization
+- How shared access signatures provide delegated access
+- How managed disks support Azure virtual machines
+- How Azure Cost Management validates cost-safe lab execution
 
 ---
 
 ## Mini Objective Coverage
 
-By completing this lab, I can now:
+By completing this lab, I can:
 
 - Explain the purpose of an Azure storage account
-- Identify the main Azure Storage services
-- Explain when Blob Storage is appropriate
+- Identify the primary Azure Storage services
+- Explain when Azure Blob Storage is appropriate
 - Explain when Azure Files is appropriate
-- Explain when Queue Storage is appropriate
-- Explain when Table Storage is appropriate
-- Explain when managed disks are used
+- Explain when Azure Queue Storage is appropriate
+- Explain when Azure Table Storage is appropriate
+- Explain when Azure managed disks are used
+- Compare storage account types
 - Compare storage redundancy options
-- Compare blob access tiers
-- Explain basic Azure Storage security controls
-- Explain what shared access signatures provide
-- Validate storage service locations in the Azure portal
-- Confirm cost impact after storage service review
+- Compare Blob Storage access tiers
+- Explain Microsoft Entra authorization for storage
+- Explain Azure RBAC data access
+- Explain the purpose of shared access signatures
+- Describe common storage security controls
+- Identify storage cost drivers
+- Validate Azure storage services without deploying resources
+- Confirm cost impact after storage-service review
 
 ---
 
 ## IAM / Security Relevance
 
-Azure Storage is closely connected to identity and access management because storage often contains sensitive data.
+Azure Storage is closely connected to identity and access management because storage services commonly contain sensitive organizational data.
 
-In a regulated environment, storage access must be controlled, monitored, and limited by role.
+### Management-Plane and Data-Plane Access
 
-Important security and IAM connections:
+Storage access can involve two different control areas.
 
-- Microsoft Entra ID can be used for storage authorization.
-- Managed identities can reduce reliance on shared keys.
-- RBAC controls who can manage or access storage resources.
-- SAS tokens provide delegated access but must be scoped carefully.
-- Encryption at rest protects stored data.
-- Encryption in transit protects data moving over the network.
-- Storage analytics and logging support auditing.
-- Public access should be intentionally controlled.
-- Storage access should follow least privilege.
+| Access Area | Purpose |
+|---|---|
+| Management plane | Controls configuration of the storage account and related Azure resources |
+| Data plane | Controls access to blobs, files, queues, and tables |
 
-For government, healthcare, finance, and defense contractor environments, storage decisions affect:
+An identity may have permission to manage a storage account without automatically having permission to read all stored data.
+
+Likewise, an identity may receive data access without having permission to change the storage account configuration.
+
+### Microsoft Entra ID
+
+Microsoft Entra ID can authenticate users, groups, applications, and managed identities accessing supported Azure Storage services.
+
+Identity-based authorization supports:
+
+- Centralized identity lifecycle management
+- Multifactor authentication for users
+- Conditional Access where supported
+- Managed identities
+- Group-based access
+- Auditable role assignments
+- Reduced dependence on shared secrets
+
+### Azure RBAC
+
+Azure RBAC can control:
+
+- Storage account administration
+- Blob data access
+- Queue data access
+- Table data access
+- File-share access in supported configurations
+
+Role assignments should use:
+
+- The correct built-in role
+- The narrowest practical scope
+- Group-based assignments
+- Temporary privileged access where appropriate
+- Regular access reviews
+
+### Shared Keys
+
+Storage account keys can provide broad access.
+
+They should be:
+
+- Protected
+- Rotated
+- Restricted
+- Avoided when identity-based authorization meets the requirement
+- Stored outside source code
+- Excluded from screenshots and repositories
+
+### Shared Access Signatures
+
+SAS tokens provide delegated access but can create risk if they are:
+
+- Overly broad
+- Long-lived
+- Shared through insecure channels
+- Stored in code
+- Logged accidentally
+- Committed to source control
+- Not revoked when no longer needed
+
+### Managed Identities
+
+Managed identities can allow Azure workloads to access storage without storing credentials.
+
+Potential examples include:
+
+- Azure Functions processing queue messages
+- App Service reading Blob Storage
+- Virtual machines accessing files or blobs
+- Container Apps accessing storage
+- Automation services writing logs
+
+### Network Access
+
+Storage security can also include:
+
+- Disabling unnecessary public access
+- Restricting allowed networks
+- Using private endpoints
+- Using private DNS
+- Requiring secure transfer
+- Monitoring network and access activity
+
+### Regulated Environment Relevance
+
+In government, defense, healthcare, finance, and other regulated environments, storage design affects:
 
 - Data confidentiality
-- Auditability
+- Data integrity
+- Data availability
 - Access control
+- Auditability
+- Data residency
 - Retention
+- Legal holds
 - Incident response
-- Compliance posture
+- Recovery
+- Compliance evidence
 - Cost governance
 
 ### Security Takeaway
 
-Storage security is not just encryption.
+Storage security is not limited to encryption.
 
-It also includes identity, access control, network boundaries, logging, key management, and data lifecycle decisions.
+It also requires:
+
+- Strong identity
+- Least-privilege authorization
+- Network controls
+- Credential protection
+- Logging
+- Monitoring
+- Key management
+- Data lifecycle governance
 
 ---
 
 ## Governance Notes
 
-Important governance considerations from this lab:
+### Governance Decisions
 
-- Storage accounts should follow naming standards.
-- Storage accounts should use appropriate redundancy settings.
-- Public access should be disabled unless explicitly required.
-- RBAC should be preferred over shared keys when possible.
-- SAS tokens should be short-lived and narrowly scoped.
-- Storage accounts should use secure transfer.
-- Sensitive screenshots should not expose tenant names, subscription IDs, object IDs, or user emails.
-- Storage resources should be tagged for ownership, environment, and cost tracking.
-- Lifecycle management should be considered for cost control.
-- High-cost storage options should require review before deployment.
-- Managed disks should not be created without workload justification.
+| Decision | Implementation | Reason |
+|---|---|---|
+| Discovery-only lab | Storage services were reviewed without deployment | Prevented unnecessary cost |
+| Microsoft Learn used | Certification-aligned storage content reviewed | Supported AZ-900 preparation |
+| Azure Portal used | Storage services were located in the live environment | Connected theory to practical administration |
+| Cost Management reviewed | Monthly budget and spending state validated | Confirmed cost-safe execution |
+| Screenshots sanitized | Sensitive identifiers were redacted | Protected cloud-environment information |
+| No storage accounts created | Storage concepts were documented without deployment | Maintained the `$0.00` cost target |
 
 ### Governance Lesson
 
-Storage should be designed around data sensitivity, access requirements, recovery needs, and cost expectations before deployment.
+Storage should be designed around data requirements before deployment.
+
+A production storage design should define:
+
+- Data owner
+- Service owner
+- Data classification
+- Approved region
+- Data residency
+- Storage account type
+- Redundancy
+- Access tier
+- Authentication method
+- Authorization model
+- Public-access policy
+- Private-endpoint requirements
+- Encryption requirements
+- Logging requirements
+- Retention requirements
+- Backup requirements
+- Recovery requirements
+- Cost ownership
+- Deletion procedures
+
+### Example Storage Governance Standard
+
+| Requirement | Example |
+|---|---|
+| Data owner | Application team |
+| Service owner | Cloud Operations |
+| Data classification | Confidential |
+| Region | Central US |
+| Storage service | Blob Storage |
+| Redundancy | ZRS |
+| Access tier | Hot |
+| Public access | Disabled |
+| Authorization | Microsoft Entra ID and Azure RBAC |
+| Network access | Private endpoint |
+| Secure transfer | Required |
+| Logging | Centralized |
+| Retention | Seven years |
+| Cost center | Application department |
+
+### Naming
+
+Storage account names have specific restrictions.
+
+They generally require:
+
+- Globally unique names
+- Lowercase letters
+- Numbers
+- No hyphens
+- Length restrictions
+
+The standard MRTG naming pattern may need adjustment to meet storage account naming requirements.
+
+### Tagging
+
+Storage resources should include approved tags such as:
+
+- Project
+- Environment
+- Owner
+- Cost center
+- Data classification
+- Application
+- Managed by
+- Retention category
+
+Tags support organization but do not replace data-plane access controls.
 
 ---
 
@@ -666,198 +1346,389 @@ Storage should be designed around data sensitivity, access requirements, recover
 Estimated cost: $0.00
 ```
 
-No storage resources were created in this lab.
+### Why Cost Remained at Zero
 
-Cost-sensitive areas reviewed included:
+This lab did not create:
 
 - Storage accounts
-- Blob data
-- Blob access tiers
-- Archive retrieval
-- Geo-redundant replication
-- Read-access geo-redundant replication
+- Blob containers
+- Blobs
+- File shares
+- Queues
+- Tables
 - Managed disks
-- Premium storage
-- Large file shares
-- Transaction volume
-- Data transfer and retrieval patterns
+- Snapshots
+- Images
+- Azure NetApp Files resources
+- Azure Managed Lustre resources
+- Azure Elastic SAN resources
+- Private endpoints
+- Lifecycle-management policies
+- Backup services
+- Storage monitoring resources
 
-The final budget validation confirmed:
+### Common Storage Cost Drivers
+
+- Data capacity
+- Storage account type
+- Performance tier
+- Blob access tier
+- Read and write transactions
+- Data retrieval
+- Early deletion
+- Geo-replication
+- Read-access replication
+- Managed disk size
+- Managed disk performance
+- Snapshots
+- File-share capacity
+- File-share transactions
+- Data transfer
+- Private endpoints
+- Backup
+- Monitoring-data ingestion
+
+### Access Tier Cost Considerations
+
+| Tier | Storage Cost | Access Cost | Retrieval Time |
+|---|---|---|---|
+| Hot | Higher | Lower | Immediate |
+| Cool | Lower | Higher | Immediate |
+| Cold | Lower | Higher | Immediate |
+| Archive | Lowest | Highest | Delayed rehydration |
+
+### Redundancy Cost Considerations
+
+Higher redundancy generally creates higher cost.
+
+| Redundancy | General Cost Pattern |
+|---|---|
+| LRS | Lowest |
+| ZRS | Higher than LRS |
+| GRS | Higher due to geographic replication |
+| GZRS | Higher due to zone and geographic replication |
+| RA-GRS | Higher due to secondary read access |
+| RA-GZRS | Higher due to zone, geographic, and read-access capabilities |
+
+### Managed Disk Cost Considerations
+
+Managed disks can generate cost based on:
+
+- Provisioned size
+- Disk tier
+- Performance level
+- Snapshots
+- Regional configuration
+- Redundancy
+- Retention after VM deletion
+
+Stopping or deleting a virtual machine does not always remove its managed disks.
+
+### Budget Validation
+
+The final Cost Management review showed:
 
 ```text
-Budget amount: $10.00
-Forecasted cost: 0
+Budget: $10.00
+Forecasted spend: 0
 Evaluated spend: $0.00
 Progress: 0.00%
 ```
 
-This confirmed that the lab remained cost-safe.
+### Budget Limitation
 
-### Cost Reminder
+Azure budgets:
 
-Azure Storage can appear inexpensive at first, but cost can increase through:
-
-- Large data volumes
-- Frequent transactions
-- Premium performance tiers
-- Geo-redundant replication
-- Archive retrieval
-- Snapshots
-- Managed disks
-- Unused storage resources
-
-Storage costs should be reviewed before deployment and monitored after deployment.
+- Monitor actual and forecasted costs
+- Generate notifications
+- Do not delete storage accounts
+- Do not remove disks
+- Do not change access tiers
+- Do not disable replication
+- Do not prevent additional charges
+- Do not replace regular Cost Management review
 
 ---
 
 ## Troubleshooting Notes
 
-### Issue 1: Avoiding Accidental Storage Costs
+### Issue 1: Storage Create Options Were Prominent
 
-**Symptom:**
+**Symptom**
 
-Several Azure storage pages include **Create** buttons.
+Azure Portal storage pages displayed prominent **Create** options.
 
-**Risk:**
+**Risk**
 
-Creating a storage account, disk, file share, or premium storage resource can introduce cost.
+Completing a creation workflow could deploy billable storage resources.
 
-**Resolution:**
+**Resolution**
 
-Each service was opened for review only. No resources were created.
+Each service page was opened for discovery only.
 
-**Result:**
+No creation workflow was completed.
 
-The lab was completed without creating billable storage resources.
+**Result**
 
----
-
-### Issue 2: Storage-Dependent Services Require a Storage Account
-
-**Symptom:**
-
-Blob containers, file shares, queues, and tables cannot be fully managed without a storage account.
-
-**Explanation:**
-
-These services exist inside a storage account. Without a storage account, the portal shows storage service categories but no deployed resources.
-
-**Resolution:**
-
-The lab documented the service locations without creating a storage account.
-
-**Result:**
-
-Storage services were reviewed while maintaining `$0.00` evaluated spend.
+No storage or supporting resource was deployed.
 
 ---
 
-### Issue 3: Redundancy Options Can Be Confusing
+### Issue 2: Storage Services Required a Storage Account
 
-**Symptom:**
+**Symptom**
 
-Storage redundancy includes several similar names, such as LRS, ZRS, GRS, GZRS, RA-GRS, and RA-GZRS.
+Blob containers, file shares, queues, and tables could not be fully managed because no storage account existed.
 
-**Explanation:**
+**Explanation**
 
-The redundancy option determines where Azure stores copies of data and whether secondary-region reads are available.
+These services exist within an Azure storage account.
 
-**Resolution:**
+Without a storage account, the portal can display the service categories but cannot display deployed containers, shares, queues, or tables.
 
-Each redundancy model was reviewed and documented separately.
+**Result**
 
-**Result:**
+The service locations were documented without creating a storage account.
 
-The lab clarified how redundancy affects durability, availability, recovery, and cost.
+---
+
+### Issue 3: Redundancy Names Were Similar
+
+**Symptom**
+
+Azure Storage includes several similar redundancy abbreviations:
+
+- LRS
+- ZRS
+- GRS
+- GZRS
+- RA-GRS
+- RA-GZRS
+
+**Explanation**
+
+Each option defines where replicas are stored and whether the secondary endpoint is readable.
+
+**Resolution**
+
+The redundancy models were documented in a comparison table.
+
+**Result**
+
+The relationship between durability, availability, regional protection, read access, and cost became easier to understand.
+
+---
+
+### Issue 4: Replication Could Be Mistaken for Backup
+
+**Symptom**
+
+Storage replication can appear to provide complete data recovery.
+
+**Risk**
+
+Replication can copy accidental deletion, corruption, or unauthorized changes to additional replicas.
+
+**Resolution**
+
+The lab documented redundancy and backup as separate controls.
+
+**Result**
+
+Storage replication was treated as an availability and durability feature rather than a complete backup strategy.
+
+---
+
+### Issue 5: SAS Tokens Can Be Exposed Easily
+
+**Symptom**
+
+A SAS token can be copied into URLs, scripts, configuration files, or screenshots.
+
+**Risk**
+
+Anyone possessing an active SAS token may receive the access granted by that token.
+
+**Resolution**
+
+No SAS token was created during the lab.
+
+The README documents SAS tokens as sensitive credentials.
+
+**Result**
+
+No delegated-access credential was exposed.
 
 ---
 
 ## What I Would Do Differently in Production
 
-In a production Azure environment, I would not create storage resources without a storage design.
+A production Azure Storage deployment would require formal data, identity, network, security, recovery, operations, and cost planning.
 
-I would define the storage design before deployment, including:
+### Data Architecture
 
-- Data classification
-- Storage account naming standards
-- Region selection
-- Redundancy requirements
-- Access tier strategy
-- Public access policy
-- RBAC role assignments
-- Managed identity usage
-- SAS token policy
-- Key management requirements
-- Network access restrictions
-- Private endpoint requirements
-- Logging and monitoring requirements
-- Lifecycle management rules
-- Backup and recovery requirements
-- Cost alerting and ownership tags
+- Classify data before storage
+- Identify the data owner
+- Select the correct storage service
+- Define data residency
+- Define retention requirements
+- Define deletion requirements
+- Define legal-hold requirements
+- Separate workloads where appropriate
+- Document data flows
+- Document recovery requirements
 
-For regulated environments, I would also document data retention, encryption requirements, access reviews, audit logging, and incident response procedures before production use.
+### Identity and Access
+
+- Use Microsoft Entra ID authorization
+- Assign Azure RBAC through groups
+- Use storage data roles
+- Use the narrowest practical scope
+- Use managed identities for workloads
+- Avoid shared keys where possible
+- Limit SAS permissions and duration
+- Use Privileged Identity Management
+- Perform recurring access reviews
+- Monitor privileged storage operations
+
+### Network Security
+
+- Disable unnecessary public access
+- Require secure transfer
+- Use private endpoints where appropriate
+- Configure private DNS
+- Restrict network access
+- Review trusted service exceptions
+- Monitor access attempts
+- Protect administrative paths
+
+### Encryption and Key Management
+
+- Confirm encryption at rest
+- Require encryption in transit
+- Evaluate customer-managed keys
+- Protect key-management permissions
+- Define key-rotation procedures
+- Monitor key access
+- Document recovery procedures
+
+### Resiliency and Recovery
+
+- Select redundancy based on business requirements
+- Configure soft delete
+- Configure versioning where appropriate
+- Configure backups where required
+- Test data recovery
+- Document failover procedures
+- Define recovery-time objectives
+- Define recovery-point objectives
+- Avoid treating replication as backup
+
+### Governance
+
+- Apply Azure Policy
+- Require secure transfer
+- Restrict public access
+- Require approved redundancy
+- Require approved regions
+- Require tags
+- Apply resource locks where appropriate
+- Document exemptions
+- Monitor policy compliance
+
+### Operations
+
+- Use Infrastructure as Code
+- Store templates in source control
+- Require peer review
+- Configure lifecycle management
+- Configure logging
+- Configure alerts
+- Monitor capacity and transactions
+- Review unused storage
+- Remove orphaned disks and snapshots
+- Document support ownership
+
+### Cost Management
+
+- Estimate storage cost before deployment
+- Select the correct access tier
+- Review transaction patterns
+- Review retrieval costs
+- Review replication costs
+- Configure workload-level budgets
+- Apply cost-center tags
+- Monitor unused storage
+- Review orphaned disks
+- Review snapshots
+- Use lifecycle-management policies
+- Review spending regularly
+
+The lab intentionally avoided deployment because its purpose was storage-service discovery and AZ-900 concept validation.
 
 ---
 
 ## Lessons Learned
 
-This lab reinforced that Azure Storage is more than a place to put files.
-
-Key lessons:
-
-- Storage accounts provide the namespace and management boundary for Azure Storage data.
-- Blob Storage is used for unstructured object data.
+- Azure storage accounts provide namespaces and management boundaries for Azure Storage services.
+- Azure Blob Storage stores unstructured object data.
 - Azure Files provides managed SMB and NFS file shares.
-- Queue Storage supports asynchronous messaging.
-- Table Storage provides NoSQL structured storage.
+- Azure Queue Storage supports asynchronous application messaging.
+- Azure Table Storage provides structured NoSQL storage.
 - Azure managed disks provide block-level storage for virtual machines.
-- Redundancy affects durability, availability, recovery, and cost.
-- Access tiers help balance cost and access frequency.
-- Storage security includes encryption, RBAC, Entra ID, SAS, and logging.
-- Shared access signatures are useful but must be carefully scoped.
-- Storage resources can create cost if deployed carelessly.
-- Cost validation should be part of every Azure lab.
+- Storage account type affects performance, services, redundancy, and cost.
+- Blob access tiers align storage cost with access frequency.
+- Redundancy affects data durability, availability, recovery, and cost.
+- Replication is not the same as backup.
+- Microsoft Entra ID and Azure RBAC support identity-based storage access.
+- Shared access signatures provide delegated access and must be protected.
+- Public storage access should be an intentional design decision.
+- Managed disks can continue generating cost after virtual machine deletion.
+- Cost validation should be performed after every Azure lab.
 
 ### Technical Takeaway
 
-Azure Storage services are selected based on data type, access pattern, availability requirement, and security requirement.
+Azure Storage services are selected based on data type, access pattern, performance, resiliency, security, and application requirements.
 
 ### Business Takeaway
 
-Good storage design reduces cost, protects data, and supports operational reliability.
+A planned storage architecture protects organizational data, controls cost, supports recovery, and reduces operational risk.
 
 ### Security Takeaway
 
-Storage access must be controlled with least privilege, monitored with logs, and protected through encryption and identity-based authorization.
+Storage security requires identity, authorization, encryption, network controls, credential protection, logging, and lifecycle governance.
 
 ### Exam Takeaway
 
 For AZ-900, remember:
 
-- Blob Storage is for object data.
-- Azure Files is for managed file shares.
-- Queue Storage is for messages.
-- Table Storage is for NoSQL structured data.
-- Managed disks are for Azure VMs.
-- Redundancy protects data availability and durability.
-- Access tiers help control cost.
-- SAS provides delegated access.
-- RBAC and Microsoft Entra ID help secure storage access.
+- Storage accounts provide namespaces and management boundaries.
+- Blob Storage stores unstructured object data.
+- Azure Files provides managed file shares.
+- Queue Storage stores asynchronous messages.
+- Table Storage provides NoSQL structured storage.
+- Managed disks support Azure virtual machines.
+- LRS protects within one datacenter.
+- ZRS protects across availability zones.
+- GRS and GZRS add secondary-region replication.
+- RA options provide secondary read access.
+- Access tiers align cost with access frequency.
+- SAS provides restricted delegated access.
+- Microsoft Entra ID and Azure RBAC can secure storage access.
 
 ---
 
 ## Cleanup
 
-No cleanup was required because no storage resources were created.
-
 ### Resources Retained
 
 | Resource or Configuration | Reason |
 |---|---|
-| Azure subscription | Required for future labs |
-| Monthly budget | Required for ongoing cost visibility |
-| Existing Lab 01 resource group | Retained as the foundational lab resource group |
-| Cost Management configuration | Required for continued budget validation |
+| MRTG Azure subscription | Required for the remaining labs |
+| Monthly Azure budget | Required for ongoing cost visibility |
+| Lab 01 resource group | Retained as the foundational resource group |
+| Lab 07 documentation | Retained as project evidence |
+| Lab 07 screenshots | Retained as validation evidence |
 
 ### Resources Removed
 
@@ -873,35 +1744,44 @@ No Azure storage resources were created during this lab.
 - [x] No tables were created
 - [x] No managed disks were created
 - [x] No snapshots were created
-- [x] No lifecycle management policies were created
+- [x] No Azure Elastic SAN resources were created
+- [x] No Azure NetApp Files resources were created
+- [x] No Azure Managed Lustre resources were created
+- [x] No private endpoints were created
+- [x] No lifecycle-management policies were created
 - [x] No redundancy settings were changed
-- [x] No SAS tokens were created
+- [x] No shared access signatures were created
+- [x] No storage-related billable resources were deployed
+- [x] Monthly budget remained active
 - [x] Evaluated spend remained `$0.00`
 - [x] Budget progress remained `0.00%`
+- [x] Screenshot data was sanitized
 
 ---
 
 ## Outcome
 
-Lab 07 successfully established a foundational understanding of Azure Storage services while maintaining a cost-safe lab environment.
+This lab documented the Azure Storage foundation required for secure and cost-conscious cloud architecture.
 
-The lab demonstrated how to identify and validate core storage services in Azure without deploying billable resources.
-
-The completed lab demonstrates:
+The completed lab demonstrated:
 
 - Understanding of Azure storage accounts
 - Understanding of storage account types
-- Understanding of Blob Storage
+- Understanding of Azure Blob Storage
 - Understanding of Azure Files
-- Understanding of Queue Storage
-- Understanding of Table Storage
+- Understanding of Azure Queue Storage
+- Understanding of Azure Table Storage
 - Understanding of Azure managed disks
-- Understanding of storage redundancy options
+- Understanding of storage redundancy
 - Understanding of blob access tiers
-- Understanding of Azure Storage security strategies
+- Understanding of Azure Storage security
+- Understanding of Microsoft Entra authorization
+- Understanding of Azure RBAC for storage
 - Understanding of shared access signatures
 - Awareness of storage cost risks
 - Awareness of storage security responsibilities
+- Practical Azure Portal validation
+- No deployed billable storage resources
 - Final evaluated spend of `$0.00`
 
 ---
@@ -918,19 +1798,107 @@ The completed lab demonstrates:
 | `06-azure-files-overview.png` | Azure Files overview |
 | `07-queue-storage-overview.png` | Azure Queue Storage overview |
 | `08-table-storage-overview.png` | Azure Table Storage overview |
-| `09-azure-disks-overview.png` | Azure Disks overview |
-| `10-storage-redundancy-overview.png` | Storage redundancy overview |
+| `09-azure-disks-overview.png` | Azure managed disks overview |
+| `10-storage-redundancy-overview.png` | Azure Storage redundancy overview |
 | `11-zone-redundant-storage.png` | Zone-redundant storage |
 | `12-secondary-region-redundancy.png` | Secondary-region redundancy |
 | `13-geo-redundant-storage-options.png` | Geo-redundant and geo-zone-redundant storage |
 | `14-read-access-secondary-region.png` | Read access to secondary-region data |
 | `15-storage-security-overview.png` | Azure Storage security strategies |
 | `16-shared-access-signatures-overview.png` | Shared access signatures |
-| `17-storage-center-blob-storage-portal.png` | Storage Center Blob Storage portal view |
-| `18-storage-center-file-storage-portal.png` | Storage Center File Storage portal view |
-| `19-storage-center-block-storage-portal.png` | Storage Center Block Storage portal view |
-| `20-azure-disks-portal.png` | Azure Disks portal view |
+| `17-storage-center-blob-storage-portal.png` | Azure Portal Blob Storage view |
+| `18-storage-center-file-storage-portal.png` | Azure Portal File Storage view |
+| `19-storage-center-block-storage-portal.png` | Azure Portal Block Storage view |
+| `20-azure-disks-portal.png` | Azure Portal managed disks view |
 | `21-cost-management-final-validation.png` | Final Cost Management validation |
+
+---
+
+## Screenshots
+
+### Azure Storage Accounts Overview
+
+![Azure Storage Accounts Overview](screenshots/01-azure-storage-accounts-overview.png)
+
+### Storage Account Types Overview
+
+![Storage Account Types Overview](screenshots/02-storage-account-types-overview.png)
+
+### Azure Storage Services Overview
+
+![Azure Storage Services Overview](screenshots/03-azure-storage-services-overview.png)
+
+### Azure Blob Storage Overview
+
+![Azure Blob Storage Overview](screenshots/04-blob-storage-overview.png)
+
+### Blob Storage Access Tiers
+
+![Blob Storage Access Tiers](screenshots/05-blob-storage-access-tiers.png)
+
+### Azure Files Overview
+
+![Azure Files Overview](screenshots/06-azure-files-overview.png)
+
+### Azure Queue Storage Overview
+
+![Azure Queue Storage Overview](screenshots/07-queue-storage-overview.png)
+
+### Azure Table Storage Overview
+
+![Azure Table Storage Overview](screenshots/08-table-storage-overview.png)
+
+### Azure Managed Disks Overview
+
+![Azure Managed Disks Overview](screenshots/09-azure-disks-overview.png)
+
+### Storage Redundancy Overview
+
+![Storage Redundancy Overview](screenshots/10-storage-redundancy-overview.png)
+
+### Zone-Redundant Storage
+
+![Zone-Redundant Storage](screenshots/11-zone-redundant-storage.png)
+
+### Secondary-Region Redundancy
+
+![Secondary-Region Redundancy](screenshots/12-secondary-region-redundancy.png)
+
+### Geo-Redundant Storage Options
+
+![Geo-Redundant Storage Options](screenshots/13-geo-redundant-storage-options.png)
+
+### Read Access to Secondary Region
+
+![Read Access to Secondary Region](screenshots/14-read-access-secondary-region.png)
+
+### Azure Storage Security Overview
+
+![Azure Storage Security Overview](screenshots/15-storage-security-overview.png)
+
+### Shared Access Signatures Overview
+
+![Shared Access Signatures Overview](screenshots/16-shared-access-signatures-overview.png)
+
+### Storage Center Blob Storage Portal
+
+![Storage Center Blob Storage Portal](screenshots/17-storage-center-blob-storage-portal.png)
+
+### Storage Center File Storage Portal
+
+![Storage Center File Storage Portal](screenshots/18-storage-center-file-storage-portal.png)
+
+### Storage Center Block Storage Portal
+
+![Storage Center Block Storage Portal](screenshots/19-storage-center-block-storage-portal.png)
+
+### Azure Managed Disks Portal
+
+![Azure Managed Disks Portal](screenshots/20-azure-disks-portal.png)
+
+### Cost Management Final Validation
+
+![Cost Management Final Validation](screenshots/21-cost-management-final-validation.png)
 
 ---
 
@@ -942,15 +1910,16 @@ The next lab is:
 Lab 08 - Microsoft Entra ID, RBAC, and Zero Trust
 ```
 
-The next lab will build on this storage foundation by reviewing:
+The next lab builds on this storage foundation by examining:
 
 - Microsoft Entra ID
 - Authentication
 - Authorization
-- Role-Based Access Control
-- Built-in roles
-- Scope
+- Azure role-based access control
+- Built-in Azure roles
+- Azure RBAC scope
 - Least privilege
+- Conditional Access
 - Zero Trust
-- Conditional Access concepts
+- Defense in depth
 - Identity and access security in Azure

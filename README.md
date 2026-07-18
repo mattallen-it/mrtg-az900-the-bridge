@@ -1,14 +1,43 @@
 # MRTG Azure Fundamentals: The Bridge
 
-A hands-on Microsoft Azure Fundamentals lab series connecting on-premises identity and access management concepts to Azure cloud services, security, governance, cost management, and administration.
+A hands-on Microsoft Azure Fundamentals lab series connecting on-premises identity and access management concepts to Azure cloud services, security, governance, cost management, monitoring, and administration.
+
+---
+
+## Project Status
+
+| Item | Status |
+|---|---|
+| Labs Completed | 13 of 13 |
+| Lab Documentation | Complete |
+| Capstone | Complete |
+| Screenshot Review | Complete |
+| Documentation Consistency Review | In Progress |
+| AZ-900 Exam Preparation | In Progress |
+
+---
 
 ## Project Overview
 
 **MRTG Azure Fundamentals: The Bridge** documents the transition from traditional on-premises infrastructure and identity administration into Microsoft Azure.
 
-This project is aligned with the Microsoft **AZ-900: Azure Fundamentals** certification objectives. It combines conceptual study, practical Azure portal experience, security analysis, cost awareness, governance decisions, and professional technical documentation.
+The project was developed to support preparation for the Microsoft **AZ-900: Azure Fundamentals** certification while building practical experience with the Azure Portal and Microsoft cloud services.
 
-Each lab approaches Azure from an operational and business perspective. The objective is not simply to deploy resources, but to understand:
+The series combines:
+
+- Certification-aligned study
+- Azure Portal exploration
+- Identity and access analysis
+- Security review
+- Cost awareness
+- Governance decisions
+- Monitoring and service-health review
+- Production-readiness analysis
+- Professional technical documentation
+
+Each lab approaches Azure from both an operational and business perspective.
+
+The objective is not simply to explore a service, but to understand:
 
 - What problem the service solves
 - Why an organization would use it
@@ -17,7 +46,7 @@ Each lab approaches Azure from an operational and business perspective. The obje
 - How identity and access are controlled
 - What governance requirements apply
 - How costs are monitored
-- How the deployment would differ in production
+- How the configuration would differ in production
 
 ---
 
@@ -41,18 +70,22 @@ The series connects those concepts to Azure technologies such as:
 
 - Microsoft Entra ID
 - Azure role-based access control
-- Azure subscriptions and resource groups
-- Azure compute, networking, and storage
+- Azure subscriptions
+- Azure resource groups
+- Azure compute services
+- Azure networking services
+- Azure storage services
 - Azure Policy
 - Resource locks
 - Azure Cost Management
 - Azure Monitor
 - Microsoft Defender for Cloud
-- Infrastructure deployment tools
+- Azure Resource Manager
+- Infrastructure as Code
 - Cloud governance
 - Shared responsibility
 
-The result is a documented progression from on-premises IAM foundations into cloud identity, security, governance, and administration.
+The result is a documented progression from on-premises IAM foundations into cloud identity, security, governance, monitoring, and administration.
 
 ---
 
@@ -72,21 +105,21 @@ The organization requires a structured Azure foundation that supports:
 - Future hybrid identity integration
 - Repeatable technical documentation
 
-This lab series documents the foundational knowledge and technical decisions required to begin that transition.
+This lab series documents the foundational knowledge, service evaluations, and technical decisions required to begin that transition.
 
 ---
 
 ## Project Objectives
 
-The objectives of this project are to:
+The objectives of this project were to:
 
-- Build practical familiarity with the Azure portal
+- Build practical familiarity with the Azure Portal
 - Explain core cloud concepts using business scenarios
 - Identify appropriate Azure services for common requirements
 - Understand Azure regions, availability zones, and resource hierarchy
 - Compare Azure compute, networking, and storage options
 - Connect traditional IAM concepts to Microsoft Entra ID and Azure RBAC
-- Apply cost-management and governance controls
+- Review cost-management and governance controls
 - Evaluate Azure management and deployment tools
 - Use monitoring and service-health features
 - Document security, cost, and production considerations
@@ -97,7 +130,7 @@ The objectives of this project are to:
 
 ## Certification Alignment
 
-This project follows the Microsoft AZ-900 skills measured as of **January 14, 2026**.
+This project was aligned with the Microsoft AZ-900 skills measured published on **January 14, 2026**.
 
 | Exam Domain | Weight |
 |---|---:|
@@ -127,7 +160,8 @@ This project follows the Microsoft AZ-900 skills measured as of **January 14, 20
 - Availability zones
 - Sovereign regions
 - Azure datacenters
-- Azure resources and resource groups
+- Azure resources
+- Resource groups
 - Subscriptions
 - Management groups
 - Compute services
@@ -159,15 +193,16 @@ This project follows the Microsoft AZ-900 skills measured as of **January 14, 20
 - Microsoft Purview
 - Azure Policy
 - Resource locks
-- Azure portal
+- Azure Portal
 - Azure Cloud Shell
 - Azure CLI
 - Azure PowerShell
 - Azure Arc
-- Infrastructure as code
+- Infrastructure as Code
 - ARM templates
 - Azure Advisor
 - Azure Service Health
+- Azure Resource Health
 - Azure Monitor
 - Log Analytics
 - Azure Monitor alerts
@@ -189,7 +224,7 @@ Study the Azure concepts, services, terminology, and business requirements assoc
 
 ### Build
 
-Use the Azure portal and other approved management tools to configure or examine the required services.
+Use the Azure Portal and other approved management tools to configure or examine the required services.
 
 ### Document
 
@@ -201,27 +236,50 @@ Describe why the technology was selected, what problem it solves, and how it wou
 
 ### Map
 
-Connect the completed work to the applicable AZ-900 exam objectives and existing IAM, infrastructure, security, or governance knowledge.
+Connect the completed work to applicable AZ-900 exam objectives and existing IAM, infrastructure, security, governance, or operational knowledge.
 
 ---
 
 ## Lab Roadmap
 
 | Lab | Title | Primary Focus | Status |
-|---|---|---|---|
-| 01 | Azure Environment and Cost Protection | Account security, subscription validation, budgets, naming, tagging, and resource groups | Complete |
-| 02 | Cloud Computing and Shared Responsibility | Cloud concepts, shared responsibility, consumption models, and serverless computing | Complete |
-| 03 | Cloud Models, Benefits, and Service Types | Public, private, and hybrid cloud; IaaS, PaaS, and SaaS | Complete |
-| 04 | Azure Architecture and Resource Hierarchy | Regions, availability zones, resources, resource groups, subscriptions, and management groups | Complete |
-| 05 | Azure Compute Services | Virtual machines, containers, functions, application hosting, and compute selection | Complete |
-| 06 | Azure Networking Foundation | Virtual networks, subnets, peering, endpoints, routing, security, and DNS | Complete |
-| 07 | Azure Storage Services | Storage accounts, blobs, files, queues, tables, redundancy, and access tiers | Complete |
-| 08 | Microsoft Entra ID, RBAC, and Zero Trust | Identity, authentication, authorization, Conditional Access, RBAC, and Zero Trust | Complete |
-| 09 | Azure Cost Management and Resource Organization | Cost analysis, budgets, pricing, tags, and resource organization | In Progress |
-| 10 | Azure Governance, Policy, and Compliance | Azure Policy, resource locks, governance, compliance, and Microsoft Purview | Planned |
-| 11 | Azure Management and Deployment Tools | Portal, Cloud Shell, CLI, PowerShell, ARM templates, IaC, and Azure Arc | Planned |
-| 12 | Azure Monitoring, Health, and Optimization | Azure Monitor, Log Analytics, alerts, Service Health, Advisor, and Application Insights | Planned |
-| 13 | MRTG Azure Fundamentals Capstone | Integrated architecture, service selection, security, governance, cost, and operational planning | Planned |
+|---:|---|---|---|
+| 01 | [Azure Environment and Cost Protection](labs/lab-01-azure-environment-and-cost-protection/) | Account security, subscription validation, budgets, naming, tagging, and resource groups | Complete |
+| 02 | [Cloud Computing and Shared Responsibility](labs/lab-02-cloud-computing-and-shared-responsibility/) | Cloud concepts, shared responsibility, consumption models, and serverless computing | Complete |
+| 03 | [Cloud Models, Benefits, and Service Types](labs/lab-03-cloud-models-benefits-and-service-types/) | Public, private, and hybrid cloud; IaaS, PaaS, and SaaS | Complete |
+| 04 | [Azure Architecture and Resource Hierarchy](labs/lab-04-azure-architecture-and-resource-hierarchy/) | Regions, availability zones, resources, resource groups, subscriptions, and management groups | Complete |
+| 05 | [Azure Compute Services](labs/lab-05-azure-compute-services/) | Virtual machines, containers, functions, application hosting, and compute selection | Complete |
+| 06 | [Azure Networking Foundation](labs/lab-06-azure-networking-foundation/) | Virtual networks, subnets, peering, endpoints, routing, security, and DNS | Complete |
+| 07 | [Azure Storage Services](labs/lab-07-azure-storage-services/) | Storage accounts, blobs, files, queues, tables, redundancy, and access tiers | Complete |
+| 08 | [Microsoft Entra ID, RBAC, and Zero Trust](labs/lab-08-entra-id-rbac-and-zero-trust/) | Identity, authentication, authorization, Conditional Access, RBAC, and Zero Trust | Complete |
+| 09 | [Azure Cost Management and Resource Organization](labs/lab-09-cost-management-and-resource-organization/) | Cost analysis, budgets, pricing, tags, and resource organization | Complete |
+| 10 | [Azure Governance, Policy, and Compliance](labs/lab-10-governance-policy-and-compliance/) | Azure Policy, resource locks, governance, compliance, and Microsoft Purview | Complete |
+| 11 | [Azure Management and Deployment Tools](labs/lab-11-management-and-deployment-tools/) | Azure Portal, Cloud Shell, CLI, PowerShell, ARM templates, Infrastructure as Code, and Azure Arc | Complete |
+| 12 | [Azure Monitoring, Health, and Optimization](labs/lab-12-monitoring-health-and-optimization/) | Azure Monitor, Log Analytics, alerts, Service Health, Resource Health, Advisor, and Application Insights | Complete |
+| 13 | [MRTG Azure Fundamentals Capstone](labs/lab-13-azure-fundamentals-capstone/) | Integrated identity, governance, cost, monitoring, security, and operational review | Complete |
+
+---
+
+## Series Completion
+
+The **MRTG Azure Fundamentals: The Bridge** project is complete.
+
+The series includes:
+
+- 13 certification-aligned labs
+- Azure Portal exploration
+- Microsoft Learn concept reviews
+- Identity and access analysis
+- Compute, networking, and storage service comparisons
+- Governance and compliance review
+- Cost-management controls
+- Monitoring and operational-health validation
+- Production-readiness analysis
+- A final Azure environment capstone
+- Sanitized screenshots
+- Documented validation evidence
+
+The capstone confirmed that the Azure lab environment remained controlled, documented, and within its intended cost boundary.
 
 ---
 
@@ -237,8 +295,6 @@ mrtg-az900-the-bridge/
 ├── docs/
 ├── labs/
 │   ├── lab-01-azure-environment-and-cost-protection/
-│   │   ├── README.md
-│   │   └── screenshots/
 │   ├── lab-02-cloud-computing-and-shared-responsibility/
 │   ├── lab-03-cloud-models-benefits-and-service-types/
 │   ├── lab-04-azure-architecture-and-resource-hierarchy/
@@ -255,35 +311,45 @@ mrtg-az900-the-bridge/
     └── lab-readme-template.md
 ```
 
-Lab directories are added as the series progresses. Git does not track empty directories, so placeholder files may be used until documentation or screenshots are added.
+Each lab directory contains:
+
+```text
+README.md
+screenshots/
+```
 
 ---
 
 ## Lab Documentation Standard
 
-Each lab README uses the following structure:
+Each lab README follows this structure:
 
 1. Lab title
 2. Objective
 3. Business Problem Solved
 4. Scenario
-5. Azure Services Used
+5. Azure Services and Resources Used
 6. Why These Services Were Used
 7. Environment
-8. Architecture or Concept Diagram
+8. Architecture / Concept Diagram
 9. Steps Performed
 10. Validation
-11. AZ-900 Exam Objective Coverage
-12. Mini Objective Coverage
-13. IAM and Security Relevance
-14. Governance Notes
-15. Cost Considerations
-16. Troubleshooting Notes
-17. What I Would Do Differently in Production
-18. Lessons Learned
-19. Cleanup
-20. Outcome
-21. Next Lab
+11. Completion Checklist
+12. AZ-900 Exam Objective Coverage
+13. Mini Objective Coverage
+14. IAM / Security Relevance
+15. Governance Notes
+16. Cost Considerations
+17. Troubleshooting Notes
+18. What I Would Do Differently in Production
+19. Lessons Learned
+20. Cleanup
+21. Outcome
+22. Screenshot Inventory
+23. Screenshots
+24. Next Lab
+
+Lab 13 uses a **Series Completion** section instead of a **Next Lab** section.
 
 This standard ensures that each lab documents both the technical work and the reasoning behind it.
 
@@ -300,9 +366,9 @@ labs/<lab-folder>/screenshots/
 Screenshot filenames use the following format:
 
 ```text
-01-descriptive-screenshot-name
-02-descriptive-screenshot-name
-03-descriptive-screenshot-name
+01-descriptive-screenshot-name.png
+02-descriptive-screenshot-name.png
+03-descriptive-screenshot-name.png
 ```
 
 Screenshot requirements:
@@ -310,11 +376,13 @@ Screenshot requirements:
 - Use sequential two-digit numbering
 - Use lowercase filenames
 - Separate words with hyphens
+- Include the `.png` file extension
 - Describe the configuration or validation being shown
 - Capture only information relevant to the lab
-- Crop unnecessary browser and desktop content
+- Crop unnecessary browser and desktop content when practical
 - Maintain a consistent image size when practical
 - Place screenshots near the related README steps
+- Include screenshots in the Screenshot Inventory
 - Review every screenshot before committing it
 
 Screenshots must not expose:
@@ -333,9 +401,16 @@ Screenshots must not expose:
 - Recovery email addresses
 - Subscription IDs
 - Tenant IDs
+- Directory names
+- `onmicrosoft.com` domains
 - Object IDs
+- Principal IDs
+- Request IDs
+- Correlation IDs
 - Sensitive account notifications
 - Public IP addresses when disclosure is unnecessary
+
+Sensitive information is removed using solid opaque redaction rather than blur.
 
 ---
 
@@ -429,7 +504,8 @@ Cost controls include:
 
 - Reviewing estimated cost before deployment
 - Using free or low-cost services when practical
-- Creating subscription-level budgets and alerts
+- Creating subscription-level budgets
+- Configuring budget thresholds and notifications
 - Monitoring current and forecasted spending
 - Reviewing free-service usage
 - Applying ownership and cost-center tags
@@ -456,25 +532,30 @@ The project uses foundational governance practices throughout the lab series:
 - Azure Policy evaluation
 - Resource-lock evaluation
 - Cost monitoring
-- Activity-log review
+- Activity Log review
 - Documentation of ownership
 - Defined cleanup dates
 - Production-readiness analysis
 
-Later labs expand these practices into policy enforcement, compliance evaluation, monitoring, and operational management.
+Labs 10 through 13 expanded these practices through governance review, compliance evaluation, deployment-tool exploration, monitoring, operational health, and final environment validation.
 
 ---
 
-## Environment
+## Project Environment
 
-The lab environment may include:
+The lab environment included:
 
-- Microsoft Azure portal
+- Microsoft Azure Portal
 - Microsoft Entra ID
 - Azure Cloud Shell
 - Azure CLI
 - Azure PowerShell
 - Azure Resource Manager
+- Azure Cost Management
+- Azure Monitor
+- Azure Service Health
+- Azure Resource Health
+- Azure Advisor
 - Windows-based administrative workstation
 - GitHub for version control and documentation
 - Microsoft Learn for certification-aligned reference material
@@ -485,7 +566,7 @@ The specific services used are documented inside each lab.
 
 ## Validation Standard
 
-A deployment is not considered complete simply because Azure reports that it was created.
+A lab is not considered complete simply because an Azure service was opened or a resource was created.
 
 Validation may include:
 
@@ -500,9 +581,19 @@ Validation may include:
 - Checking monitoring data
 - Reviewing cost information
 - Confirming cleanup
-- Verifying that documentation matches the deployed environment
+- Verifying that documentation matches the observed environment
 
-Each lab records both the expected result and the observed result.
+Each lab records:
+
+- The validation item
+- The expected result
+- The actual result
+
+The standard validation status is:
+
+```text
+Passed
+```
 
 ---
 
@@ -520,7 +611,7 @@ Each lab identifies production considerations such as:
 - High availability
 - Backup and recovery
 - Monitoring and alerting
-- Infrastructure as code
+- Infrastructure as Code
 - Change control
 - Policy enforcement
 - Centralized logging
@@ -542,33 +633,45 @@ This distinction prevents a successful demonstration from being mistaken for a p
 | Azure subscription configured | Complete |
 | Cost protections configured | Complete |
 | Core cloud-concept labs completed | Complete |
-| Azure architecture labs completed | Complete |
+| Azure architecture lab completed | Complete |
+| Compute services lab completed | Complete |
+| Networking services lab completed | Complete |
+| Storage services lab completed | Complete |
 | Identity and security lab completed | Complete |
-| Governance and management labs completed | In Progress |
-| Monitoring lab completed | Not Started |
-| Capstone completed | Not Started |
-| AZ-900 exam preparation review completed | Not Started |
-
-Progress is updated as each lab is completed and validated.
+| Cost-management lab completed | Complete |
+| Governance and compliance lab completed | Complete |
+| Management and deployment lab completed | Complete |
+| Monitoring and optimization lab completed | Complete |
+| Capstone completed | Complete |
+| Screenshot sanitization completed | Complete |
+| Full documentation consistency review | In Progress |
+| AZ-900 exam preparation review | In Progress |
 
 ---
 
-## Expected Outcomes
+## Demonstrated Outcomes
 
-By completing this series, I will be able to:
+By completing this series, I demonstrated the ability to:
 
 - Explain fundamental cloud concepts
 - Compare cloud deployment and service models
 - Describe Azure architecture and resource hierarchy
-- Identify appropriate Azure compute, networking, and storage services
+- Identify appropriate Azure compute services
+- Identify appropriate Azure networking services
+- Identify appropriate Azure storage services
 - Explain Microsoft Entra ID and Azure RBAC
-- Describe Zero Trust and defense-in-depth concepts
+- Describe authentication and authorization
+- Explain Zero Trust and defense-in-depth concepts
 - Explain Azure pricing and cost-management tools
 - Describe Azure governance and compliance capabilities
 - Identify Azure management and deployment tools
 - Explain Azure monitoring, health, and optimization services
 - Translate on-premises IAM knowledge into Azure terminology
 - Discuss Azure services from technical and business perspectives
+- Review an Azure subscription from an operational perspective
+- Validate cost, governance, identity, and monitoring configurations
+- Produce professional technical documentation
+- Sanitize screenshots before public publication
 - Demonstrate certification-aligned knowledge with documented practical work
 
 ---
@@ -577,19 +680,23 @@ By completing this series, I will be able to:
 
 This project establishes the foundation for more advanced Microsoft cloud work, including:
 
-- Microsoft 365 fundamentals and administration
-- Hybrid identity
-- Microsoft Entra Connect
-- Microsoft Entra Cloud Sync
-- SC-900: Microsoft Security, Compliance, and Identity Fundamentals
-- SC-300: Microsoft Identity and Access Administrator
-- AZ-104: Microsoft Azure Administrator
-- Conditional Access
-- Privileged Identity Management
-- Identity Governance
-- Azure landing zones
-- Infrastructure as code
-- Cloud security operations
+1. SC-900: Microsoft Security, Compliance, and Identity Fundamentals
+2. AI-901 foundational AI studies and lab series
+3. SC-300: Microsoft Identity and Access Administrator
+4. AZ-104: Microsoft Azure Administrator
+5. Hybrid identity
+6. Microsoft Entra Connect
+7. Microsoft Entra Cloud Sync
+8. Conditional Access
+9. Privileged Identity Management
+10. Identity Governance
+11. Azure landing zones
+12. Infrastructure as Code
+13. Cloud security operations
+14. Microsoft Sentinel
+15. Microsoft Defender for Cloud
+
+Future projects will extend the MRTG environment from foundational Azure concepts into identity administration, hybrid cloud integration, privileged access, governance, automation, and security operations.
 
 ---
 
@@ -597,7 +704,9 @@ This project establishes the foundation for more advanced Microsoft cloud work, 
 
 This repository is an independent educational and portfolio project.
 
-It is not affiliated with, endorsed by, or sponsored by Microsoft. Microsoft Azure, Microsoft Entra, Microsoft 365, Windows Server, and related product names are trademarks of Microsoft Corporation.
+It is not affiliated with, endorsed by, or sponsored by Microsoft.
+
+Microsoft Azure, Microsoft Entra, Microsoft 365, Windows Server, and related product names are trademarks of Microsoft Corporation.
 
 Azure services, pricing, interfaces, free-service allowances, certification objectives, and product features may change. Current Microsoft documentation should always be reviewed before deploying resources or scheduling an exam.
 
@@ -607,7 +716,9 @@ No real production credentials, customer data, private organizational informatio
 
 ## License
 
-This project is licensed under the MIT License. See the `LICENSE` file for details.
+This project is licensed under the MIT License.
+
+See the `LICENSE` file for details.
 
 ---
 
@@ -616,7 +727,7 @@ This project is licensed under the MIT License. See the `LICENSE` file for detai
 **Matthew Allen**  
 **Monroe Redstone Technology Group**
 
-Focus areas:
+### Focus Areas
 
 - Identity and access management
 - Microsoft Azure

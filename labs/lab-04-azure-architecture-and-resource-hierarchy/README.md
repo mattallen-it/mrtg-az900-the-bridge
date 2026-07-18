@@ -6,71 +6,84 @@ Document the core architectural components of Microsoft Azure and explain how Az
 
 By completing this lab, I:
 
-- Reviewed Azure physical infrastructure concepts
+- Reviewed Azure physical infrastructure
 - Documented Azure geographies, regions, availability zones, and datacenters
 - Reviewed Azure region pairs and sovereign regions
 - Documented Azure resources, resource groups, subscriptions, and management groups
 - Reviewed the Azure resource hierarchy
-- Identified the existing MRTG subscription in Azure
+- Validated the existing MRTG Azure subscription
 - Validated the existing Lab 01 resource group
-- Reviewed the Tenant Root Group management group view
+- Reviewed the Tenant Root Group hierarchy
 - Reviewed Azure Resource Manager as the Azure deployment and management layer
-- Confirmed that no billable resources were created during the lab
-- Validated that Azure spend remained at `$0.00`
+- Confirmed that no billable resources were created
+- Validated that evaluated Azure spend remained `$0.00`
+
+This was a discovery-only lab. No Azure resources or configurations were created or modified.
 
 ---
 
 ## Business Problem Solved
 
-Azure environments can become difficult to manage if the organization does not understand how Azure structures resources, governance, access control, and billing.
+Azure environments can become difficult to manage when an organization does not understand how Azure structures resources, governance, access control, billing, and regional infrastructure.
 
 Monroe Redstone Technology Group needed to understand the Azure architecture model before deploying additional services.
 
-This lab helped answer:
+This lab addressed the following questions:
 
+- What is an Azure geography?
 - What is an Azure region?
 - What is an availability zone?
 - What is a region pair?
-- What are sovereign regions used for?
+- Why do sovereign regions exist?
 - What is an Azure resource?
 - What is a resource group?
-- What is a subscription?
+- What is an Azure subscription?
 - What is a management group?
 - What is Azure Resource Manager?
 - How do Azure governance scopes relate to IAM and security?
 
-Understanding this hierarchy helps prevent poor design decisions later.
+Understanding these concepts helps prevent poor architecture, governance, identity, cost, and resource-organization decisions.
 
 ---
 
 ## Scenario
 
-MRTG has completed the first three Azure Fundamentals labs.
+MRTG completed the first three Azure Fundamentals labs:
 
 - Lab 01 established the Azure environment and cost controls.
 - Lab 02 documented cloud computing and shared responsibility.
-- Lab 03 documented cloud benefits and service types.
+- Lab 03 documented cloud benefits and service models.
 
 In Lab 04, MRTG reviews how Azure is structured physically and logically.
 
-The organization needs to understand how Azure resources are deployed into regions, organized into resource groups, governed through subscriptions, and managed through management groups.
+The organization needs to understand how:
 
-No Azure resources are created in this lab.
+- Microsoft organizes global Azure infrastructure
+- Resources are deployed into Azure regions
+- Availability zones support resiliency
+- Region pairs support recovery planning
+- Resources are organized into resource groups
+- Subscriptions provide billing and access boundaries
+- Management groups provide higher-level governance
+- Azure Resource Manager provides a consistent management layer
+- Governance and access can inherit through Azure scopes
+
+No new Azure resources are created during this lab.
 
 ---
 
 ## Azure Services and Resources Used
 
-| Service or Resource | Purpose |
+| Azure Service, Resource, or Platform | Purpose |
 |---|---|
-| Microsoft Learn | Reviewed official Azure architecture concepts |
-| Azure portal | Reviewed practical Azure hierarchy and resource organization |
-| Azure Resource Manager | Reviewed the Azure deployment and management layer |
-| Azure subscription | Validated the subscription as a billing and access-control boundary |
-| Azure resource groups | Validated the existing Lab 01 resource group |
-| Azure management groups | Reviewed the Tenant Root Group hierarchy |
-| Azure Cost Management | Validated budget and spending status |
-| Azure budgets | Confirmed evaluated spend remained `$0.00` |
+| Microsoft Learn | Provided certification-aligned Azure architecture instruction |
+| Azure Portal | Supported practical review of subscriptions, resource groups, and management groups |
+| Azure Resource Manager | Demonstrated the Azure deployment and management layer |
+| Azure Subscription | Demonstrated a billing, access-control, governance, and resource boundary |
+| Azure Resource Group | Demonstrated logical resource organization and lifecycle management |
+| Azure Management Groups | Demonstrated governance above the subscription scope |
+| Azure Cost Management | Supported final spending validation |
+| Azure Budgets | Confirmed that evaluated spend remained `$0.00` |
 
 ---
 
@@ -78,10 +91,11 @@ No Azure resources are created in this lab.
 
 ### Microsoft Learn
 
-Microsoft Learn was used as the official source for AZ-900 architecture concepts.
+Microsoft Learn was used as the primary certification-aligned source for Azure architecture concepts.
 
-It provided coverage for:
+It provided structured coverage of:
 
+- Azure geographies
 - Azure regions
 - Region pairs
 - Sovereign regions
@@ -95,112 +109,150 @@ It provided coverage for:
 
 ### Azure Portal
 
-The Azure portal was used to validate how these concepts appear in a real Azure environment.
+The Azure Portal was used to connect Microsoft Learn concepts to the existing MRTG Azure environment.
 
-This provided practical evidence for:
+It supported practical validation of:
 
-- Subscription visibility
+- Subscription status
+- Subscription role
+- Parent management group
 - Resource group organization
+- Resource group location
+- Resource group metadata
 - Management group hierarchy
-- Cost validation
+- Cost status
 
 ### Azure Resource Manager
 
-Azure Resource Manager was reviewed because it is the management and deployment layer for Azure resources.
+Azure Resource Manager is the management and deployment layer for Azure.
 
-ARM is important because Azure portal, Azure CLI, Azure PowerShell, SDKs, and REST clients all interact with Azure resources through the same management layer.
+It was reviewed because Azure management requests from the following interfaces are processed through Azure Resource Manager:
+
+- Azure Portal
+- Azure CLI
+- Azure PowerShell
+- REST APIs
+- Software development kits
+- ARM templates
+- Bicep
+
+Azure Resource Manager also supports management capabilities such as:
+
+- Azure RBAC
+- Resource tags
+- Resource locks
+- Deployments
+- Resource organization
+- Policy integration
+
+### Azure Subscription
+
+The existing MRTG subscription was reviewed because subscriptions provide boundaries for:
+
+- Billing
+- Cost Management
+- Azure RBAC
+- Azure Policy
+- Resource deployment
+- Service quotas
+- Administration
+
+### Azure Resource Group
+
+The Lab 01 resource group was reviewed as an example of a logical container for Azure resources sharing a common purpose or lifecycle.
+
+### Azure Management Groups
+
+Management groups were reviewed because they provide governance scopes above subscriptions.
+
+They can help organizations apply consistent:
+
+- Azure Policy assignments
+- Azure RBAC assignments
+- Governance standards
+- Compliance requirements
 
 ### Azure Cost Management
 
-Cost Management was reviewed to confirm that Lab 04 stayed cost-safe.
+Azure Cost Management was reviewed to confirm that architecture and hierarchy discovery did not increase Azure spending.
 
-The final budget validation showed:
+### Azure Budgets
 
-```text
-Budget: $10.00
-Evaluated spend: $0.00
-Progress: 0.00%
-```
+The existing monthly budget provided evidence that:
+
+- The `$10.00` monthly budget remained active
+- Evaluated spend remained `$0.00`
+- Budget progress remained `0.00%`
 
 ---
 
 ## Environment
 
-| Component | Configuration |
+| Item | Value |
 |---|---|
 | Organization | Monroe Redstone Technology Group |
 | Project | MRTG Azure Fundamentals: The Bridge |
-| Lab | Lab 04 |
+| Lab | Lab 04 - Azure Architecture and Resource Hierarchy |
+| Cloud Platform | Microsoft Azure |
+| Management Interface | Azure Portal |
+| Learning Platform | Microsoft Learn |
 | Subscription | `MRTG-AZ900-Lab-Subscription` |
-| Existing resource group | `rg-mrtg-az900-lab01-centralus-001` |
-| Resource group location | `Central US` |
-| Parent management group | `Tenant Root Group` |
-| Azure resources created | None |
-| Estimated cost | `$0.00` |
-| Documentation platform | GitHub |
+| Subscription Status | Active |
+| Subscription Role | Owner |
+| Parent Management Group | Tenant Root Group |
+| Existing Resource Group | `rg-mrtg-az900-lab01-centralus-001` |
+| Resource Group Location | `Central US` |
+| New Resource Group | None |
+| Azure Resources Created | None |
+| Monthly Budget | `$10.00` |
+| Evaluated Spend | `$0.00` |
+| Budget Progress | `0.00%` |
+| Documentation Platform | GitHub |
+| Lab Type | Discovery-only |
+| Estimated Cost | `$0.00` |
 
 ---
 
 ## Architecture / Concept Diagram
 
-```text
-+-----------------------------------------------------------+
-| Azure Physical Infrastructure                             |
-|                                                           |
-|  Geography                                                |
-|     |                                                     |
-|     v                                                     |
-|  Region                                                   |
-|     |                                                     |
-|     v                                                     |
-|  Availability Zone                                        |
-|     |                                                     |
-|     v                                                     |
-|  Datacenter                                               |
-+-----------------------------------------------------------+
+```mermaid
+flowchart TD
+    Geography[Azure Geography] --> Region[Azure Region]
+    Region --> Zone1[Availability Zone 1]
+    Region --> Zone2[Availability Zone 2]
+    Region --> Zone3[Availability Zone 3]
 
-+-----------------------------------------------------------+
-| Azure Management Infrastructure                           |
-|                                                           |
-|  Tenant Root Group                                        |
-|     |                                                     |
-|     v                                                     |
-|  Management Group                                         |
-|     |                                                     |
-|     v                                                     |
-|  Subscription                                             |
-|     |                                                     |
-|     v                                                     |
-|  Resource Group                                           |
-|     |                                                     |
-|     v                                                     |
-|  Resource                                                 |
-+-----------------------------------------------------------+
+    Zone1 --> DC1[Azure Datacenter]
+    Zone2 --> DC2[Azure Datacenter]
+    Zone3 --> DC3[Azure Datacenter]
 
-+-----------------------------------------------------------+
-| MRTG Lab Environment                                      |
-|                                                           |
-|  Tenant Root Group                                        |
-|     |                                                     |
-|     v                                                     |
-|  MRTG-AZ900-Lab-Subscription                              |
-|     |                                                     |
-|     v                                                     |
-|  rg-mrtg-az900-lab01-centralus-001                        |
-|     |                                                     |
-|     v                                                     |
-|  No billable workloads deployed                           |
-+-----------------------------------------------------------+
+    Region --> Pair[Paired Azure Region]
+    Geography --> Sovereign[Sovereign or Specialized Regions]
+
+    Tenant[Microsoft Entra Tenant] --> Root[Tenant Root Group]
+    Root --> MG[Management Group]
+    MG --> Subscription[MRTG-AZ900-Lab-Subscription]
+    Subscription --> RG[rg-mrtg-az900-lab01-centralus-001]
+    RG --> Resources[No Deployed Billable Workloads]
+
+    ARM[Azure Resource Manager] --> Subscription
+    ARM --> RG
+    ARM --> Resources
+
+    Governance[Azure RBAC and Azure Policy] --> Root
+    Governance --> MG
+    Governance --> Subscription
+    Governance --> RG
 ```
 
 ---
 
 ## Steps Performed
 
-### Step 1: Review Azure Architecture Module
+### Step 1: Review the Azure Architecture Module
 
 1. Opened Microsoft Learn.
-2. Located the module **Describe the core architectural components of Azure**.
+2. Located the **Describe the core architectural components of Azure** module.
 3. Reviewed the learning objectives.
 4. Confirmed that the module covered:
    - Azure regions
@@ -208,113 +260,128 @@ Progress: 0.00%
    - Sovereign regions
    - Availability zones
    - Azure datacenters
-   - Azure resources and resource groups
+   - Azure resources
+   - Resource groups
    - Subscriptions
    - Management groups
    - Resource hierarchy
 
 ![Microsoft Learn Azure architecture](screenshots/01-microsoft-learn-azure-architecture.png)
 
-**Screenshot evidence:** Microsoft Learn shows the Azure architecture module and its AZ-900-relevant learning objectives.
+**Validation:** Microsoft Learn displayed the Azure architecture module and its AZ-900-aligned objectives.
 
 ---
 
 ### Step 2: Review Azure Physical Infrastructure
 
 1. Opened the Azure physical infrastructure section.
-2. Reviewed how Azure organizes physical infrastructure.
+2. Reviewed how Microsoft organizes Azure infrastructure globally.
 3. Documented the relationship between:
    - Geography
    - Region
    - Availability zone
    - Datacenter
-4. Confirmed that resources are deployed to regions, while Azure manages placement across zones and datacenters.
+4. Confirmed that Azure resources are commonly deployed to regions.
+5. Confirmed that Microsoft manages the underlying datacenter infrastructure.
 
 ![Azure physical infrastructure](screenshots/02-azure-physical-infrastructure.png)
 
-**Screenshot evidence:** Microsoft Learn shows Azure physical infrastructure from geography down to datacenter.
+**Validation:** Microsoft Learn displayed the relationship between Azure geographies, regions, availability zones, and datacenters.
 
 ---
 
 ### Step 3: Review Azure Regions
 
-1. Reviewed the Azure regions section.
-2. Documented that a region is a geographic area containing one or more nearby datacenters.
-3. Confirmed that resources are commonly deployed to a selected region.
-4. Documented that some services are regional while some global services do not require region selection.
+1. Opened the Azure regions section.
+2. Documented that an Azure region is a geographic area containing one or more nearby datacenters.
+3. Reviewed how datacenters within a region are connected through low-latency networking.
+4. Confirmed that many Azure resources require region selection.
+5. Documented that some Azure services operate globally rather than within a selected region.
 
 ![Azure regions overview](screenshots/03-azure-regions-overview.png)
 
-**Screenshot evidence:** Microsoft Learn explains Azure regions as geographic areas containing datacenters connected through low-latency networks.
+**Validation:** Microsoft Learn described Azure regions as geographic areas containing connected datacenters.
 
 ---
 
 ### Step 4: Review Availability Zones
 
-1. Reviewed the availability zones section.
+1. Opened the availability zones section.
 2. Documented that availability zones are physically separate locations within supported Azure regions.
-3. Reviewed how zones provide isolation boundaries for resilience.
-4. Confirmed that not every Azure region supports availability zones.
+3. Reviewed how each zone can include independent:
+   - Power
+   - Cooling
+   - Networking
+4. Connected availability zones to datacenter-level failure protection.
+5. Confirmed that not every Azure region or service supports availability zones.
 
 ![Availability zones](screenshots/04-availability-zones.png)
 
-**Screenshot evidence:** Microsoft Learn shows availability zones as separate datacenter locations within an Azure region.
+**Validation:** Microsoft Learn displayed availability zones as physically separate locations within an Azure region.
 
 ---
 
 ### Step 5: Review Availability Zone Service Categories
 
-1. Reviewed how Azure services can support availability zones differently.
+1. Reviewed how Azure services use availability zones.
 2. Documented the difference between:
    - Zonal services
    - Zone-redundant services
    - Non-regional services
-3. Connected the concept to workload resiliency planning.
+3. Connected each service type to resilience planning.
+4. Documented that availability architecture depends on the selected Azure service.
 
 ![Availability zone service categories](screenshots/05-availability-zone-service-categories.png)
 
-**Screenshot evidence:** Microsoft Learn shows zonal, zone-redundant, and non-regional service patterns.
+**Validation:** Microsoft Learn displayed zonal, zone-redundant, and non-regional service patterns.
 
 ---
 
 ### Step 6: Review Region Pairs
 
-1. Reviewed the region pairs section.
-2. Documented how Azure pairs many regions within the same geography.
-3. Reviewed how region pairs support resiliency and disaster recovery.
-4. Documented that not every service automatically replicates or fails over to a paired region.
+1. Opened the Azure region-pair section.
+2. Documented that Microsoft pairs many regions within the same geography.
+3. Reviewed how region pairs can support:
+   - Disaster recovery
+   - Service restoration
+   - Geographic resiliency
+   - Data-residency requirements
+4. Documented that region pairing does not automatically replicate every Azure service.
 
 ![Region pairs](screenshots/06-region-pairs.png)
 
-**Screenshot evidence:** Microsoft Learn shows Azure region pairs and how paired regions can support disaster recovery.
+**Validation:** Microsoft Learn displayed Azure region pairs and their role in recovery planning.
 
 ---
 
-### Step 7: Review Region Pair Advantages
+### Step 7: Review Region-Pair Advantages
 
-1. Reviewed additional region pair benefits.
-2. Documented advantages such as:
+1. Continued reviewing region-pair behavior.
+2. Documented potential advantages such as:
    - Prioritized restoration
    - Planned update sequencing
-   - Same-geography data residency
-3. Documented that some regions have special pairing behavior.
+   - Same-geography pairing
+3. Reviewed limitations and exceptions.
+4. Documented that organizations must still configure service-specific replication and failover.
 
-![Region pair advantages](screenshots/07-region-pair-advantages.png)
+![Region-pair advantages](screenshots/07-region-pair-advantages.png)
 
-**Screenshot evidence:** Microsoft Learn documents region-pair advantages and limitations.
+**Validation:** Microsoft Learn documented region-pair advantages and limitations.
 
 ---
 
 ### Step 8: Review Sovereign Regions
 
-1. Reviewed the sovereign regions section.
-2. Documented that sovereign regions are isolated Azure instances used for compliance or legal requirements.
-3. Reviewed examples such as U.S. government regions and China regions.
-4. Connected sovereign regions to regulated IT environments.
+1. Opened the sovereign regions section.
+2. Documented that sovereign regions are isolated Azure environments designed for legal, compliance, or regulatory requirements.
+3. Reviewed examples involving:
+   - United States government regions
+   - Azure regions in China
+4. Connected sovereign regions to government, defense, and regulated workloads.
 
 ![Sovereign regions](screenshots/08-sovereign-regions.png)
 
-**Screenshot evidence:** Microsoft Learn explains sovereign regions and their use for compliance or legal requirements.
+**Validation:** Microsoft Learn described sovereign regions and their compliance-focused use cases.
 
 ---
 
@@ -322,122 +389,132 @@ Progress: 0.00%
 
 1. Opened the Azure management infrastructure section.
 2. Reviewed Azure resources and resource groups.
-3. Documented that a resource is a basic Azure building block.
-4. Documented that each resource belongs to one resource group.
-5. Reviewed resource group rules:
-   - Each resource belongs to one resource group at a time.
+3. Documented that an Azure resource is a manageable item created in Azure.
+4. Documented that each resource belongs to one resource group at a time.
+5. Reviewed resource group characteristics:
    - Resource groups cannot be nested.
    - Resource groups cannot be renamed after creation.
-   - Deleting a resource group deletes resources inside it.
-   - Access permissions can apply to all resources inside a resource group.
+   - Resources can be moved between resource groups when supported.
+   - Deleting a resource group deletes the resources contained within it.
+   - Azure RBAC assignments can be applied at resource group scope.
 
 ![Azure resources and resource groups](screenshots/09-azure-resources-and-resource-groups.png)
 
-**Screenshot evidence:** Microsoft Learn shows resource group rules and explains resource groups as containers for Azure resources.
+**Validation:** Microsoft Learn documented Azure resources and the primary rules governing resource groups.
 
 ---
 
 ### Step 10: Review Azure Subscriptions
 
-1. Reviewed the Azure subscriptions section.
-2. Documented that subscriptions are units of management, billing, and scale.
+1. Opened the Azure subscriptions section.
+2. Documented that subscriptions are management, billing, governance, and scale boundaries.
 3. Reviewed subscriptions as:
    - Billing boundaries
    - Access-control boundaries
-4. Documented that different subscriptions can have different access policies, spending limits, and access rules.
+4. Documented that organizations can use multiple subscriptions to separate:
+   - Environments
+   - Departments
+   - Projects
+   - Billing responsibilities
+   - Administrative requirements
 
 ![Azure subscriptions](screenshots/10-azure-subscriptions.png)
 
-**Screenshot evidence:** Microsoft Learn shows subscriptions as billing and access-control boundaries.
+**Validation:** Microsoft Learn described Azure subscriptions as billing and access-control boundaries.
 
 ---
 
 ### Step 11: Review Azure Management Groups
 
-1. Reviewed the Azure management groups section.
+1. Opened the Azure management groups section.
 2. Documented that management groups sit above subscriptions.
-3. Reviewed how management groups can apply governance conditions across subscriptions.
-4. Documented that every Microsoft Entra tenant has a top-level Tenant Root Group.
+3. Reviewed how management groups can apply governance across multiple subscriptions.
+4. Documented that each Microsoft Entra tenant contains a Tenant Root Group.
+5. Connected management groups to Azure Policy and Azure RBAC inheritance.
 
 ![Azure management groups](screenshots/11-azure-management-groups.png)
 
-**Screenshot evidence:** Microsoft Learn explains management groups as higher-level containers for subscription governance.
+**Validation:** Microsoft Learn described management groups as higher-level governance containers for subscriptions.
 
 ---
 
-### Step 12: Review Resource Hierarchy
+### Step 12: Review the Azure Resource Hierarchy
 
-1. Reviewed the management group, subscription, and resource group hierarchy.
-2. Documented the Azure hierarchy:
+1. Reviewed the Azure management hierarchy.
+2. Documented the following structure:
    - Tenant Root Group
    - Management group
    - Subscription
    - Resource group
    - Resource
-3. Reviewed how policies and access can inherit downward through the hierarchy.
+3. Reviewed how Azure Policy and Azure RBAC can inherit downward through the hierarchy.
+4. Connected hierarchy design to least privilege and governance.
 
 ![Resource hierarchy overview](screenshots/12-resource-hierarchy-overview.png)
 
-**Screenshot evidence:** Microsoft Learn shows the Azure resource hierarchy and how governance can flow downward.
+**Validation:** Microsoft Learn displayed the Azure resource hierarchy and downward inheritance model.
 
 ---
 
-### Step 13: Validate Subscription Overview
+### Step 13: Validate the MRTG Subscription
 
-1. Opened the Azure portal.
+1. Opened the Azure Portal.
 2. Navigated to **Subscriptions**.
-3. Confirmed the MRTG subscription was visible.
-4. Confirmed the subscription role was `Owner`.
-5. Confirmed the current cost was `0.00`.
-6. Confirmed the subscription was under the `Tenant Root Group`.
-7. Confirmed the subscription status was `Active`.
-8. Redacted account and identifier information before documentation.
+3. Confirmed that `MRTG-AZ900-Lab-Subscription` was visible.
+4. Confirmed that the subscription role was Owner.
+5. Confirmed that the current cost was `0.00`.
+6. Confirmed that the subscription was located under the Tenant Root Group.
+7. Confirmed that the subscription status was Active.
+8. Redacted sensitive account and subscription identifiers.
 
 ![Subscription overview](screenshots/13-subscription-overview.png)
 
-**Screenshot evidence:** The Azure portal shows the MRTG subscription as active, assigned to the Tenant Root Group, and currently at `0.00` cost.
+**Validation:** The Azure Portal showed the MRTG subscription as Active, assigned beneath the Tenant Root Group, and reporting no current cost.
 
 ---
 
-### Step 14: Validate Resource Groups List
+### Step 14: Validate the Resource Group List
 
-1. Opened **Resource groups** in the Azure portal.
-2. Confirmed the existing Lab 01 resource group was present.
-3. Confirmed the resource group belonged to the MRTG subscription.
-4. Confirmed the resource group location was `Central US`.
+1. Opened **Resource groups** in the Azure Portal.
+2. Confirmed that the existing Lab 01 resource group was present.
+3. Confirmed that the resource group belonged to the MRTG subscription.
+4. Confirmed that the resource group location was Central US.
+5. Confirmed that no new resource group was created.
 
 ![Resource groups list](screenshots/14-resource-groups-list.png)
 
-**Screenshot evidence:** The Azure portal shows the existing Lab 01 resource group inside the MRTG subscription.
+**Validation:** The Azure Portal displayed the existing Lab 01 resource group within the MRTG subscription.
 
 ---
 
-### Step 15: Validate Lab Resource Group Overview
+### Step 15: Validate the Lab Resource Group
 
-1. Opened the Lab 01 resource group.
+1. Opened `rg-mrtg-az900-lab01-centralus-001`.
 2. Confirmed the resource group name.
 3. Confirmed the subscription association.
-4. Confirmed the resource group location was `Central US`.
-5. Confirmed no deployments were present.
-6. Confirmed tags were visible.
-7. Confirmed the resource group acted as a logical container.
+4. Confirmed that the location was Central US.
+5. Confirmed that no deployments were present.
+6. Confirmed that the MRTG tags were visible.
+7. Confirmed that the resource group acted as a logical resource container.
 
 ![Lab resource group overview](screenshots/15-lab-resource-group-overview.png)
 
-**Screenshot evidence:** The existing Lab 01 resource group is visible with location, subscription association, tags, and no deployments.
+**Validation:** The resource group displayed its location, subscription association, tags, and empty deployment state.
 
 ---
 
-### Step 16: Validate Management Groups View
+### Step 16: Validate the Management Group Hierarchy
 
 1. Opened **Management groups** in Azure Resource Manager.
 2. Reviewed the Tenant Root Group.
-3. Confirmed the MRTG subscription was listed under the Tenant Root Group.
-4. Confirmed no sensitive IDs were exposed in the documentation.
+3. Confirmed that the MRTG subscription was listed beneath the Tenant Root Group.
+4. Confirmed that no additional management groups had been created.
+5. Confirmed that no subscription was moved.
+6. Redacted sensitive identifiers before publishing the screenshot.
 
 ![Management groups view](screenshots/16-management-groups-view.png)
 
-**Screenshot evidence:** The Azure portal shows the MRTG subscription under the Tenant Root Group management hierarchy.
+**Validation:** The Azure Portal displayed the MRTG subscription beneath the Tenant Root Group.
 
 ---
 
@@ -446,62 +523,115 @@ Progress: 0.00%
 1. Opened Microsoft documentation for Azure Resource Manager.
 2. Reviewed Azure Resource Manager as the deployment and management service for Azure.
 3. Documented that Azure Resource Manager provides the management layer for creating, updating, and deleting resources.
-4. Reviewed that requests from the Azure portal, Azure PowerShell, Azure CLI, SDKs, and REST clients go through Azure Resource Manager.
-5. Documented that ARM supports management features such as access control, locks, and tags.
+4. Reviewed how management requests from the following interfaces pass through Azure Resource Manager:
+   - Azure Portal
+   - Azure PowerShell
+   - Azure CLI
+   - REST APIs
+   - Software development kits
+5. Documented that Azure Resource Manager supports:
+   - Access control
+   - Tags
+   - Locks
+   - Deployments
+   - Resource organization
 
 ![Azure Resource Manager overview](screenshots/17-azure-resource-manager-overview.png)
 
-**Screenshot evidence:** Microsoft documentation explains Azure Resource Manager as the consistent management layer for Azure resources.
+**Validation:** Microsoft documentation described Azure Resource Manager as the consistent management layer for Azure resources.
 
 ---
 
 ### Step 18: Perform Final Cost Validation
 
 1. Opened Azure Cost Management.
-2. Reviewed the subscription budget.
+2. Reviewed the existing subscription budget.
 3. Confirmed that the monthly budget remained active.
 4. Confirmed that evaluated spend remained `$0.00`.
-5. Confirmed that progress remained `0.00%`.
+5. Confirmed that budget progress remained `0.00%`.
 6. Confirmed that no billable resources were created during the lab.
-7. Redacted scope identifiers before documentation.
+7. Redacted sensitive scope identifiers.
 
 ![Cost Management final validation](screenshots/18-cost-management-final-validation.png)
 
-**Screenshot evidence:** The final Cost Management screenshot shows the budget is active, evaluated spend is `$0.00`, and progress is `0.00%`.
+**Validation:** The final Cost Management review showed the active monthly budget, `$0.00` evaluated spend, and `0.00%` progress.
 
 ---
 
 ## Azure Physical Infrastructure Summary
 
-Azure physical infrastructure describes how Microsoft organizes datacenters globally.
+Azure physical infrastructure describes how Microsoft organizes datacenters and supporting infrastructure globally.
 
 ### Geography
 
-A geography is a broad area that can support data residency and compliance requirements.
+An Azure geography is a defined area that can support:
 
-Examples include:
+- Data residency
+- Regulatory requirements
+- Compliance requirements
+- Regional service availability
 
-- United States
-- Europe
-- Asia Pacific
+A geography can contain multiple Azure regions.
 
 ### Region
 
-A region is a geographic area that contains one or more nearby datacenters connected by low-latency networking.
+An Azure region is a geographic area containing one or more nearby datacenters connected through low-latency networking.
 
-Azure resources are commonly deployed to a selected region.
+Azure regions support:
+
+- Resource deployment
+- Regional service availability
+- Data location decisions
+- Resiliency planning
+- Cost and performance decisions
 
 ### Availability Zone
 
 An availability zone is a physically separate location within a supported Azure region.
 
-Availability zones help protect workloads from datacenter-level failures.
+Availability zones help protect workloads from failures involving:
+
+- Power
+- Cooling
+- Networking
+- Individual datacenter facilities
+
+Applications must be designed to use multiple zones when zone-level resilience is required.
 
 ### Datacenter
 
-A datacenter is a physical facility that contains servers, networking, power, and cooling infrastructure.
+An Azure datacenter is a physical facility containing:
 
-Customers do not usually interact directly with individual Azure datacenters.
+- Servers
+- Storage systems
+- Network equipment
+- Power infrastructure
+- Cooling infrastructure
+- Physical security controls
+
+Customers normally select an Azure region or availability option rather than an individual datacenter.
+
+---
+
+## Availability Zone Service Categories
+
+### Zonal Services
+
+A zonal service is deployed to a specific availability zone.
+
+The customer selects the zone where the resource is placed.
+
+### Zone-Redundant Services
+
+A zone-redundant service distributes or replicates service components across multiple availability zones.
+
+The Azure service manages much of the zone distribution.
+
+### Non-Regional Services
+
+Non-regional services are not deployed into a specific Azure region.
+
+These services can operate globally.
 
 ---
 
@@ -509,40 +639,56 @@ Customers do not usually interact directly with individual Azure datacenters.
 
 Many Azure regions are paired with another region in the same geography.
 
-Region pairs can help with:
+Region pairs can support:
 
 - Disaster recovery planning
 - Regional resilience
-- Update sequencing
+- Platform update sequencing
 - Data residency
-- Recovery prioritization
+- Service restoration prioritization
 
-Important limitation:
+Region pairs do not automatically provide application recovery.
 
-Not every Azure service automatically replicates to a paired region. Some services require customer configuration for replication, backup, or failover.
+Organizations may still need to configure:
+
+- Data replication
+- Backups
+- Traffic failover
+- Secondary deployments
+- Recovery procedures
+- Application-level resiliency
 
 ---
 
 ## Sovereign Regions Summary
 
-Sovereign regions are isolated Azure environments used for compliance, legal, or regulatory needs.
+Sovereign regions are isolated Azure environments designed for specific legal, governmental, regulatory, or residency requirements.
 
 Examples include:
 
-- U.S. government Azure regions
-- China Azure regions operated through a local partner model
+- Azure Government regions in the United States
+- Azure regions in China operated through a local partnership model
 
-Sovereign regions are important for government, defense, regulated industries, and workloads with strict residency or legal requirements.
+Sovereign regions can differ from the global Azure environment in areas such as:
+
+- Available services
+- Compliance certifications
+- Operational controls
+- Identity endpoints
+- Portal endpoints
+- Service release timelines
+
+Sovereign regions are especially relevant to government, defense, and other regulated environments.
 
 ---
 
 ## Azure Management Infrastructure Summary
 
-Azure management infrastructure describes how resources are organized, governed, and controlled.
+Azure management infrastructure describes how Azure resources are organized, governed, accessed, and billed.
 
 ### Azure Resource
 
-A resource is anything created, deployed, or managed in Azure.
+An Azure resource is a manageable service instance created in Azure.
 
 Examples include:
 
@@ -550,67 +696,85 @@ Examples include:
 - Storage accounts
 - Virtual networks
 - Databases
-- App services
+- App Services
 - Key vaults
+- Log Analytics workspaces
 
 ### Resource Group
 
 A resource group is a logical container for Azure resources.
 
-Resource group rules:
+Resource group characteristics include:
 
 - A resource belongs to one resource group at a time.
 - Resource groups cannot be nested.
 - Resource groups cannot be renamed after creation.
-- Resources can move between resource groups in some cases.
-- Deleting a resource group deletes resources inside it.
-- Permissions assigned at the resource group scope can apply to resources inside it.
+- Supported resources can be moved between resource groups.
+- Deleting a resource group deletes its contained resources.
+- Azure RBAC can be assigned at resource group scope.
+- Azure Policy can evaluate resources inside the group.
+- Tags can be applied to the resource group.
+
+Resources in the same resource group do not need to be located in the same Azure region.
+
+The resource group stores management metadata in its selected location.
 
 ### Subscription
 
-A subscription is a boundary for billing, management, access control, and scale.
+An Azure subscription provides boundaries for:
 
-Subscriptions can separate:
+- Billing
+- Cost Management
+- Azure RBAC
+- Azure Policy
+- Resource quotas
+- Resource deployment
+- Administration
 
-- Environments
+Organizations may use multiple subscriptions to separate:
+
+- Production and non-production environments
 - Departments
-- Projects
-- Billing responsibilities
-- Access-control requirements
-- Production and non-production workloads
+- Business units
+- Applications
+- Billing ownership
+- Regulatory requirements
+- Administrative responsibilities
 
 ### Management Group
 
-A management group is a governance scope above subscriptions.
+A management group is a governance scope above Azure subscriptions.
 
-Management groups can help apply:
+Management groups can help apply consistent:
 
-- Azure Policy
-- Access control
-- Compliance rules
-- Governance standards
-- Organizational hierarchy
+- Azure Policy assignments
+- Azure RBAC assignments
+- Compliance standards
+- Organizational structures
 
 ### Azure Resource Manager
 
-Azure Resource Manager is the Azure deployment and management layer.
+Azure Resource Manager is the Azure control plane and management layer.
 
-ARM provides a consistent way to manage resources through:
+It provides a consistent way to manage Azure resources through:
 
-- Azure portal
+- Azure Portal
 - Azure CLI
 - Azure PowerShell
 - REST APIs
-- SDKs
-- Templates
+- Software development kits
+- ARM templates
+- Bicep
 
-ARM supports management features such as:
+Azure Resource Manager supports:
 
-- Access control
-- Tags
-- Locks
 - Deployments
+- Azure RBAC
+- Resource tags
+- Resource locks
 - Resource organization
+- Dependency management
+- Template-based infrastructure deployment
 
 ---
 
@@ -620,82 +784,91 @@ The Azure resource hierarchy is:
 
 ```text
 Tenant Root Group
-Management Group
-Subscription
-Resource Group
-Resource
+└── Management Group
+    └── Subscription
+        └── Resource Group
+            └── Resource
 ```
 
 ### Practical MRTG Hierarchy
 
 ```text
 Tenant Root Group
-MRTG-AZ900-Lab-Subscription
-rg-mrtg-az900-lab01-centralus-001
-No deployed billable workloads
+└── MRTG-AZ900-Lab-Subscription
+    └── rg-mrtg-az900-lab01-centralus-001
+        └── No deployed billable workloads
 ```
 
-### Inheritance Concept
+### Inheritance
 
-Governance settings can flow downward through the hierarchy.
+Governance and access assignments can inherit downward through the hierarchy.
 
-For example:
+Examples include:
 
-- A policy assigned at a management group can apply to subscriptions below it.
-- A role assignment at a subscription can apply to resource groups below it.
-- A role assignment at a resource group can apply to resources inside it.
+- An Azure Policy assignment at management group scope can apply to subscriptions beneath it.
+- An Azure RBAC assignment at subscription scope can apply to resource groups and resources beneath it.
+- An Azure RBAC assignment at resource group scope can apply to resources inside the group.
+- A resource-level assignment applies only to the selected resource.
 
-This is important for IAM because scope determines how broad an access assignment is.
+Inheritance simplifies administration but can also increase risk when broad permissions or policies are assigned at high scopes.
 
 ---
 
 ## Validation
 
-| Validation Check | Expected Result | Observed Result | Status |
-|---|---|---|---|
-| Azure architecture module reviewed | Microsoft Learn module is located | Core architectural components module was reviewed | Passed |
-| Physical infrastructure reviewed | Geography, region, zone, and datacenter concepts documented | Physical infrastructure diagram was captured | Passed |
-| Regions reviewed | Azure region concept documented | Regions section was captured | Passed |
-| Availability zones reviewed | Availability zone concept documented | Availability zones section was captured | Passed |
-| Zone service categories reviewed | Zonal and zone-redundant concepts documented | Service categories were captured | Passed |
-| Region pairs reviewed | Region-pair concept documented | Region pairs section was captured | Passed |
-| Sovereign regions reviewed | Sovereign region concept documented | Sovereign regions section was captured | Passed |
-| Resource groups reviewed | Resource group rules documented | Resource group rules were captured | Passed |
-| Subscriptions reviewed | Subscription boundaries documented | Subscription boundaries were captured | Passed |
-| Management groups reviewed | Management group concept documented | Management groups section was captured | Passed |
-| Resource hierarchy reviewed | Hierarchy documented | Resource hierarchy diagram was captured | Passed |
-| Subscription validated | Subscription is active | MRTG subscription showed Active | Passed |
-| Resource group list validated | Existing lab resource group is visible | Lab 01 resource group was visible | Passed |
-| Resource group overview validated | Resource group metadata is visible | Location, tags, and subscription association were visible | Passed |
-| Management group view validated | Subscription appears under Tenant Root Group | MRTG subscription appeared under Tenant Root Group | Passed |
-| Azure Resource Manager reviewed | ARM management layer documented | ARM overview was captured | Passed |
-| Final cost validation | Spend remains `$0.00` | Evaluated spend showed `$0.00` | Passed |
+| Validation Item | Expected Result | Actual Result |
+|---|---|---|
+| Microsoft Learn architecture module | Core architecture module is available | Passed |
+| Azure physical infrastructure | Geography, region, zone, and datacenter relationships are reviewed | Passed |
+| Azure regions | Region purpose is documented | Passed |
+| Availability zones | Zone isolation and resiliency are documented | Passed |
+| Zone service categories | Zonal and zone-redundant patterns are documented | Passed |
+| Region pairs | Region-pair purpose and limitations are documented | Passed |
+| Sovereign regions | Sovereign-region purpose is documented | Passed |
+| Azure resources | Resource concept is documented | Passed |
+| Resource groups | Resource group rules are documented | Passed |
+| Azure subscriptions | Billing and access boundaries are documented | Passed |
+| Management groups | Higher-level governance scope is documented | Passed |
+| Resource hierarchy | Azure scope hierarchy is documented | Passed |
+| MRTG subscription | Subscription is visible and Active | Passed |
+| Resource group list | Existing Lab 01 resource group is visible | Passed |
+| Resource group metadata | Location, subscription, and tags are visible | Passed |
+| Management group hierarchy | Subscription appears beneath Tenant Root Group | Passed |
+| Azure Resource Manager | Azure management layer is documented | Passed |
+| Billable resources | No new billable resources are deployed | Passed |
+| Monthly budget | Existing budget remains active | Passed |
+| Evaluated spend | Spend remains `$0.00` | Passed |
+| Budget progress | Progress remains `0.00%` | Passed |
+| Estimated cost | Lab remains within the `$0.00` estimate | Passed |
 
 ---
 
 ## Completion Checklist
 
-- [x] Reviewed Microsoft Learn Azure architecture module
-- [x] Documented Azure physical infrastructure
+- [x] Reviewed the Microsoft Learn Azure architecture module
+- [x] Documented Azure geographies
 - [x] Documented Azure regions
 - [x] Documented availability zones
+- [x] Documented Azure datacenters
 - [x] Documented availability zone service categories
 - [x] Documented region pairs
 - [x] Documented region-pair advantages
 - [x] Documented sovereign regions
-- [x] Documented Azure resources and resource groups
+- [x] Documented Azure resources
+- [x] Documented Azure resource groups
 - [x] Documented Azure subscriptions
 - [x] Documented Azure management groups
-- [x] Documented resource hierarchy
-- [x] Validated MRTG subscription in Azure portal
-- [x] Validated Lab 01 resource group in Azure portal
-- [x] Validated management group view
+- [x] Documented the Azure resource hierarchy
+- [x] Validated the MRTG subscription in the Azure Portal
+- [x] Validated the Lab 01 resource group
+- [x] Validated the Tenant Root Group hierarchy
 - [x] Reviewed Azure Resource Manager
 - [x] Did not create paid Azure resources
-- [x] Validated budget remained active
-- [x] Validated evaluated spend remained `$0.00`
+- [x] Validated that the monthly budget remained active
+- [x] Validated that evaluated spend remained `$0.00`
+- [x] Validated that budget progress remained `0.00%`
 - [x] Sanitized screenshots before upload
-- [x] Avoided exposing tenant, subscription, account, or scope identifiers
+- [x] Avoided exposing sensitive tenant, subscription, account, or scope identifiers
 
 ---
 
@@ -717,90 +890,119 @@ Describe Azure management and governance
 
 This lab supports the ability to:
 
+- Describe Azure geographies
 - Describe Azure regions
 - Describe region pairs
 - Describe sovereign regions
 - Describe availability zones
 - Describe Azure datacenters
 - Describe Azure resources
-- Describe resource groups
+- Describe Azure resource groups
 - Describe Azure subscriptions
-- Describe management groups
-- Describe the hierarchy of resource groups, subscriptions, and management groups
+- Describe Azure management groups
+- Describe the hierarchy of resources, resource groups, subscriptions, and management groups
 - Describe Azure Resource Manager
 - Describe Azure governance scopes
-- Explain how access and policy can apply at different scopes
+- Explain how Azure RBAC and Azure Policy can apply at different scopes
 
 ### How This Lab Supports the Objectives
 
-This lab connects Azure architecture concepts to the actual Azure portal.
+This lab connected Azure architecture concepts to the existing MRTG Azure environment.
 
-It demonstrates:
+It demonstrated:
 
-- How Azure organizes physical infrastructure
+- How Microsoft organizes Azure physical infrastructure
 - How Azure organizes management scopes
 - How resources fit into the Azure hierarchy
-- How subscriptions act as billing and access boundaries
+- How subscriptions act as billing and access-control boundaries
 - How resource groups organize related resources
 - How management groups support higher-level governance
-- How Azure Resource Manager provides the consistent management layer
+- How Azure Resource Manager provides a consistent management layer
+- How Azure RBAC and Azure Policy relate to scope
 - How cost validation supports safe Azure administration
 
 ---
 
 ## Mini Objective Coverage
 
-By completing this lab, I can now:
+By completing this lab, I can:
 
+- Explain what an Azure geography is
 - Explain what an Azure region is
 - Explain what an availability zone is
 - Explain why region pairs matter
 - Explain why sovereign regions exist
 - Describe the relationship between geographies, regions, availability zones, and datacenters
-- Describe what an Azure resource is
-- Describe what a resource group does
+- Describe an Azure resource
+- Describe the purpose of a resource group
 - Explain why subscriptions are billing and access-control boundaries
-- Explain where management groups fit in Azure governance
-- Explain the hierarchy from Tenant Root Group to resource
+- Explain where management groups fit into Azure governance
+- Explain the hierarchy from Tenant Root Group to individual resource
 - Explain the role of Azure Resource Manager
-- Validate Azure structure in the Azure portal
-- Confirm cost impact after architecture review
+- Explain how governance and access can inherit through Azure scopes
+- Validate Azure hierarchy through the Azure Portal
+- Confirm the cost impact of architecture discovery
 
 ---
 
 ## IAM / Security Relevance
 
-Azure hierarchy directly affects IAM because access is assigned at scopes.
+Azure hierarchy directly affects identity and access management because Azure role assignments are created at defined scopes.
 
-A role assignment can apply at:
+An Azure RBAC assignment can be applied at:
 
 - Management group scope
 - Subscription scope
 - Resource group scope
 - Resource scope
 
-The broader the scope, the more resources the identity can affect.
+The broader the scope, the more resources the assigned identity can affect.
 
 ### IAM Scope Examples
 
 | Scope | Example | Security Impact |
 |---|---|---|
-| Management group | Assign policy or access across many subscriptions | Broadest governance impact |
-| Subscription | Assign access across all resource groups in a subscription | High impact |
-| Resource group | Assign access to a project or workload group | More targeted |
-| Resource | Assign access to a specific resource | Most specific |
+| Management group | Assign access across multiple subscriptions | Broad organizational impact |
+| Subscription | Assign access across all resource groups in one subscription | Broad subscription impact |
+| Resource group | Assign access to resources supporting one workload or project | More targeted impact |
+| Resource | Assign access to one specific Azure resource | Narrowest practical impact |
+
+### Authentication and Authorization
+
+Microsoft Entra ID authenticates the identity accessing Azure.
+
+Azure RBAC determines what the authenticated identity can do at the assigned Azure scope.
+
+These are related but separate responsibilities.
+
+### Least Privilege
+
+Least privilege requires organizations to:
+
+- Assign only required permissions
+- Use the narrowest practical scope
+- Avoid unnecessary subscription-wide access
+- Prefer group-based assignments
+- Review inherited access
+- Remove unused permissions
+- Monitor privileged activity
 
 ### Security Takeaway
 
-Azure hierarchy is not just an organization model.
+Azure hierarchy is both a resource-organization model and an access-control model.
 
-It is also an access-control model.
+Poor scope design can result in:
 
-Poor scope design can lead to excessive permissions, weak governance, and audit issues.
+- Excessive permissions
+- Weak separation of duties
+- Unintended policy inheritance
+- Difficult access reviews
+- Audit findings
+- Increased administrative risk
 
-### Regulated IT Relevance
+### Regulated Environment Relevance
 
-In government, defense, healthcare, finance, and other regulated environments, Azure scope design affects:
+In government, defense, healthcare, finance, and other regulated environments, scope design affects:
 
 - Least privilege
 - Separation of duties
@@ -821,19 +1023,48 @@ In government, defense, healthcare, finance, and other regulated environments, A
 
 | Decision | Implementation | Reason |
 |---|---|---|
-| Used Microsoft Learn | Official AZ-900 concept source | Aligns the lab with exam objectives |
-| Used Azure portal validation | Practical Azure evidence | Connects theory to real Azure administration |
-| Used existing resource group | `rg-mrtg-az900-lab01-centralus-001` | Avoids unnecessary resource creation |
-| Reviewed management groups | Tenant Root Group view | Demonstrates hierarchy and governance scope |
-| Reviewed ARM | Microsoft documentation | Documents Azure management layer |
-| Reviewed Cost Management | Final budget validation | Confirms lab remained cost-safe |
-| Redacted sensitive details | IDs and account details removed | Prevents public exposure |
+| Microsoft Learn used | Certification-aligned architecture content reviewed | Supported AZ-900 preparation |
+| Azure Portal validation used | Existing MRTG hierarchy was reviewed | Connected theory to practical administration |
+| Existing resource group used | `rg-mrtg-az900-lab01-centralus-001` | Avoided unnecessary resource creation |
+| Management groups reviewed | Tenant Root Group hierarchy | Demonstrated governance above subscriptions |
+| Azure Resource Manager reviewed | Microsoft documentation | Documented the Azure management layer |
+| Cost Management reviewed | Final budget validation | Confirmed the lab remained cost-safe |
+| Screenshots sanitized | Sensitive identifiers were redacted | Protected cloud-environment information |
 
 ### Governance Lesson
 
 Azure governance begins with structure.
 
-Before deploying resources, organizations should understand where resources will live, who owns them, who can access them, and which policies apply.
+Before deploying resources, organizations should determine:
+
+- Which management group applies
+- Which subscription should contain the workload
+- Which resource group should contain the resources
+- Who owns the workload
+- Who can administer it
+- Which policies apply
+- Which region is approved
+- Which cost center is responsible
+- How the workload will be monitored
+- When the workload should be removed
+
+### Management Group Design
+
+A production management group hierarchy could include:
+
+```text
+Tenant Root Group
+├── Platform
+│   ├── Identity
+│   ├── Connectivity
+│   └── Management
+├── Landing Zones
+│   ├── Production
+│   └── Non-Production
+└── Sandbox
+```
+
+The appropriate hierarchy depends on organizational size, regulatory requirements, administrative boundaries, and cloud adoption strategy.
 
 ---
 
@@ -845,126 +1076,237 @@ Before deploying resources, organizations should understand where resources will
 Estimated cost: $0.00
 ```
 
-### Why Cost Stayed at Zero
+### Why Cost Remained at Zero
 
 This lab did not create:
 
 - Virtual machines
+- Managed disks
 - Storage accounts
-- App services
+- App Services
 - App Service plans
 - Databases
 - Public IP addresses
 - Virtual networks
 - Load balancers
 - Log Analytics workspaces
-- Defender upgrades
+- Microsoft Defender upgrades
 - Backup services
 
 ### Cost Controls Used
 
-- Used Microsoft Learn for concept review
-- Used Azure portal review only
+- Used Microsoft Learn for conceptual study
+- Used the Azure Portal for discovery and validation
 - Used the existing Lab 01 resource group
-- Avoided create workflows
-- Reviewed the existing budget
-- Confirmed evaluated spend remained `$0.00`
-- Confirmed budget progress remained `0.00%`
+- Avoided resource-creation workflows
+- Reviewed the existing monthly budget
+- Confirmed that evaluated spend remained `$0.00`
+- Confirmed that budget progress remained `0.00%`
 
-### Cost Reminder
+### Regional Cost Considerations
 
-Azure budgets provide notifications.
+Azure pricing can vary based on:
 
-They do not automatically stop resources, delete resources, or guarantee a hard spending cap.
+- Selected region
+- Service availability
+- Resource type
+- Resource size
+- Redundancy option
+- Data transfer
+- Replication configuration
+- Sovereign cloud requirements
+
+### Resiliency Cost Considerations
+
+Higher availability and resiliency can require:
+
+- Multiple resource instances
+- Multiple availability zones
+- Secondary regions
+- Replicated storage
+- Additional network traffic
+- Backup services
+- Disaster-recovery services
+- Increased monitoring
+
+### Budget Limitation
+
+Azure budgets:
+
+- Monitor actual and forecasted spending
+- Generate notifications at configured thresholds
+- Do not stop resources
+- Do not delete resources
+- Do not prevent additional charges
+- Do not replace regular Cost Management review
 
 ---
 
 ## Troubleshooting Notes
 
-### Issue 1: Azure Portal Pages Can Expose Identifiers
+### Issue 1: Azure Portal Pages Exposed Sensitive Identifiers
 
-**Symptom:**
+**Symptom**
 
-Azure pages may show subscription IDs, tenant IDs, directory names, object IDs, scope values, or account details.
+Azure Portal pages displayed information such as:
 
-**Risk:**
+- Subscription IDs
+- Tenant IDs
+- Directory names
+- Object IDs
+- Scope values
+- Account details
 
-Publishing screenshots without redaction can expose cloud environment identifiers.
+**Risk**
 
-**Resolution:**
+Publishing unreviewed screenshots could expose cloud-environment identifiers.
 
-Sensitive identifiers were redacted before upload.
+**Resolution**
 
-**Result:**
+Sensitive identifiers were redacted before screenshots were committed.
 
-Screenshots were safe for public documentation.
+**Result**
 
----
-
-### Issue 2: Management Groups Can Appear Confusing in Small Environments
-
-**Symptom:**
-
-In a small lab environment, the management group view may only show the Tenant Root Group and one subscription.
-
-**Explanation:**
-
-That is expected. Larger organizations may build deeper management group structures, but small environments may only need the Tenant Root Group.
-
-**Result:**
-
-The screenshot still validates the hierarchy concept.
+The screenshots were suitable for public GitHub documentation.
 
 ---
 
-### Issue 3: Azure Resource Groups Have Strict Rules
+### Issue 2: Management Groups Appeared Minimal
 
-**Symptom:**
+**Symptom**
 
-Resource groups cannot be nested or renamed after creation.
+The Management Groups page displayed only the Tenant Root Group and the MRTG subscription.
 
-**Risk:**
+**Explanation**
 
-Poor naming choices can create long-term management and documentation problems.
+This was expected for a small single-subscription lab environment.
 
-**Resolution:**
+Larger organizations commonly create additional management groups to organize:
 
-MRTG uses a consistent resource group naming standard.
+- Production
+- Development
+- Testing
+- Shared services
+- Security
+- Business units
+- Geographic environments
 
-**Result:**
+**Result**
 
-The existing Lab 01 resource group remains clear and easy to identify.
+The screenshot still provided valid evidence of the Azure governance hierarchy.
+
+---
+
+### Issue 3: Resource Groups Have Naming Limitations
+
+**Symptom**
+
+Resource groups cannot be renamed after creation.
+
+**Risk**
+
+An unclear or inconsistent resource group name can create long-term administration and documentation problems.
+
+**Resolution**
+
+The MRTG naming standard was established before the resource group was created.
+
+**Result**
+
+The existing Lab 01 resource group remained clearly identifiable.
+
+---
+
+### Issue 4: Region Pairs Do Not Automatically Provide Recovery
+
+**Symptom**
+
+Region-pair documentation can create the impression that Azure automatically replicates all services to another region.
+
+**Risk**
+
+An organization may assume that disaster recovery is configured when it is not.
+
+**Resolution**
+
+The lab documented that replication, backup, failover, and secondary deployment requirements depend on the selected Azure service.
+
+**Result**
+
+Region pairs were treated as an architectural consideration rather than an automatic disaster-recovery solution.
 
 ---
 
 ## What I Would Do Differently in Production
 
-A production Azure environment would include more formal architecture and governance planning, including:
+A production Azure environment would require formal architecture, identity, governance, resiliency, and cost planning.
 
-- Management group design
-- Subscription strategy
-- Environment separation
-- Production and non-production separation
-- Workload classification
-- Data residency planning
-- Region selection standards
-- Availability zone strategy
-- Disaster recovery planning
-- Azure Policy assignments
-- Required tagging policies
-- Role-based access control design
-- Privileged Identity Management
-- Conditional Access
-- Resource locks
-- Centralized logging
-- Security monitoring
-- Cost allocation
-- Budget ownership
-- Infrastructure as code
-- Change-management approval
-- Compliance mapping
+### Architecture
 
-This lab stayed lightweight because its purpose was AZ-900 architecture validation and safe Azure hierarchy review.
+- Use a documented cloud-adoption framework
+- Design a management group hierarchy
+- Develop a subscription strategy
+- Separate production and non-production environments
+- Classify workloads
+- Define approved Azure regions
+- Define data-residency requirements
+- Evaluate sovereign cloud requirements
+- Use availability zones where appropriate
+- Define disaster-recovery architecture
+- Establish recovery-time objectives
+- Establish recovery-point objectives
+- Test failover procedures
+
+### Identity and Access
+
+- Use Microsoft Entra work accounts
+- Separate administrative and standard-user identities
+- Assign Azure RBAC through groups
+- Use the narrowest practical scopes
+- Use Privileged Identity Management
+- Configure Conditional Access
+- Maintain emergency-access accounts
+- Perform recurring access reviews
+- Review inherited permissions
+
+### Governance
+
+- Apply Azure Policy at appropriate scopes
+- Use policy initiatives
+- Test policies in audit mode
+- Require standardized tags
+- Apply resource locks to critical resources
+- Document policy exemptions
+- Establish approved resource types
+- Define naming standards
+- Document resource ownership
+- Establish deployment approval procedures
+
+### Operations
+
+- Use Infrastructure as Code
+- Store templates in source control
+- Require peer review
+- Configure centralized logging
+- Configure monitoring and alerting
+- Define service ownership
+- Create backup standards
+- Test disaster recovery
+- Maintain configuration documentation
+- Establish formal change management
+
+### Cost Management
+
+- Estimate regional service costs
+- Assign cost ownership
+- Apply cost-center tags
+- Configure workload-level budgets
+- Review spending regularly
+- Evaluate resiliency costs
+- Define approval thresholds for premium services
+- Track unused and orphaned resources
+
+The lab intentionally remained lightweight because its purpose was foundational architecture review and AZ-900 preparation.
 
 ---
 
@@ -972,45 +1314,49 @@ This lab stayed lightweight because its purpose was AZ-900 architecture validati
 
 - Azure physical infrastructure is organized through geographies, regions, availability zones, and datacenters.
 - Azure management infrastructure is organized through management groups, subscriptions, resource groups, and resources.
-- Regions are where many Azure resources are deployed.
-- Availability zones help protect against datacenter-level failures.
-- Region pairs can support resilience and disaster recovery planning.
-- Sovereign regions support special compliance and legal requirements.
+- Azure regions contain one or more datacenters.
+- Availability zones provide physical separation within supported regions.
+- Region pairs can support resiliency and recovery planning.
+- Region pairs do not automatically replicate every service.
+- Sovereign regions support specialized legal, regulatory, and residency requirements.
 - Resource groups are logical containers for Azure resources.
-- Subscriptions are billing, management, and access-control boundaries.
+- Resources in one resource group can exist in different Azure regions.
+- Subscriptions provide billing, access-control, governance, and deployment boundaries.
 - Management groups provide governance above subscriptions.
-- Azure Resource Manager is the consistent management layer for Azure resources.
-- IAM scope matters because access can inherit downward.
+- Azure Resource Manager is the consistent Azure management layer.
+- Azure scope affects access and policy inheritance.
 - Cost validation should be performed after every lab.
 
 ### Technical Takeaway
 
-Azure architecture is both physical and logical.
+Azure architecture includes both physical infrastructure and logical management infrastructure.
 
-Physical architecture supports resiliency.
+Physical architecture supports service delivery and resiliency.
 
-Management architecture supports governance, access control, and organization.
+Management architecture supports resource organization, access control, governance, billing, and administration.
 
 ### Business Takeaway
 
-Good Azure structure helps organizations control cost, ownership, compliance, and operational risk.
+A well-designed Azure hierarchy helps organizations control ownership, cost, compliance, access, and operational risk.
 
 ### Security Takeaway
 
-Azure hierarchy determines where access and policy apply, so scope design is a security decision.
+Azure hierarchy determines where access and governance controls apply, making scope design an important security decision.
 
 ### Exam Takeaway
 
 For AZ-900, remember:
 
-- Regions contain Azure datacenters.
-- Availability zones are physically separate locations inside supported regions.
-- Region pairs support resiliency across geographies.
+- Geographies contain Azure regions.
+- Regions contain one or more datacenters.
+- Availability zones are physically separate locations within supported regions.
+- Region pairs can support resiliency and recovery planning.
+- Sovereign regions support specialized legal or regulatory requirements.
 - Resource groups contain resources.
-- Subscriptions are billing and access-control boundaries.
+- Subscriptions provide billing and access-control boundaries.
 - Management groups organize subscriptions.
-- The hierarchy is Management Group > Subscription > Resource Group > Resource.
-- Azure Resource Manager is the deployment and management layer.
+- Azure Resource Manager is the Azure management and deployment layer.
+- The hierarchy is Management Group, Subscription, Resource Group, and Resource.
 
 ---
 
@@ -1020,10 +1366,11 @@ For AZ-900, remember:
 
 | Resource or Configuration | Reason |
 |---|---|
-| MRTG Azure subscription | Required for future labs |
-| Monthly budget | Required for ongoing cost visibility |
+| MRTG Azure subscription | Required for the remaining labs |
+| Monthly Azure budget | Required for ongoing cost visibility |
 | Lab 01 resource group | Retained as the foundational lab resource group |
-| Lab 04 screenshots | Required for documentation evidence |
+| Lab 04 documentation | Retained as project evidence |
+| Lab 04 screenshots | Retained as validation evidence |
 
 ### Resources Removed
 
@@ -1032,15 +1379,17 @@ No Azure resources were created during this lab.
 ### Cleanup Validation
 
 - [x] No virtual machines were created
-- [x] No app services were created
+- [x] No managed disks were created
+- [x] No App Services were created
 - [x] No storage accounts were created
 - [x] No databases were created
 - [x] No public IP addresses were created
 - [x] No virtual networks were created
 - [x] No premium services were enabled
-- [x] Budget remained active
+- [x] Monthly budget remained active
 - [x] Evaluated spend remained `$0.00`
 - [x] Budget progress remained `0.00%`
+- [x] Screenshot data was sanitized
 
 ---
 
@@ -1048,7 +1397,7 @@ No Azure resources were created during this lab.
 
 This lab documented the core architectural components of Azure and validated the MRTG Azure resource hierarchy.
 
-The completed lab demonstrates:
+The completed lab demonstrated:
 
 - Understanding of Azure geographies
 - Understanding of Azure regions
@@ -1062,8 +1411,8 @@ The completed lab demonstrates:
 - Understanding of Azure hierarchy and governance scopes
 - Practical validation of the MRTG subscription
 - Practical validation of the Lab 01 resource group
-- Practical validation of the Tenant Root Group view
-- No billable Azure resources deployed
+- Practical validation of the Tenant Root Group hierarchy
+- No deployed billable resources
 - Final evaluated spend of `$0.00`
 
 ---
@@ -1087,9 +1436,85 @@ The completed lab demonstrates:
 | `13-subscription-overview.png` | MRTG subscription overview |
 | `14-resource-groups-list.png` | Azure resource groups list |
 | `15-lab-resource-group-overview.png` | Lab 01 resource group overview |
-| `16-management-groups-view.png` | Management groups view in Azure portal |
+| `16-management-groups-view.png` | Tenant Root Group and MRTG subscription hierarchy |
 | `17-azure-resource-manager-overview.png` | Azure Resource Manager overview |
 | `18-cost-management-final-validation.png` | Final Cost Management validation |
+
+---
+
+## Screenshots
+
+### Microsoft Learn Azure Architecture
+
+![Microsoft Learn Azure Architecture](screenshots/01-microsoft-learn-azure-architecture.png)
+
+### Azure Physical Infrastructure
+
+![Azure Physical Infrastructure](screenshots/02-azure-physical-infrastructure.png)
+
+### Azure Regions Overview
+
+![Azure Regions Overview](screenshots/03-azure-regions-overview.png)
+
+### Availability Zones
+
+![Availability Zones](screenshots/04-availability-zones.png)
+
+### Availability Zone Service Categories
+
+![Availability Zone Service Categories](screenshots/05-availability-zone-service-categories.png)
+
+### Region Pairs
+
+![Region Pairs](screenshots/06-region-pairs.png)
+
+### Region-Pair Advantages
+
+![Region-Pair Advantages](screenshots/07-region-pair-advantages.png)
+
+### Sovereign Regions
+
+![Sovereign Regions](screenshots/08-sovereign-regions.png)
+
+### Azure Resources and Resource Groups
+
+![Azure Resources and Resource Groups](screenshots/09-azure-resources-and-resource-groups.png)
+
+### Azure Subscriptions
+
+![Azure Subscriptions](screenshots/10-azure-subscriptions.png)
+
+### Azure Management Groups
+
+![Azure Management Groups](screenshots/11-azure-management-groups.png)
+
+### Resource Hierarchy Overview
+
+![Resource Hierarchy Overview](screenshots/12-resource-hierarchy-overview.png)
+
+### Subscription Overview
+
+![Subscription Overview](screenshots/13-subscription-overview.png)
+
+### Resource Groups List
+
+![Resource Groups List](screenshots/14-resource-groups-list.png)
+
+### Lab Resource Group Overview
+
+![Lab Resource Group Overview](screenshots/15-lab-resource-group-overview.png)
+
+### Management Groups View
+
+![Management Groups View](screenshots/16-management-groups-view.png)
+
+### Azure Resource Manager Overview
+
+![Azure Resource Manager Overview](screenshots/17-azure-resource-manager-overview.png)
+
+### Cost Management Final Validation
+
+![Cost Management Final Validation](screenshots/18-cost-management-final-validation.png)
 
 ---
 
@@ -1101,12 +1526,13 @@ The next lab is:
 Lab 05 - Azure Compute Services
 ```
 
-The next lab will build on this foundation by examining:
+The next lab builds on this foundation by examining:
 
 - Azure Virtual Machines
-- App Service
+- Azure App Service
 - Azure Functions
-- Containers
+- Azure Container Instances
 - Azure Kubernetes Service
 - Compute service selection
-- Cost and responsibility differences across compute options
+- Cost differences across compute options
+- Responsibility differences across compute service models

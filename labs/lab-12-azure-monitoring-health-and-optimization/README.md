@@ -2,126 +2,180 @@
 
 ## Objective
 
-The objective of this lab was to explore the Azure services used to monitor cloud resources, collect telemetry, investigate operational issues, review platform health, and identify optimization opportunities.
+Document the Microsoft Azure services used to collect telemetry, analyze performance, investigate operational issues, review platform health, detect alert conditions, monitor applications, and identify optimization opportunities.
 
-This lab focused on:
+By completing this lab, I:
 
-- Azure Monitor
-- Azure Monitor Metrics
-- Azure Monitor Logs
-- Log Analytics workspaces
-- Azure Monitor Alerts
-- Application Insights
-- Azure Service Health
-- Azure Resource Health
-- Azure Advisor
+- Reviewed Azure Monitor
+- Reviewed Azure Monitor Metrics
+- Reviewed Azure Monitor Logs
+- Reviewed Log Analytics workspaces
+- Reviewed Azure Monitor Alerts
+- Reviewed Application Insights
+- Reviewed Azure Service Health
+- Reviewed Azure Resource Health
+- Reviewed Azure Advisor
+- Explored Azure monitoring interfaces in the Azure Portal
+- Reviewed active Azure Advisor security recommendations
+- Confirmed that no monitoring resources or configurations were created
+- Confirmed that no existing Azure resources were modified
+- Confirmed that the expected incremental cost remained `$0.00`
 
-The lab combined Microsoft Learn documentation with discovery-based exploration in the Azure portal. No monitoring resources, alert rules, workspaces, or billable services were created.
+This was a discovery-only lab. No Log Analytics workspaces, Application Insights resources, alert rules, action groups, workbooks, dashboards, diagnostic settings, data collection rules, or monitoring agents were created or modified.
 
 ---
 
 ## Business Problem Solved
 
-Organizations need visibility into the performance, availability, reliability, and security of their cloud environments.
+Organizations need visibility into the performance, availability, reliability, security, and operational state of their cloud environments.
 
 Without centralized monitoring, administrators may not know:
 
 - When a resource becomes unavailable
-- Whether an issue originates from Azure or from a customer configuration
-- When performance begins to degrade
+- Whether an issue originates from Azure or customer configuration
+- When application performance begins to degrade
 - Whether an application is generating errors
-- When an Azure service outage affects the organization
-- Which resources require operational or security improvements
+- When an Azure service issue affects the organization
 - Whether alert conditions have been triggered
-- Where monitoring data should be stored and analyzed
+- Which resources require operational improvement
+- Which security recommendations require review
+- Where monitoring data should be stored
+- Who is responsible for responding to incidents
 
-Azure Monitor and its related services provide a centralized observability platform for collecting metrics, logs, traces, and events across Azure and hybrid environments.
+Poor monitoring can result in:
 
-These capabilities help cloud teams detect problems, investigate incidents, respond to alerts, understand platform health, and improve their Azure deployments.
+- Extended outages
+- Delayed incident response
+- Missed security events
+- Unidentified performance problems
+- Insufficient audit evidence
+- Incomplete troubleshooting information
+- Unclear operational ownership
+- Excessive telemetry costs
+- Alert fatigue
+- Limited service-health awareness
+
+Monroe Redstone Technology Group needed to understand Azure monitoring, health, and optimization capabilities before deploying production workloads.
+
+This lab established the observability foundation required for future Azure operations.
 
 ---
 
 ## Scenario
 
-Monroe Redstone Technology Group is preparing to operate Azure workloads in a production environment.
+MRTG is preparing to operate Azure workloads in a production environment.
 
-Before deploying monitoring resources, the cloud operations team must understand the tools available for:
+Before deploying monitoring resources, the cloud operations team must understand the Azure services available for:
 
-- Collecting performance metrics
+- Collecting numerical performance data
 - Storing and querying operational logs
-- Creating alert conditions
+- Creating alerts
 - Monitoring application performance
-- Reviewing Azure platform incidents
-- Checking the health of individual resources
+- Reviewing Azure service incidents
+- Checking individual resource health
 - Receiving optimization recommendations
-- Supporting troubleshooting and incident response
+- Supporting troubleshooting
+- Supporting security investigations
+- Supporting incident response
 
-The team used Microsoft Learn to review each monitoring concept and then located the corresponding services in the Azure portal.
+The team used Microsoft Learn to review each concept and then located the corresponding services in the Azure Portal.
 
-This was a discovery-only lab. No Log Analytics workspace, Application Insights resource, alert rule, action group, workbook, dashboard, or monitoring agent was created.
+No monitoring resources were deployed during this lab.
 
 ---
 
 ## Azure Services and Resources Used
 
-| Service or Feature | Purpose |
+| Azure Service, Resource, or Feature | Purpose |
 |---|---|
-| Microsoft Learn | Reviewed Azure monitoring concepts and service capabilities |
-| Azure Portal | Explored the monitoring and optimization interfaces |
-| Azure Monitor | Centralized collection, analysis, visualization, and response for telemetry |
-| Azure Monitor Metrics | Stores numerical time-series performance data |
-| Azure Monitor Logs | Collects and analyzes detailed telemetry records |
-| Log Analytics Workspace | Stores log tables and supports log queries |
-| Azure Monitor Alerts | Evaluates telemetry and identifies conditions requiring attention |
-| Application Insights | Provides application performance monitoring and diagnostics |
-| Azure Service Health | Reports Azure service issues, maintenance, and advisories |
-| Azure Resource Health | Reports the current and historical health of individual resources |
-| Azure Advisor | Provides recommendations for cost, security, reliability, performance, and operational excellence |
-
-### Resources Created
-
-None.
-
-### Resources Modified
-
-None.
-
-### Configuration Changes
-
-None.
+| Microsoft Learn | Provided certification-aligned monitoring and optimization instruction |
+| Azure Portal | Supported practical monitoring-service discovery |
+| Azure Monitor | Provided centralized collection, analysis, visualization, and response for telemetry |
+| Azure Monitor Metrics | Stored numerical time-series performance data |
+| Azure Monitor Logs | Collected and analyzed detailed telemetry records |
+| Log Analytics Workspace | Provided the primary data store for Azure Monitor Logs |
+| Log Analytics | Provided the interface for querying log data with Kusto Query Language |
+| Azure Monitor Alerts | Evaluated telemetry and identified conditions requiring attention |
+| Action Groups | Defined notification and automated response targets for alerts |
+| Application Insights | Provided application performance monitoring and diagnostics |
+| Azure Service Health | Reported Azure service issues, maintenance, and advisories |
+| Azure Resource Health | Reported current and historical health for individual resources |
+| Azure Advisor | Provided cost, security, reliability, performance, and operational recommendations |
 
 ---
 
 ## Why These Services Were Used
 
+### Microsoft Learn
+
+Microsoft Learn was used as the primary certification-aligned source for Azure monitoring concepts.
+
+It provided structured coverage of:
+
+- Azure Monitor
+- Metrics
+- Logs
+- Log Analytics workspaces
+- Alerts
+- Application Insights
+- Service Health
+- Resource Health
+- Azure Advisor
+
+### Azure Portal
+
+The Azure Portal was used to connect monitoring concepts to actual Azure service interfaces.
+
+It supported review of:
+
+- Azure Monitor
+- Metrics Explorer
+- Azure Monitor Logs
+- Azure Monitor Alerts
+- Service Health
+- Resource Health
+- Azure Advisor
+- Advisor recommendations
+
+The Azure Portal was used only for discovery and validation.
+
 ### Azure Monitor
 
-Azure Monitor provides the central observability platform for Azure.
+Azure Monitor is the centralized observability platform for Microsoft Azure.
 
-It collects telemetry from:
+It can collect telemetry from:
 
 - Azure resources
-- Applications and workloads
+- Applications
 - Virtual machines
 - Network services
 - Azure platform services
-- Hybrid environments
+- Hybrid systems
 - Custom data sources
 
-The collected telemetry can be analyzed, visualized, queried, and used to trigger operational responses.
+Azure Monitor can support:
+
+- Analysis
+- Visualization
+- Alerting
+- Investigation
+- Automation
+- Troubleshooting
+- Operational reporting
 
 ### Azure Monitor Metrics
 
-Metrics provide numerical values collected over time.
+Metrics are numerical values collected over time.
 
 Examples include:
 
 - CPU utilization
+- Memory usage
 - Disk operations
 - Network throughput
 - Request counts
-- Availability percentages
-- Response times
+- Response time
+- Availability percentage
 
 Metrics are useful for:
 
@@ -129,77 +183,104 @@ Metrics are useful for:
 - Performance charts
 - Dashboards
 - Trend analysis
+- Capacity planning
 - Metric-based alerts
 
 ### Azure Monitor Logs
 
-Azure Monitor Logs provides centralized collection and analysis of detailed telemetry records.
+Azure Monitor Logs stores detailed telemetry records.
 
 Logs can support:
 
 - Troubleshooting
 - Security investigations
 - Compliance reporting
-- Operational analysis
-- Historical review
-- Dashboards and reports
+- Historical analysis
+- Operational reporting
+- Dashboards
 - Log-based alerts
+- Correlation across multiple resources
 
-Azure Monitor Logs can retrieve data using Kusto Query Language, commonly called KQL.
+Azure Monitor Logs can be queried using Kusto Query Language, commonly called KQL.
 
 ### Log Analytics Workspace
 
-A Log Analytics workspace is the primary data store for Azure Monitor Logs.
+A Log Analytics workspace is the primary storage and governance boundary for Azure Monitor Logs.
 
 A workspace can contain:
 
 - Azure resource logs
-- Activity logs
-- Virtual machine data
+- Azure Activity Logs
+- Virtual machine telemetry
 - Application telemetry
 - Security data
 - Custom tables
 - Saved queries
 - Alert-related data
 
-Workspace access, retention, table plans, and data collection should be governed because log data may contain operational or security-sensitive information.
+Workspace design affects:
+
+- Data location
+- Access control
+- Retention
+- Cost
+- Network isolation
+- Operational ownership
 
 ### Azure Monitor Alerts
 
-Azure Monitor Alerts evaluates metrics or logs against defined conditions.
+Azure Monitor Alerts evaluates selected signals against defined conditions.
 
-An alert rule normally includes:
+An alert rule commonly includes:
 
-- A monitored resource or scope
-- A signal
-- A condition
-- An evaluation frequency
-- An action group or response
+- Scope
+- Signal
+- Condition
+- Evaluation logic
+- Severity
+- Action group
 
-Alerts help administrators detect and address issues before users are significantly affected.
+Alerts can notify teams or trigger supported automated responses.
+
+### Action Groups
+
+Action groups define what happens when an alert fires.
+
+Potential actions can include:
+
+- Email
+- SMS
+- Push notification
+- Voice notification
+- Webhook
+- Azure Function
+- Logic App
+- Automation Runbook
+- IT service-management integration
+
+No action group was created during this lab.
 
 ### Application Insights
 
-Application Insights is an application performance monitoring capability within Azure Monitor.
+Application Insights provides application performance monitoring through Azure Monitor.
 
 It can provide visibility into:
 
 - Application availability
-- Request performance
-- Failures and exceptions
+- Requests
+- Response time
+- Failures
+- Exceptions
 - Dependencies
 - User activity
-- Application usage
 - Distributed traces
 - Performance bottlenecks
 
-Application Insights helps support, development, and operations teams investigate application issues.
-
 ### Azure Service Health
 
-Azure Service Health provides information about events that may affect Azure services used by an organization.
+Azure Service Health provides personalized information about Azure events that may affect an organization.
 
-Service Health includes:
+It can include:
 
 - Service issues
 - Planned maintenance
@@ -208,24 +289,24 @@ Service Health includes:
 - Billing updates
 - Health history
 
-Unlike the public Azure Status page, Service Health provides a personalized view based on the subscriptions, services, and regions used by the organization.
+Service Health differs from the public Azure Status page because it can provide information based on the subscriptions, services, and regions used by the organization.
 
 ### Azure Resource Health
 
 Azure Resource Health reports the current and historical health of individual Azure resources.
 
-It helps administrators determine whether an outage or degraded condition is related to:
+It can help determine whether a problem is related to:
 
-- The Azure platform
+- Azure platform availability
 - Planned maintenance
 - Customer configuration
-- A resource-specific problem
-
-Resource Health can also help provide evidence when reviewing service availability and possible service-level agreement impacts.
+- Resource-specific conditions
 
 ### Azure Advisor
 
-Azure Advisor analyzes resource configuration and usage data to provide recommendations in five categories:
+Azure Advisor analyzes supported Azure configurations and usage information.
+
+It provides recommendations across:
 
 - Cost
 - Security
@@ -233,7 +314,7 @@ Azure Advisor analyzes resource configuration and usage data to provide recommen
 - Operational Excellence
 - Performance
 
-Advisor recommendations can help teams identify configuration gaps and prioritize improvements.
+Recommendations should be reviewed before implementation because they may affect cost, access, configuration, or service behavior.
 
 ---
 
@@ -244,21 +325,29 @@ Advisor recommendations can help teams identify configuration gaps and prioritiz
 | Organization | Monroe Redstone Technology Group |
 | Project | MRTG Azure Fundamentals: The Bridge |
 | Lab | Lab 12 - Azure Monitoring, Health, and Optimization |
+| Cloud Platform | Microsoft Azure |
+| Management Interface | Azure Portal |
+| Learning Platform | Microsoft Learn |
 | Subscription | `MRTG-AZ900-Lab-Subscription` |
-| Lab Type | Discovery and portal exploration |
-| Resources Created | None |
-| Monitoring Resources Created | None |
+| Azure Resources Created | None |
+| Azure Resources Modified | None |
 | Log Analytics Workspaces Created | None |
 | Application Insights Resources Created | None |
 | Alert Rules Created | None |
 | Action Groups Created | None |
-| Estimated Incremental Cost | `$0.00` |
+| Workbooks Created | None |
+| Dashboards Created | None |
+| Diagnostic Settings Created | None |
+| Monitoring Agents Installed | None |
+| Expected Incremental Cost | `$0.00` |
+| Documentation Platform | GitHub |
+| Lab Type | Discovery-only |
 
-Sensitive identifiers were excluded or redacted from the screenshots, including:
+Sensitive identifiers were excluded or redacted from screenshots, including:
 
 - Subscription IDs
 - Tenant IDs
-- User email addresses
+- Email addresses
 - Directory names
 - Object identifiers
 - Billing information
@@ -271,471 +360,653 @@ Sensitive identifiers were excluded or redacted from the screenshots, including:
 flowchart TD
     Sources[Azure and Hybrid Data Sources] --> Monitor[Azure Monitor]
 
-    Sources --> Apps[Applications and Workloads]
-    Sources --> Infra[Infrastructure]
+    Sources --> Applications[Applications and Workloads]
+    Sources --> Infrastructure[Infrastructure]
     Sources --> Platform[Azure Platform]
     Sources --> Custom[Custom Sources]
 
-    Apps --> Monitor
-    Infra --> Monitor
+    Applications --> Monitor
+    Infrastructure --> Monitor
     Platform --> Monitor
     Custom --> Monitor
 
     Monitor --> Metrics[Azure Monitor Metrics]
     Monitor --> Logs[Azure Monitor Logs]
-    Monitor --> Traces[Application Traces and Telemetry]
+    Monitor --> Traces[Application Traces]
 
     Logs --> Workspace[Log Analytics Workspace]
-    Metrics --> Analyze[Analyze and Visualize]
-    Workspace --> Analyze
-    Traces --> AppInsights[Application Insights]
-    AppInsights --> Analyze
+    Metrics --> Analysis[Analysis and Visualization]
+    Workspace --> Analytics[Log Analytics and KQL]
+    Traces --> Insights[Application Insights]
 
-    Analyze --> Explorer[Metrics Explorer]
-    Analyze --> Queries[Log Analytics and KQL]
-    Analyze --> Workbooks[Workbooks and Dashboards]
+    Analytics --> Analysis
+    Insights --> Analysis
+
+    Analysis --> Dashboards[Dashboards and Workbooks]
+    Analysis --> Investigation[Issue Investigation]
 
     Metrics --> Alerts[Azure Monitor Alerts]
     Workspace --> Alerts
-    Alerts --> Actions[Notifications and Automated Actions]
+    Alerts --> Actions[Action Groups]
+    Actions --> Notifications[Notifications]
+    Actions --> Automation[Automated Response]
 
     ServiceHealth[Azure Service Health] --> Operations[Operational Awareness]
     ResourceHealth[Azure Resource Health] --> Operations
     Advisor[Azure Advisor] --> Optimization[Optimization Recommendations]
 
-    Operations --> CloudTeam[Cloud Operations Team]
+    Notifications --> CloudTeam[Cloud Operations Team]
+    Automation --> CloudTeam
+    Operations --> CloudTeam
     Optimization --> CloudTeam
-    Actions --> CloudTeam
 ```
 
 ---
 
 ## Steps Performed
 
-### Step 1 - Reviewed the Azure Monitor Overview
+### Step 1: Review Azure Monitor
 
-I reviewed the Azure Monitor overview in Microsoft Learn.
-
-The documentation described Azure Monitor as Microsoft's unified observability service for collecting, analyzing, and acting on telemetry from cloud and hybrid environments.
-
-The review identified the major types of telemetry used by Azure Monitor:
-
-- Metrics
-- Logs
-- Traces
-- Events
-
-It also showed how Azure Monitor supports:
-
-- Insights
-- Workbooks
-- Dashboards
-- Grafana
-- Metrics Explorer
-- Log Analytics
-- Alerts
-- Actions
-- Issue investigation
+1. Opened Microsoft Learn.
+2. Reviewed Azure Monitor as Microsoft Azure's centralized observability platform.
+3. Reviewed the primary telemetry types:
+   - Metrics
+   - Logs
+   - Traces
+   - Events
+4. Reviewed Azure Monitor capabilities:
+   - Insights
+   - Workbooks
+   - Dashboards
+   - Grafana
+   - Metrics Explorer
+   - Log Analytics
+   - Alerts
+   - Actions
+   - Issue investigation
 
 ![Azure Monitor overview](screenshots/01-azure-monitor-overview.png)
 
+**Validation:** Microsoft Learn described Azure Monitor as a unified platform for collecting, analyzing, visualizing, and responding to telemetry.
+
 ---
 
-### Step 2 - Reviewed Azure Monitor Metrics
+### Step 2: Review Azure Monitor Metrics
 
-I reviewed Azure Monitor Metrics and learned that metrics are numerical values stored in a time-series database.
-
-The documentation identified several metric types:
-
-- Platform metrics
-- Advanced platform metrics
-- Custom metrics
-- Prometheus metrics
-
-Platform metrics are automatically collected from supported Azure resources and can be used for analysis and alerting.
-
-Custom metrics can be collected from configured applications, agents, and other supported sources.
-
-Prometheus metrics support monitoring for Kubernetes environments and can be analyzed using tools such as PromQL and Grafana.
+1. Opened the Azure Monitor Metrics section.
+2. Documented metrics as numerical values stored in a time-series database.
+3. Reviewed metric categories:
+   - Platform metrics
+   - Advanced platform metrics
+   - Custom metrics
+   - Prometheus metrics
+4. Reviewed how metrics support:
+   - Performance analysis
+   - Visualization
+   - Dashboards
+   - Alerts
+5. Connected Prometheus metrics to Kubernetes monitoring and Grafana.
 
 ![Azure Monitor Metrics overview](screenshots/02-azure-monitor-metrics-overview.png)
 
+**Validation:** Microsoft Learn described numerical time-series metrics and the primary metric categories supported by Azure Monitor.
+
 ---
 
-### Step 3 - Reviewed Azure Monitor Logs
+### Step 3: Review Azure Monitor Logs
 
-I reviewed Azure Monitor Logs and learned that it provides a centralized platform for collecting, analyzing, and acting on telemetry from Azure and non-Azure resources.
-
-Azure Monitor Logs can be used to:
-
-- Collect telemetry data
-- Transform collected data
-- Route data into workspace tables
-- Manage log retention
-- Control access to logs
-- Optimize log-related costs
-- Retrieve data using KQL
-- Create dashboards and reports
-- Support troubleshooting and alerting
-
-The documentation also reinforced that Azure Monitor Metrics and Azure Monitor Logs form the two main parts of the Azure Monitor data platform.
+1. Opened the Azure Monitor Logs section.
+2. Reviewed centralized log collection from Azure and non-Azure sources.
+3. Reviewed capabilities involving:
+   - Data collection
+   - Data transformation
+   - Workspace tables
+   - Retention
+   - Access control
+   - Cost optimization
+   - KQL queries
+   - Dashboards
+   - Reports
+   - Alerts
+4. Documented Metrics and Logs as the two primary parts of the Azure Monitor data platform.
 
 ![Azure Monitor Logs overview](screenshots/03-azure-monitor-logs-overview.png)
 
+**Validation:** Microsoft Learn described Azure Monitor Logs as a centralized platform for collecting, storing, querying, and analyzing telemetry.
+
 ---
 
-### Step 4 - Reviewed Log Analytics Workspaces
+### Step 4: Review Log Analytics Workspaces
 
-I reviewed the purpose of a Log Analytics workspace.
-
-A Log Analytics workspace stores tables containing collected monitoring data.
-
-The documentation showed that administrators can use workspaces to:
-
-- Define table plans
-- Configure analytics retention
-- Configure long-term retention
-- Manage access to the workspace
-- Manage access to individual tables
-- Create summary rules
-- Save queries
-- Build visualizations
-- Create alerts
-- Configure network isolation
-- Design regional workspace architectures
-
-This review demonstrated that a Log Analytics workspace is not only a storage location. It is also an important governance, security, and operational boundary for monitoring data.
+1. Opened the Log Analytics workspace section.
+2. Documented a workspace as the primary data store for Azure Monitor Logs.
+3. Reviewed:
+   - Workspace tables
+   - Table plans
+   - Analytics retention
+   - Long-term retention
+   - Workspace access
+   - Table-level access
+   - Summary rules
+   - Saved queries
+   - Visualizations
+   - Alerts
+   - Network isolation
+   - Regional architecture
+4. Connected workspace design to governance, security, and cost.
 
 ![Log Analytics workspace overview](screenshots/04-log-analytics-overview.png)
 
+**Validation:** Microsoft Learn described Log Analytics workspaces as storage, access, retention, and governance boundaries for monitoring data.
+
 ---
 
-### Step 5 - Reviewed Azure Monitor Alerts
+### Step 5: Review Azure Monitor Alerts
 
-I reviewed how Azure Monitor Alerts detect and address operational issues.
-
-The alert workflow included:
-
-1. Azure resources emit telemetry.
-2. Azure Monitor stores metrics or logs.
-3. An alert rule evaluates a selected signal.
-4. Azure compares the signal against a condition.
-5. A fired alert is created when the condition is met.
-6. An action group can notify administrators or start an automated response.
-
-The review identified the main components of an alert rule:
-
-- Scope
-- Signal
-- Condition
-- Evaluation logic
-- Actions
-
-No alert rule or action group was created during this lab.
+1. Opened the Azure Monitor Alerts section.
+2. Reviewed the alert workflow:
+   1. A resource emits telemetry.
+   2. Azure Monitor stores the metric or log.
+   3. An alert rule evaluates a signal.
+   4. Azure compares the signal against a condition.
+   5. A fired alert is created when the condition is met.
+   6. An action group can notify administrators or begin a response.
+3. Reviewed alert-rule components:
+   - Scope
+   - Signal
+   - Condition
+   - Evaluation logic
+   - Actions
+4. Confirmed that no alert rule or action group was created.
 
 ![Azure Monitor Alerts overview](screenshots/05-azure-monitor-alerts-overview.png)
 
+**Validation:** Microsoft Learn described the Azure Monitor alert workflow and the primary components of an alert rule.
+
 ---
 
-### Step 6 - Reviewed Application Insights
+### Step 6: Review Application Insights
 
-I reviewed Application Insights and its integration with Azure Monitor.
-
-Application Insights stores application telemetry in Azure Monitor Logs and provides monitoring and diagnostic views for applications.
-
-The documentation showed that Application Insights can help teams:
-
-- Create application health dashboards
-- Perform proactive monitoring
-- Configure alerts
-- Analyze application usage
-- Track navigation patterns
-- Investigate failures
-- Investigate performance
-- Query application telemetry
-
-No Application Insights resource was created during the lab.
+1. Opened the Application Insights section.
+2. Reviewed Application Insights as an application performance monitoring capability within Azure Monitor.
+3. Reviewed capabilities involving:
+   - Application health dashboards
+   - Proactive monitoring
+   - Alerts
+   - Application usage
+   - User navigation
+   - Failures
+   - Performance
+   - Telemetry queries
+4. Confirmed that no Application Insights resource was created.
 
 ![Application Insights overview](screenshots/06-application-insights-overview.png)
 
+**Validation:** Microsoft Learn described Application Insights application-performance, failure-analysis, usage, and diagnostic capabilities.
+
 ---
 
-### Step 7 - Reviewed Azure Service Health
+### Step 7: Review Azure Service Health
 
-I reviewed Azure Service Health and its major components.
-
-The documentation distinguished between:
-
-- Azure Status
-- Service Health
-- Resource Health
-
-Azure Status provides a broad public view of Azure service availability.
-
-Service Health provides a personalized view of issues, maintenance, and advisories that may affect the services and regions used by an organization.
-
-Resource Health provides health information for individual Azure resources.
+1. Opened the Azure Service Health section.
+2. Compared:
+   - Azure Status
+   - Service Health
+   - Resource Health
+3. Documented Azure Status as a broad public Azure availability view.
+4. Documented Service Health as a personalized view of subscription-relevant service events.
+5. Reviewed Service Health event categories:
+   - Service issues
+   - Planned maintenance
+   - Health advisories
+   - Security advisories
+   - Billing updates
+   - Health history
 
 ![Azure Service Health overview](screenshots/07-azure-service-health-overview.png)
 
+**Validation:** Microsoft Learn distinguished Azure Status, Service Health, and Resource Health.
+
 ---
 
-### Step 8 - Reviewed Azure Resource Health
+### Step 8: Review Azure Resource Health
 
-I reviewed Azure Resource Health and learned how it reports the current and historical health of individual resources.
-
-Resource Health can help administrators:
-
-- Diagnose resource availability problems
-- Identify Azure platform issues
-- Review historical health events
-- Determine when a resource was unavailable
-- Gather evidence for support cases
-- Review possible SLA impacts
+1. Opened the Azure Resource Health section.
+2. Reviewed current and historical resource-health information.
+3. Reviewed how Resource Health can help:
+   - Diagnose availability problems
+   - Identify platform issues
+   - Review historical events
+   - Determine when a resource was unavailable
+   - Support service requests
+   - Review possible service-level agreement impact
 
 ![Azure Resource Health overview](screenshots/08-azure-resource-health-overview.png)
 
+**Validation:** Microsoft Learn described Azure Resource Health as a service for reviewing current and historical health for individual resources.
+
 ---
 
-### Step 9 - Reviewed Azure Advisor
+### Step 9: Review Azure Advisor
 
-I reviewed Azure Advisor and learned how it analyzes Azure configurations and usage telemetry.
-
-Advisor provides personalized recommendations across:
-
-- Cost
-- Security
-- Reliability
-- Operational Excellence
-- Performance
-
-The recommendations can help organizations improve cloud configurations and identify opportunities to reduce risk or unnecessary spending.
+1. Opened the Azure Advisor section.
+2. Reviewed how Advisor analyzes Azure configuration and usage information.
+3. Reviewed the five recommendation categories:
+   - Cost
+   - Security
+   - Reliability
+   - Operational Excellence
+   - Performance
+4. Documented Advisor recommendations as improvement opportunities requiring evaluation before implementation.
 
 ![Azure Advisor overview](screenshots/09-azure-advisor-overview.png)
 
+**Validation:** Microsoft Learn described Azure Advisor and its five recommendation categories.
+
 ---
 
-### Step 10 - Explored the Azure Monitor Portal
+### Step 10: Explore Azure Monitor in the Azure Portal
 
-I opened Azure Monitor in the Azure portal.
-
-The overview page provided centralized navigation to monitoring capabilities such as:
-
-- Application Insights
-- Container Insights
-- VM Insights
-- Network Insights
-- Metrics
-- Alerts
-- Logs
-- Workbooks
-- Dashboards with Grafana
-- Change Analysis
-- Diagnostic Settings
-- Managed Prometheus
-- Health Model
-
-This page demonstrated how Azure Monitor brings multiple observability capabilities into one management interface.
+1. Opened Azure Monitor.
+2. Reviewed centralized navigation to:
+   - Application Insights
+   - Container Insights
+   - VM Insights
+   - Network Insights
+   - Metrics
+   - Alerts
+   - Logs
+   - Workbooks
+   - Grafana dashboards
+   - Change Analysis
+   - Diagnostic settings
+   - Managed Prometheus
+   - Health Model
+3. Did not create a monitoring resource or configuration.
 
 ![Azure Monitor portal](screenshots/10-azure-monitor-portal.png)
 
+**Validation:** The Azure Portal displayed the centralized Azure Monitor management interface.
+
 ---
 
-### Step 11 - Explored Azure Monitor Metrics
+### Step 11: Explore Azure Monitor Metrics
 
-I opened the Metrics interface in the Azure portal.
-
-The Metrics page displayed options to:
-
-- Add a metric
-- Select a monitored scope
-- Apply filters
-- Split data by dimensions
-- Change chart types
-- Drill into logs
-- Create an alert rule
-- Save a chart to a dashboard
-
-No metric data was displayed because no monitored resource had been selected.
-
-No chart, dashboard, or alert rule was created.
+1. Opened **Metrics** in Azure Monitor.
+2. Reviewed options to:
+   - Select a monitored scope
+   - Add a metric
+   - Apply filters
+   - Split data by dimensions
+   - Change chart types
+   - Drill into logs
+   - Create an alert rule
+   - Save a chart to a dashboard
+3. Confirmed that no metric data was displayed because no monitored resource was selected.
+4. Did not create a chart, dashboard, or alert rule.
 
 ![Azure Monitor Metrics portal](screenshots/11-azure-monitor-metrics-portal.png)
 
+**Validation:** The Metrics interface was accessible and required a selected resource before displaying telemetry.
+
 ---
 
-### Step 12 - Explored Azure Monitor Logs
+### Step 12: Explore Azure Monitor Logs
 
-I opened the Logs interface in Azure Monitor.
-
-The portal displayed the Log Analytics query experience with options to:
-
-- Select a resource
-- Select a table
-- Choose a time range
-- Use simple mode
-- Open the query interface
-- Review available monitoring data
-
-The page instructed me to select a resource before querying data.
-
-No Log Analytics workspace was created, no resource was selected, and no query was executed.
+1. Opened **Logs** in Azure Monitor.
+2. Reviewed the Log Analytics query interface.
+3. Reviewed options to:
+   - Select a resource
+   - Select a table
+   - Choose a time range
+   - Use simple mode
+   - Open the query interface
+   - Review available monitoring data
+4. Confirmed that the page required a selected resource before querying data.
+5. Did not create a Log Analytics workspace.
+6. Did not select a resource.
+7. Did not execute a query.
 
 ![Azure Monitor Logs portal](screenshots/12-azure-monitor-logs-portal.png)
 
+**Validation:** The Azure Monitor Logs interface was accessible and required a selected resource or workspace before querying telemetry.
+
 ---
 
-### Step 13 - Explored Azure Monitor Alerts
+### Step 13: Explore Azure Monitor Alerts
 
-I opened the Alerts page in Azure Monitor.
-
-The interface provided access to:
-
-- Fired alerts
-- Alert rules
-- Action groups
-- Alert processing rules
-- Prometheus rule groups
-- Timeline views
-- Alert filters
-- Severity filters
-
-The page showed zero fired alerts across all displayed severity levels.
-
-The subscription identifier visible in the original portal view was redacted before the screenshot was included in the repository.
-
-No alert rule, action group, or processing rule was created.
+1. Opened **Alerts** in Azure Monitor.
+2. Reviewed:
+   - Fired alerts
+   - Alert rules
+   - Action groups
+   - Alert processing rules
+   - Prometheus rule groups
+   - Timeline views
+   - Alert filters
+   - Severity filters
+3. Confirmed that zero fired alerts were displayed across the listed severity levels.
+4. Did not create an alert rule.
+5. Did not create an action group.
+6. Did not create an alert-processing rule.
+7. Redacted the subscription identifier.
 
 ![Azure Monitor Alerts portal](screenshots/13-azure-monitor-alerts-portal.png)
 
+**Validation:** The Azure Portal displayed no fired Azure Monitor alerts.
+
 ---
 
-### Step 14 - Reviewed Azure Service Health in the Portal
+### Step 14: Review Azure Service Health in the Azure Portal
 
-I opened Service Health and reviewed the Service Issues page.
-
-The portal was filtered to:
-
-- Subscription: `MRTG-AZ900-Lab-Subscription`
-- All regions
-- All services
-- All event levels
-- All event tags
-
-The portal reported that there were no active service issues affecting the selected subscription.
-
-The page also provided navigation to:
-
-- Planned maintenance
-- Health advisories
-- Security advisories
-- Billing updates
-- Health history
-- Resource Health
-- Health alerts
-
-No Service Health alert was created.
+1. Opened Azure Service Health.
+2. Reviewed the **Service Issues** page.
+3. Reviewed filters for:
+   - Subscription
+   - Region
+   - Service
+   - Event level
+   - Event tags
+4. Confirmed that no active service issues affected `MRTG-AZ900-Lab-Subscription`.
+5. Reviewed navigation to:
+   - Planned maintenance
+   - Health advisories
+   - Security advisories
+   - Billing updates
+   - Health history
+   - Resource Health
+   - Health alerts
+6. Did not create a Service Health alert.
 
 ![Azure Service Health portal](screenshots/14-azure-service-health-portal.png)
 
+**Validation:** Azure Service Health displayed no active service issues affecting the selected subscription.
+
 ---
 
-### Step 15 - Reviewed Azure Resource Health in the Portal
+### Step 15: Review Azure Resource Health in the Azure Portal
 
-I opened Resource Health under Service Health.
-
-The portal showed the selected subscription but reported that there were no registered resources available for selection.
-
-This was expected because the lab subscription did not contain a supported deployed resource for Resource Health evaluation.
-
-No Resource Health alert was created.
+1. Opened **Resource Health**.
+2. Reviewed the selected subscription scope.
+3. Confirmed that no registered resources were available for selection.
+4. Documented that this was expected because the lab subscription did not contain a supported deployed resource for health evaluation.
+5. Did not create a Resource Health alert.
 
 ![Azure Resource Health portal](screenshots/15-azure-resource-health-portal.png)
 
+**Validation:** Azure Resource Health displayed no supported deployed resources available for health review.
+
 ---
 
-### Step 16 - Reviewed Azure Advisor in the Portal
+### Step 16: Review Azure Advisor in the Azure Portal
 
-I opened Azure Advisor and reviewed its overview dashboard.
-
-The page displayed the five Advisor recommendation categories:
-
-- Cost
-- Security
-- Reliability
-- Operational Excellence
-- Performance
-
-The displayed Advisor view showed:
-
-- No active cost recommendations
-- Seven active security recommendations
-- A displayed security score of 100 percent
-- No active reliability recommendations
-- No active operational excellence recommendations
-- No active performance recommendations
-
-No recommendation was implemented during the lab.
+1. Opened Azure Advisor.
+2. Reviewed the five recommendation categories:
+   - Cost
+   - Security
+   - Reliability
+   - Operational Excellence
+   - Performance
+3. Reviewed the displayed results:
+   - No active cost recommendations
+   - Seven active security recommendations
+   - Displayed security score of `100%`
+   - No active reliability recommendations
+   - No active Operational Excellence recommendations
+   - No active performance recommendations
+4. Did not implement a recommendation.
 
 ![Azure Advisor portal](screenshots/16-azure-advisor-portal.png)
 
+**Validation:** Azure Advisor displayed category-level recommendation information for the subscription.
+
 ---
 
-### Step 17 - Reviewed Azure Advisor Recommendations
+### Step 17: Review Azure Advisor Recommendations
 
-I opened the All Recommendations page in Azure Advisor.
-
-The portal displayed seven active security recommendations for the subscription.
-
-The recommendations included:
-
-- Enable Microsoft Defender for Storage protections
-- Assign more than one owner to the subscription
-- Enable Microsoft Defender Cloud Security Posture Management
-- Enable Microsoft Defender for Resource Manager
-- Enable email notifications for high-severity alerts
-- Configure subscription owner notifications
-- Configure a contact email address for security issues
-
-The recommendations were categorized by impact levels including:
-
-- High
-- Medium
-- Low
-
-These findings were reviewed for learning purposes only. No Defender plan, owner assignment, notification setting, or subscription contact setting was changed.
+1. Opened **All Recommendations** in Azure Advisor.
+2. Reviewed seven active security recommendations.
+3. Reviewed recommendations involving:
+   - Microsoft Defender for Storage
+   - Additional subscription Owner assignment
+   - Microsoft Defender Cloud Security Posture Management
+   - Microsoft Defender for Resource Manager
+   - Email notifications for high-severity alerts
+   - Subscription Owner notifications
+   - Security contact information
+4. Reviewed recommendation impact levels:
+   - High
+   - Medium
+   - Low
+5. Did not:
+   - Enable a Defender plan
+   - Add a subscription Owner
+   - Change notification settings
+   - Change security contact information
+   - Dismiss a recommendation
+   - Implement a recommendation
 
 ![Azure Advisor recommendations](screenshots/17-advisor-recommendations-portal.png)
+
+**Validation:** Azure Advisor displayed seven active security recommendations, and no recommendation was implemented.
+
+---
+
+## Monitoring Services Summary
+
+| Service or Feature | Primary Purpose |
+|---|---|
+| Azure Monitor | Centralized observability platform |
+| Azure Monitor Metrics | Numerical time-series performance monitoring |
+| Azure Monitor Logs | Detailed telemetry collection and analysis |
+| Log Analytics Workspace | Storage and governance boundary for log data |
+| Log Analytics | Query interface for workspace data |
+| Azure Monitor Alerts | Detect and respond to telemetry conditions |
+| Action Groups | Define alert notifications and automated actions |
+| Application Insights | Application performance monitoring |
+| Azure Service Health | Personalized Azure service-event awareness |
+| Azure Resource Health | Individual resource-health visibility |
+| Azure Advisor | Configuration and optimization recommendations |
+
+---
+
+## Monitoring Mental Model
+
+```text
+Azure Monitor
+Collects and analyzes telemetry.
+
+Metrics
+Provide numerical time-series data.
+
+Logs
+Provide detailed event and operational records.
+
+Log Analytics Workspace
+Stores log data and defines access, retention, and regional boundaries.
+
+Log Analytics
+Provides the interface for querying workspace data.
+
+Alerts
+Evaluate signals and identify conditions requiring attention.
+
+Action Groups
+Notify teams or begin automated responses.
+
+Application Insights
+Monitors application performance, failures, dependencies, and usage.
+
+Service Health
+Reports Azure platform events that may affect the organization.
+
+Resource Health
+Reports the health of individual Azure resources.
+
+Azure Advisor
+Provides recommendations for cost, security, reliability, performance, and operations.
+```
+
+---
+
+## Metrics vs Logs
+
+| Area | Metrics | Logs |
+|---|---|---|
+| Data type | Numerical time-series values | Detailed structured or unstructured records |
+| Primary use | Fast performance monitoring | Investigation and historical analysis |
+| Common examples | CPU percentage and request count | Activity records and application exceptions |
+| Query method | Metrics Explorer and supported APIs | Kusto Query Language |
+| Alerting | Metric alerts | Log-search alerts |
+| Storage model | Metrics database | Log Analytics workspace tables |
+| Best fit | Dashboards, trends, and thresholds | Correlation, troubleshooting, auditing, and security analysis |
+
+### Key Takeaway
+
+Metrics answer:
+
+```text
+What is happening numerically over time?
+```
+
+Logs answer:
+
+```text
+What detailed events occurred, and how are they related?
+```
+
+---
+
+## Azure Monitor Data Flow
+
+```mermaid
+flowchart LR
+    Resource[Azure Resource] --> Metrics[Platform Metrics]
+    Resource --> Logs[Resource Logs]
+    Subscription[Azure Subscription] --> Activity[Activity Log]
+    Application[Application] --> Telemetry[Application Telemetry]
+
+    Metrics --> Monitor[Azure Monitor]
+    Logs --> DCR[Diagnostic Settings or Data Collection Rules]
+    Activity --> DCR
+    Telemetry --> Insights[Application Insights]
+
+    DCR --> Workspace[Log Analytics Workspace]
+    Insights --> Workspace
+
+    Metrics --> Alerts[Metric Alerts]
+    Workspace --> Queries[KQL Queries]
+    Workspace --> LogAlerts[Log Alerts]
+
+    Alerts --> Actions[Action Groups]
+    LogAlerts --> Actions
+```
+
+---
+
+## Alert Rule Components
+
+| Component | Purpose |
+|---|---|
+| Scope | Defines the resource or resources being monitored |
+| Signal | Defines the metric, log query, or event being evaluated |
+| Condition | Defines when the alert should fire |
+| Evaluation frequency | Defines how often the condition is checked |
+| Lookback period | Defines the data window being evaluated |
+| Severity | Defines the operational importance |
+| Action group | Defines who or what receives the alert |
+| Alert processing rule | Controls notification or alert-processing behavior |
+
+### Example Alert
+
+```text
+Scope:
+Production web application
+
+Signal:
+Failed requests
+
+Condition:
+More than 25 failed requests in 5 minutes
+
+Severity:
+Sev 2
+
+Action group:
+Application Support
+
+Response:
+Email notification and incident creation
+```
+
+---
+
+## Service Health vs Resource Health
+
+| Area | Azure Service Health | Azure Resource Health |
+|---|---|---|
+| Primary focus | Azure platform events affecting subscribed services and regions | Health of an individual Azure resource |
+| Example issue | Regional Azure service outage | One virtual machine is unavailable |
+| Planned maintenance | Included | Can appear when relevant to the resource |
+| Historical information | Health history | Resource health history |
+| Alert support | Service Health alerts | Resource Health alerts |
+| Best question answered | Is Azure experiencing an event that affects us? | Is this specific resource healthy? |
+
+---
+
+## Azure Advisor Categories
+
+| Category | Focus |
+|---|---|
+| Cost | Reduce or optimize Azure spending |
+| Security | Improve security configuration |
+| Reliability | Improve resiliency and availability |
+| Operational Excellence | Improve management and operational processes |
+| Performance | Improve workload performance |
+
+Advisor recommendations should be evaluated for:
+
+- Business impact
+- Security impact
+- Cost impact
+- Service dependencies
+- Licensing requirements
+- Change-management requirements
+- Testing requirements
 
 ---
 
 ## Validation
 
-| Validation Item | Result | Evidence |
+| Validation Item | Expected Result | Actual Result |
 |---|---|---|
-| Azure Monitor purpose reviewed | Passed | `01-azure-monitor-overview.png` |
-| Metrics concepts reviewed | Passed | `02-azure-monitor-metrics-overview.png` |
-| Logs concepts reviewed | Passed | `03-azure-monitor-logs-overview.png` |
-| Log Analytics workspace purpose reviewed | Passed | `04-log-analytics-overview.png` |
-| Alert workflow reviewed | Passed | `05-azure-monitor-alerts-overview.png` |
-| Application Insights reviewed | Passed | `06-application-insights-overview.png` |
-| Service Health reviewed | Passed | `07-azure-service-health-overview.png` |
-| Resource Health reviewed | Passed | `08-azure-resource-health-overview.png` |
-| Azure Advisor reviewed | Passed | `09-azure-advisor-overview.png` |
-| Azure Monitor portal opened | Passed | `10-azure-monitor-portal.png` |
-| Metrics interface opened | Passed | `11-azure-monitor-metrics-portal.png` |
-| Logs interface opened | Passed | `12-azure-monitor-logs-portal.png` |
-| Alerts interface opened | Passed | `13-azure-monitor-alerts-portal.png` |
-| Service Health checked | Passed | `14-azure-service-health-portal.png` |
-| Resource Health checked | Passed | `15-azure-resource-health-portal.png` |
-| Advisor overview reviewed | Passed | `16-azure-advisor-portal.png` |
-| Advisor recommendations reviewed | Passed | `17-advisor-recommendations-portal.png` |
-| Alert rules created | None |
-| Action groups created | None |
-| Log Analytics workspaces created | None |
-| Application Insights resources created | None |
-| Existing resources modified | None |
-| New billable resources created | None |
+| Azure Monitor | Central monitoring concepts are reviewed | Passed |
+| Azure Monitor Metrics | Time-series metric concepts are reviewed | Passed |
+| Azure Monitor Logs | Detailed telemetry concepts are reviewed | Passed |
+| Log Analytics workspace | Storage, retention, and access concepts are reviewed | Passed |
+| Azure Monitor Alerts | Alert workflow and components are reviewed | Passed |
+| Application Insights | Application monitoring concepts are reviewed | Passed |
+| Azure Service Health | Personalized service-health concepts are reviewed | Passed |
+| Azure Resource Health | Individual resource-health concepts are reviewed | Passed |
+| Azure Advisor | Recommendation categories are reviewed | Passed |
+| Azure Monitor Portal | Central monitoring interface is accessible | Passed |
+| Metrics Explorer | Metrics interface is accessible | Passed |
+| Metrics data | No data is displayed without a selected resource | Passed |
+| Azure Monitor Logs | Logs interface is accessible | Passed |
+| Log query | No query is executed | Passed |
+| Alerts interface | Alert-management interface is accessible | Passed |
+| Fired alerts | Zero fired alerts are displayed | Passed |
+| Service Health | No active service issues affect the subscription | Passed |
+| Resource Health | No supported resources are available for selection | Passed |
+| Advisor overview | Recommendation categories are displayed | Passed |
+| Advisor recommendations | Seven security recommendations are reviewed | Passed |
+| Advisor changes | No recommendation is implemented | Passed |
+| Log Analytics workspace | No workspace is created | Passed |
+| Application Insights | No resource is created | Passed |
+| Alert rules | No alert rule is created | Passed |
+| Action groups | No action group is created | Passed |
+| Monitoring configuration | No existing configuration is modified | Passed |
+| Expected incremental cost | Lab remains within the `$0.00` estimate | Passed |
 
 ---
 
@@ -745,89 +1016,121 @@ These findings were reviewed for learning purposes only. No Defender plan, owner
 - [x] Reviewed Azure Monitor Metrics
 - [x] Reviewed Azure Monitor Logs
 - [x] Reviewed Log Analytics workspaces
+- [x] Reviewed Log Analytics and KQL concepts
 - [x] Reviewed Azure Monitor Alerts
+- [x] Reviewed action groups
 - [x] Reviewed Application Insights
 - [x] Reviewed Azure Service Health
 - [x] Reviewed Azure Resource Health
 - [x] Reviewed Azure Advisor
-- [x] Opened Azure Monitor in the Azure portal
+- [x] Opened Azure Monitor in the Azure Portal
 - [x] Opened Metrics Explorer
-- [x] Opened the Logs interface
-- [x] Opened the Alerts interface
+- [x] Opened the Azure Monitor Logs interface
+- [x] Opened the Azure Monitor Alerts interface
+- [x] Reviewed fired-alert counts
 - [x] Checked for active Azure service issues
 - [x] Reviewed the Resource Health interface
-- [x] Reviewed Advisor recommendation categories
+- [x] Reviewed Azure Advisor categories
 - [x] Reviewed active Advisor recommendations
-- [x] Confirmed no monitoring resources were created
-- [x] Confirmed no alert rules were created
-- [x] Confirmed no recommendations were implemented
-- [x] Redacted sensitive subscription information where required
+- [x] Did not create a Log Analytics workspace
+- [x] Did not create an Application Insights resource
+- [x] Did not create an alert rule
+- [x] Did not create an action group
+- [x] Did not create a workbook
+- [x] Did not create a dashboard
+- [x] Did not configure diagnostic settings
+- [x] Did not create a data collection rule
+- [x] Did not install a monitoring agent
+- [x] Did not implement Advisor recommendations
+- [x] Did not modify existing Azure resources
+- [x] Confirmed expected incremental cost remained `$0.00`
+- [x] Sanitized screenshots before upload
+- [x] Avoided exposing subscription, tenant, directory, user, object, or billing information
 
 ---
 
 ## AZ-900 Exam Objective Coverage
 
-This lab supports the AZ-900 objective area covering Azure management and governance capabilities.
+### Primary Exam Domain
 
-The lab specifically reinforced the ability to:
+```text
+Describe Azure management and governance
+```
 
-- Describe the purpose of Azure Monitor
+### Supporting Exam Domain
+
+```text
+Describe Azure architecture and services
+```
+
+### Skills Measured
+
+This lab supports the ability to:
+
+- Describe Azure Monitor
 - Describe Azure Monitor Metrics
 - Describe Azure Monitor Logs
 - Describe Log Analytics
+- Describe Log Analytics workspaces
 - Describe Azure Monitor Alerts
+- Describe action groups
 - Describe Application Insights
 - Describe Azure Service Health
 - Describe Azure Resource Health
 - Describe Azure Advisor
+- Compare Metrics and Logs
+- Compare Service Health and Resource Health
+- Describe Azure monitoring and optimization concepts
+- Describe monitoring cost considerations
+
+### How This Lab Supports the Objectives
+
+This lab connected Azure monitoring concepts to practical Azure Portal review.
+
+It demonstrated:
+
+- How Azure Monitor centralizes telemetry
+- How Metrics provides numerical time-series data
+- How Logs provides detailed operational records
+- How Log Analytics workspaces store log data
+- How alerts evaluate signals and trigger actions
+- How Application Insights monitors application behavior
+- How Service Health reports Azure platform events
+- How Resource Health reports individual resource health
+- How Azure Advisor identifies improvement opportunities
+- How monitoring services can be reviewed without creating resources
 
 ---
 
 ## Mini Objective Coverage
 
-### Describe Azure Monitor
+By completing this lab, I can:
 
-Azure Monitor is a centralized observability platform that collects, analyzes, visualizes, and responds to telemetry from Azure and hybrid environments.
-
-### Describe Metrics
-
-Metrics are numerical time-series values used for performance monitoring, visualization, trend analysis, and alerting.
-
-### Describe Logs
-
-Logs contain detailed telemetry records that support investigation, troubleshooting, reporting, auditing, and security analysis.
-
-### Describe Log Analytics
-
-Log Analytics provides the interface and query capabilities used to analyze data stored in a Log Analytics workspace.
-
-### Describe Alerts
-
-Alerts monitor selected signals and create notifications or automated responses when defined conditions are met.
-
-### Describe Application Insights
-
-Application Insights provides application performance monitoring, failure analysis, availability monitoring, dependency tracking, and user behavior insights.
-
-### Describe Service Health
-
-Service Health provides personalized information about Azure outages, planned maintenance, advisories, and service-impacting events.
-
-### Describe Resource Health
-
-Resource Health provides current and historical health information for individual Azure resources.
-
-### Describe Azure Advisor
-
-Azure Advisor provides personalized recommendations across cost, security, reliability, performance, and operational excellence.
+- Explain the purpose of Azure Monitor
+- Explain what Azure Monitor Metrics provides
+- Explain what Azure Monitor Logs provides
+- Compare Metrics and Logs
+- Explain the purpose of a Log Analytics workspace
+- Explain the purpose of Log Analytics
+- Explain how KQL relates to Azure Monitor Logs
+- Identify the components of an alert rule
+- Explain the purpose of an action group
+- Explain what Application Insights monitors
+- Compare Azure Status, Service Health, and Resource Health
+- Explain the purpose of Azure Advisor
+- Identify the five Advisor recommendation categories
+- Explain why monitoring data requires governance
+- Explain why empty monitoring views can still be valid evidence
+- Identify common monitoring cost drivers
+- Validate Azure monitoring interfaces without deploying resources
 
 ---
 
 ## IAM / Security Relevance
 
-Azure monitoring has direct relevance to Identity and Access Management and cloud security operations.
+Azure monitoring is directly connected to identity and access management and cloud security operations.
 
-### Access Control for Monitoring Data
+### Monitoring Data Sensitivity
 
 Monitoring data may contain:
 
@@ -839,395 +1142,224 @@ Monitoring data may contain:
 - Resource names
 - Application errors
 - Security events
+- Query results
+- Service-account activity
 
-Access to monitoring services should follow least-privilege principles.
+Access to monitoring data should follow least privilege.
 
-Examples of access boundaries include:
+### Monitoring Access Boundaries
 
-- Azure Monitor permissions
-- Log Analytics workspace permissions
-- Table-level access
-- Alert rule management
-- Action group management
-- Service Health access
-- Azure Advisor access
+Access can be controlled at areas such as:
+
+- Azure Monitor
+- Log Analytics workspaces
+- Workspace tables
+- Alert rules
+- Action groups
+- Application Insights
+- Service Health
+- Azure Advisor
+
+An identity that can modify monitoring may be able to:
+
+- Disable an alert
+- Change alert thresholds
+- Change notification recipients
+- Remove diagnostic settings
+- Change retention
+- Modify queries
+- Reduce audit evidence
 
 ### Authentication and Authorization Monitoring
 
-Azure Monitor Logs can support the collection and analysis of identity-related activity such as:
+Azure Monitor Logs can support analysis of identity-related activity such as:
 
-- Sign-in activity
-- Administrative changes
-- Role assignment changes
+- Sign-in events
 - Authentication failures
+- Administrative changes
+- Role-assignment changes
 - Conditional Access events
 - Privileged activity
+- Application-consent events
 
-These logs can later support Microsoft Sentinel, security investigations, compliance reviews, and threat detection.
+These logs can support:
 
-### Alerting for Identity Events
+- Security investigations
+- Access reviews
+- Threat detection
+- Compliance reporting
+- Incident response
+- Microsoft Sentinel
 
-Alert rules can be used to notify administrators about:
+### Identity Alerting
+
+Alert rules can help detect:
 
 - Repeated authentication failures
-- Suspicious administrative activity
 - Unexpected role assignments
-- Changes to security settings
+- Privileged-role changes
+- Changes to authentication settings
 - Resource deletion
-- Policy violations
+- Policy changes
+- Monitoring changes
 - Service outages affecting identity services
 
-### Azure Advisor Security Recommendations
+### Advisor Security Recommendations
 
-The active recommendations reviewed in this lab demonstrated how Advisor can identify security configuration gaps.
+The Advisor findings reviewed in this lab demonstrated that Azure can identify subscription-level security configuration opportunities even when workload resources are limited.
 
-Examples included:
+The recommendations included areas such as:
 
-- Missing Defender protections
-- Insufficient subscription owner redundancy
-- Missing security notification settings
-- Missing security contact information
+- Microsoft Defender plans
+- Subscription Owner redundancy
+- High-severity alert notifications
+- Security contact information
 
 ### Separation of Duties
 
-In production, organizations should separate responsibilities for:
+Production environments should separate responsibilities for:
 
 - Creating monitoring rules
-- Responding to alerts
 - Managing action groups
+- Responding to alerts
 - Administering Log Analytics
 - Reviewing security logs
 - Implementing Advisor recommendations
+- Managing monitoring retention
 
-This reduces the risk that one account can both perform an administrative action and alter the monitoring evidence associated with that action.
+An account should not automatically be able to perform a privileged action and remove the evidence or alert associated with that action.
+
+### Regulated Environment Relevance
+
+In government, defense, healthcare, finance, and other regulated environments, monitoring supports:
+
+- Audit evidence
+- Administrative accountability
+- Incident response
+- Access reviews
+- Threat detection
+- Compliance reporting
+- Availability reporting
+- Change management
+- Service-level review
+- Security investigations
+
+### Security Takeaway
+
+Monitoring provides the evidence required to understand what happened, who performed an action, when the action occurred, and whether the environment responded correctly.
 
 ---
 
 ## Governance Notes
 
-### Centralized Monitoring
+### Governance Decisions
 
-Organizations should define a centralized monitoring strategy that identifies:
+| Decision | Implementation | Reason |
+|---|---|---|
+| Discovery-only lab | Monitoring services were reviewed without deployment | Prevented unnecessary resources and cost |
+| Microsoft Learn used | Certification-aligned monitoring content reviewed | Supported AZ-900 preparation |
+| Azure Portal used | Monitoring interfaces were reviewed directly | Connected theory to practical administration |
+| No workspace created | Log Analytics reviewed conceptually | Avoided ingestion and retention costs |
+| No alerts created | Alert interfaces reviewed only | Prevented unnecessary notification configuration |
+| Advisor recommendations not implemented | Review only | Prevented unapproved security or licensing changes |
+| Screenshots sanitized | Sensitive identifiers were redacted | Protected environment information |
 
-- Which resources must send logs
-- Which metrics must be retained
-- Which subscriptions use shared workspaces
-- Which teams can access monitoring data
-- Which alerts are mandatory
-- Which events require escalation
-- How long logs must be retained
+### Governance Lesson
+
+Monitoring must be designed before resources are deployed.
+
+A production monitoring strategy should define:
+
+- Required telemetry
+- Data owners
+- Workspace architecture
+- Data residency
+- Access control
+- Retention
+- Table plans
+- Diagnostic settings
+- Data collection rules
+- Alert ownership
+- Severity standards
+- Escalation procedures
+- Service Health notifications
+- Advisor review cadence
+- Cost ownership
+- Privacy requirements
 
 ### Diagnostic Settings
 
-Azure resources do not automatically send every available log to a Log Analytics workspace.
+Azure resources do not automatically send every supported log to a Log Analytics workspace.
 
-Diagnostic settings should be configured to route supported telemetry to destinations such as:
+Diagnostic settings can route supported telemetry to:
 
 - Log Analytics workspaces
 - Storage accounts
 - Event Hubs
-- Partner monitoring solutions
+- Partner monitoring services
 
-### Retention
+Diagnostic settings should be standardized and reviewed through governance controls.
 
-Log retention should balance:
+### Workspace Governance
 
-- Operational needs
-- Security investigation requirements
-- Regulatory requirements
-- Storage costs
-- Privacy requirements
+A Log Analytics workspace strategy should consider:
+
+- Centralized or distributed design
+- Region
+- Subscription
+- Environment
+- Security boundary
+- Data classification
+- Access model
+- Retention
+- Table plans
+- Network isolation
+- Microsoft Sentinel integration
+- Cost allocation
 
 ### Alert Governance
 
 Alert rules should use:
 
-- Consistent naming standards
+- Consistent naming
 - Approved severity levels
 - Documented ownership
 - Tested action groups
 - Escalation procedures
 - Maintenance windows
-- Alert suppression where appropriate
+- Suppression rules where appropriate
+- Runbooks
+- Periodic review
 
 ### Advisor Governance
 
 Advisor recommendations should be reviewed through a formal process.
 
-Recommendations should not be implemented automatically without evaluating:
+Each recommendation should be classified as:
 
-- Business impact
-- Cost impact
-- Security requirements
-- Service dependencies
-- Change-management approval
-- Testing requirements
+- Implemented
+- Planned
+- Deferred
+- Accepted risk
+- Not applicable
+- Assigned for investigation
+
+Recommendations should not be implemented automatically without evaluating dependencies and operational impact.
 
 ---
 
 ## Cost Considerations
 
-This lab created no new resources and produced no expected incremental Azure charges.
+### Estimated Lab Cost
 
-Potential Azure Monitor costs in a production environment can include:
+```text
+Expected incremental cost: $0.00
+```
 
-- Log ingestion
-- Log retention
-- Search queries
-- Data export
-- Managed Prometheus
-- Application Insights telemetry
-- Advanced metrics
-- Alert evaluations
-- Notification services
-- Additional monitoring agents or integrations
+### Why Cost Remained at Zero
 
-Cost controls should include:
+This lab did not create or modify:
 
-- Filtering unnecessary telemetry
-- Selecting appropriate table plans
-- Setting retention based on business requirements
-- Using data collection rules
-- Avoiding duplicate data collection
-- Reviewing ingestion volume
-- Creating monitoring budgets
-- Reviewing Advisor cost recommendations
-
-### Lab Cost Summary
-
-| Item | Result |
-|---|---|
-| Resources Created | None |
-| Log Analytics Workspace Created | No |
-| Application Insights Created | No |
-| Alert Rule Created | No |
-| Action Group Created | No |
-| Monitoring Agent Installed | No |
-| Expected Incremental Cost | `$0.00` |
-
----
-
-## Troubleshooting Notes
-
-### Metrics Page Displayed No Data
-
-The Metrics interface did not display telemetry because no monitored resource or metric had been selected.
-
-In a production environment, the administrator would:
-
-1. Select a resource scope.
-2. Select a metric namespace.
-3. Select a metric.
-4. Select an aggregation.
-5. Choose a time range.
-6. Apply filters or dimensions.
-
-### Logs Page Required a Resource
-
-The Logs interface required a resource or workspace before a query could be performed.
-
-No Log Analytics workspace was created because this lab was discovery-only.
-
-### Alerts Page Exposed a Subscription Identifier
-
-The Alerts page initially displayed the subscription identifier in a filter.
-
-The identifier was redacted before the screenshot was included in the repository.
-
-### Resource Health Had No Resource Types Available
-
-Resource Health displayed no registered resources because the subscription did not contain a supported deployed resource for health evaluation.
-
-### Service Health Showed No Active Issues
-
-The absence of active service issues was an expected and valid result.
-
-Service Health should still be reviewed regularly because service events can change over time.
-
-### Advisor Showed Recommendations Without Deployed Workloads
-
-Azure Advisor displayed subscription-level security recommendations even though no workload resources were deployed.
-
-This demonstrated that Advisor can evaluate subscription configuration in addition to individual resources.
-
-### Advisor Displayed a Security Score and Active Recommendations
-
-The Advisor overview displayed a security score of 100 percent while also showing seven active recommendations.
-
-Different Azure services and recommendation views may calculate or display scores using different scopes, evaluation methods, and refresh schedules.
-
-The correct operational response is to review the detailed recommendations rather than rely only on the summary score.
-
----
-
-## What I Would Do Differently in Production
-
-In a production Azure environment, I would implement the following improvements.
-
-### Deploy a Log Analytics Workspace Strategy
-
-I would determine whether the organization requires:
-
-- Centralized workspaces
-- Regional workspaces
-- Subscription-specific workspaces
-- Security-specific workspaces
-- Separate production and non-production workspaces
-
-### Configure Diagnostic Settings
-
-I would configure diagnostic settings for supported resources and route required telemetry to approved destinations.
-
-### Use Data Collection Rules
-
-I would use data collection rules to control:
-
-- Which data is collected
-- Which resources send data
-- Which transformations are applied
-- Which workspaces receive the data
-
-### Create Action Groups
-
-I would create standardized action groups for:
-
-- Cloud operations
-- Security operations
-- Application support
-- Network operations
-- Executive incident notifications
-
-### Build Alert Rules
-
-I would create alert rules for high-value conditions such as:
-
-- Resource unavailability
-- High CPU usage
-- Failed deployments
-- Authentication anomalies
-- Service Health events
-- Resource deletion
-- Application failures
-- Capacity thresholds
-
-### Implement Application Insights
-
-I would enable Application Insights for supported production applications and define:
-
-- Availability tests
-- Performance thresholds
-- Failure alerts
-- Dependency monitoring
-- Sampling settings
-- Data retention requirements
-
-### Configure Service Health Alerts
-
-I would configure Service Health alerts for:
-
-- Service issues
-- Planned maintenance
-- Health advisories
-- Security advisories
-
-### Review Advisor Regularly
-
-I would schedule regular reviews of Azure Advisor recommendations and document whether each recommendation was:
-
-- Implemented
-- Deferred
-- Accepted as risk
-- Not applicable
-- Assigned for further investigation
-
-### Protect Monitoring Resources
-
-I would use:
-
-- Azure RBAC
-- Least privilege
-- Resource locks
-- Azure Policy
-- Privileged Identity Management
-- Change management
-- Infrastructure as code
-
-to protect critical monitoring configurations.
-
-### Integrate with Microsoft Sentinel
-
-For a security-focused environment, I would evaluate integration with Microsoft Sentinel for:
-
-- Security analytics
-- Incident investigation
-- Automated response
-- Threat detection
-- Identity monitoring
-- Compliance reporting
-
----
-
-## Lessons Learned
-
-### Azure Monitor Is a Platform, Not a Single Dashboard
-
-Azure Monitor combines multiple services and interfaces for collecting, analyzing, visualizing, and responding to telemetry.
-
-### Metrics and Logs Serve Different Purposes
-
-Metrics are optimized for numerical time-series monitoring and fast alerting.
-
-Logs provide detailed records that support investigation, historical analysis, reporting, and complex queries.
-
-### Log Analytics Workspaces Are Important Governance Boundaries
-
-A workspace controls where log data is stored, how long it is retained, who can access it, and how it can be queried.
-
-### Alerts Require More Than a Threshold
-
-A complete alerting solution includes:
-
-- Scope
-- Signal
-- Condition
-- Evaluation
-- Severity
-- Action group
-- Operational ownership
-
-### Application Insights Extends Monitoring into Applications
-
-Infrastructure can be healthy while an application still performs poorly. Application Insights helps expose application-level failures, dependencies, and performance problems.
-
-### Service Health and Resource Health Answer Different Questions
-
-Service Health answers whether Azure service events affect the organization.
-
-Resource Health answers whether an individual Azure resource is healthy.
-
-### Advisor Provides Actionable Recommendations
-
-Advisor can identify improvements across multiple operational categories, including subscription-level security settings.
-
-### Monitoring Supports Security and IAM
-
-Monitoring provides the evidence needed to investigate access changes, detect suspicious activity, validate administrative actions, and support audit requirements.
-
-### Empty Results Can Still Be Valid Evidence
-
-No alerts, no active service issues, and no monitored resources were expected results in this discovery-only environment.
-
-The empty views still demonstrated that the correct services were located and reviewed.
-
----
-
-## Cleanup
-
-No cleanup was required.
-
-The lab did not create or modify:
-
-- Azure resources
 - Log Analytics workspaces
 - Application Insights resources
 - Alert rules
@@ -1237,126 +1369,577 @@ The lab did not create or modify:
 - Data collection rules
 - Diagnostic settings
 - Monitoring agents
+- Managed Prometheus resources
 - Service Health alerts
 - Resource Health alerts
-- Azure Advisor recommendations
+- Azure Advisor configurations
+- Microsoft Defender plans
+
+### Common Monitoring Cost Drivers
+
+- Log ingestion
+- Log retention
+- Search jobs
+- Data export
+- Archive retrieval
+- Application Insights telemetry
+- Managed Prometheus
+- Custom metrics
+- Alert evaluations
+- Notification services
+- Storage destinations
+- Event Hub destinations
+- Monitoring agents
+- Microsoft Sentinel
+- Premium security services
+
+### Monitoring Cost Controls
+
+- Collect only required telemetry
+- Avoid duplicate data collection
+- Use data collection rules
+- Select appropriate table plans
+- Configure appropriate retention
+- Filter unnecessary logs
+- Review ingestion volume
+- Review Application Insights sampling
+- Review workspace usage
+- Apply cost-center tags
+- Configure monitoring budgets
+- Review Azure Advisor recommendations
+
+### Cost and Security Tradeoff
+
+Reducing telemetry can lower cost, but removing required security or operational data can weaken:
+
+- Incident response
+- Troubleshooting
+- Compliance evidence
+- Threat detection
+- Performance analysis
+- Availability reporting
+
+Monitoring cost optimization should preserve required evidence and visibility.
+
+---
+
+## Troubleshooting Notes
+
+### Issue 1: Metrics Displayed No Data
+
+**Symptom**
+
+The Metrics interface did not display telemetry.
+
+**Explanation**
+
+No monitored resource or metric had been selected.
+
+**Production Resolution**
+
+1. Select a resource scope.
+2. Select a metric namespace.
+3. Select a metric.
+4. Select an aggregation.
+5. Choose a time range.
+6. Apply filters or dimensions.
+
+**Lab Result**
+
+No chart or alert rule was created.
+
+---
+
+### Issue 2: Logs Required a Resource or Workspace
+
+**Symptom**
+
+The Logs interface required a selected resource or workspace before a query could be executed.
+
+**Explanation**
+
+No Log Analytics workspace or monitored resource was selected.
+
+**Resolution**
+
+The query interface was reviewed without creating a workspace or running a query.
+
+**Result**
+
+No log-ingestion cost was introduced.
+
+---
+
+### Issue 3: Alerts Displayed a Subscription Identifier
+
+**Symptom**
+
+The Alerts page displayed a subscription identifier in a filter.
+
+**Risk**
+
+Subscription IDs should not be published in a public repository.
+
+**Resolution**
+
+The identifier was covered with solid opaque redaction.
+
+**Result**
+
+The alert interface remained visible without exposing the subscription ID.
+
+---
+
+### Issue 4: Resource Health Displayed No Resources
+
+**Symptom**
+
+Resource Health displayed no registered resources available for selection.
+
+**Explanation**
+
+The subscription did not contain a supported deployed resource for Resource Health evaluation.
+
+**Result**
+
+The empty state was documented as an expected lab outcome.
+
+---
+
+### Issue 5: Service Health Displayed No Active Issues
+
+**Symptom**
+
+Service Health displayed no active service issues.
+
+**Explanation**
+
+No Azure platform event was affecting the selected subscription at the time of the review.
+
+**Result**
+
+The no-issue state was valid evidence that Service Health was located and reviewed.
+
+---
+
+### Issue 6: Advisor Displayed Recommendations Without Workloads
+
+**Symptom**
+
+Azure Advisor displayed security recommendations even though no workload resources were deployed.
+
+**Explanation**
+
+Advisor can evaluate subscription-level configuration in addition to deployed resource configuration.
+
+**Result**
+
+Seven subscription-level security recommendations were reviewed.
+
+---
+
+### Issue 7: Advisor Displayed a 100% Score With Active Recommendations
+
+**Symptom**
+
+The Advisor overview displayed a security score of `100%` while also showing seven active security recommendations.
+
+**Explanation**
+
+Different Azure views may use different:
+
+- Scopes
+- Scoring methods
+- Refresh schedules
+- Recommendation sources
+
+**Resolution**
+
+The detailed recommendations were reviewed instead of relying only on the summary score.
+
+**Result**
+
+The lab documented the apparent difference without changing the environment.
+
+---
+
+## What I Would Do Differently in Production
+
+A production Azure environment would require formal monitoring, identity, security, operations, governance, and cost planning.
+
+### Log Analytics Architecture
+
+- Determine centralized or distributed workspace design
+- Select approved regions
+- Separate production and non-production data where required
+- Define security-specific workspaces where appropriate
+- Define Microsoft Sentinel integration
+- Define table plans
+- Define retention requirements
+- Define archive requirements
+- Configure private access where required
+- Apply workspace-level and table-level access controls
+
+### Diagnostic Settings
+
+- Identify required resource logs
+- Route Azure Activity Logs
+- Route required platform logs
+- Route required metrics
+- Use approved destinations
+- Validate diagnostic-setting coverage
+- Apply Azure Policy where appropriate
+- Monitor missing configurations
+- Document exceptions
+
+### Data Collection Rules
+
+- Define which data should be collected
+- Define which resources send data
+- Apply filtering and transformation
+- Control destination workspaces
+- Review ingestion volume
+- Prevent duplicate data collection
+- Store configurations in source control
+
+### Alert Rules
+
+- Create alerts for resource unavailability
+- Create alerts for failed deployments
+- Create alerts for high resource utilization
+- Create alerts for application failures
+- Create alerts for capacity thresholds
+- Create alerts for security events
+- Create alerts for resource deletion
+- Create alerts for policy changes
+- Test all action groups
+- Document alert ownership
+
+### Action Groups
+
+- Create separate action groups for:
+  - Cloud Operations
+  - Security Operations
+  - Application Support
+  - Network Operations
+  - Executive Incident Notification
+- Validate recipients
+- Test notification methods
+- Document escalation paths
+- Review action groups regularly
+
+### Application Insights
+
+- Enable Application Insights for supported applications
+- Configure availability tests
+- Configure failure alerts
+- Configure performance thresholds
+- Review dependency monitoring
+- Configure sampling
+- Define retention
+- Protect telemetry access
+- Review sensitive application data
+
+### Service Health
+
+- Create alerts for:
+  - Service issues
+  - Planned maintenance
+  - Health advisories
+  - Security advisories
+- Assign operational owners
+- Document response procedures
+- Review health history
+
+### Azure Advisor
+
+- Review recommendations regularly
+- Assign recommendation owners
+- Document implementation decisions
+- Estimate cost and security impact
+- Track accepted risks
+- Validate changes
+- Review recommendation refresh status
+
+### Identity and Access
+
+- Use Microsoft Entra work accounts
+- Separate administrative and standard-user accounts
+- Apply least privilege
+- Use group-based assignments
+- Use Privileged Identity Management
+- Require multifactor authentication
+- Configure Conditional Access
+- Perform access reviews
+- Monitor monitoring-configuration changes
+
+### Governance
+
+- Use Azure Policy for monitoring requirements
+- Require diagnostic settings
+- Require approved workspaces
+- Require tags
+- Apply resource locks to critical monitoring resources
+- Use Infrastructure as Code
+- Store configurations in source control
+- Require peer review
+- Maintain exception procedures
+
+### Cost Management
+
+- Estimate ingestion volume
+- Review retention costs
+- Review Application Insights volume
+- Review alert evaluation costs
+- Configure monitoring budgets
+- Review workspace usage
+- Apply cost-center tags
+- Remove unnecessary telemetry
+- Preserve required security and audit data
+
+The lab intentionally avoided monitoring deployment because its purpose was service discovery and AZ-900 concept validation.
+
+---
+
+## Lessons Learned
+
+- Azure Monitor is a platform containing multiple monitoring and analysis capabilities.
+- Metrics provide numerical time-series values.
+- Logs provide detailed records for investigation and historical analysis.
+- Log Analytics workspaces are storage, access, retention, and governance boundaries.
+- Azure Monitor Alerts require scope, signal, condition, evaluation, severity, and actions.
+- Action groups define alert notifications and automated responses.
+- Application Insights provides application-level monitoring.
+- Azure Service Health reports Azure platform events affecting the organization.
+- Azure Resource Health reports health information for individual resources.
+- Azure Advisor identifies improvement opportunities across five categories.
+- Advisor can provide subscription-level recommendations without deployed workloads.
+- Empty monitoring results can still provide valid discovery evidence.
+- Monitoring data can contain sensitive identity and operational information.
+- Monitoring configuration requires least privilege and separation of duties.
+- Monitoring can create significant ingestion and retention costs.
+- Detailed recommendations should be reviewed instead of relying only on summary scores.
+
+### Technical Takeaway
+
+Azure Monitor combines Metrics, Logs, Alerts, Application Insights, and visualization tools to provide centralized observability.
+
+### Business Takeaway
+
+Centralized monitoring reduces downtime, improves incident response, supports service management, and provides evidence for operational decisions.
+
+### Security Takeaway
+
+Monitoring provides the evidence required to investigate authentication events, administrative changes, suspicious activity, and configuration drift.
+
+### Exam Takeaway
+
+For AZ-900, remember:
+
+- Azure Monitor is the centralized observability platform.
+- Metrics are numerical time-series values.
+- Logs contain detailed telemetry records.
+- Log Analytics workspaces store Azure Monitor Logs.
+- Log Analytics provides log-query capabilities.
+- Alerts evaluate signals and trigger responses.
+- Action groups define notifications and actions.
+- Application Insights monitors application performance.
+- Service Health reports Azure service events affecting an organization.
+- Resource Health reports health for individual resources.
+- Azure Advisor provides cost, security, reliability, performance, and Operational Excellence recommendations.
+
+---
+
+## Cleanup
+
+### Resources Retained
+
+| Resource or Configuration | Reason |
+|---|---|
+| MRTG Azure subscription | Required for the final lab |
+| Azure Monitor service access | Required for future monitoring review |
+| Azure Service Health access | Required for platform-health awareness |
+| Azure Advisor access | Required for recommendation review |
+| Lab 12 documentation | Retained as project evidence |
+| Lab 12 screenshots | Retained as validation evidence |
+
+### Resources Removed
+
+No monitoring, alerting, application-performance, health, or optimization resources were created during this lab.
+
+### Cleanup Validation
+
+- [x] No Log Analytics workspaces were created
+- [x] No Application Insights resources were created
+- [x] No alert rules were created
+- [x] No action groups were created
+- [x] No alert-processing rules were created
+- [x] No workbooks were created
+- [x] No dashboards were created
+- [x] No diagnostic settings were created
+- [x] No data collection rules were created
+- [x] No monitoring agents were installed
+- [x] No Managed Prometheus resources were created
+- [x] No Service Health alerts were created
+- [x] No Resource Health alerts were created
+- [x] No Advisor recommendations were implemented
+- [x] No Defender plans were enabled
+- [x] No subscription owners were added
+- [x] No security notification settings were changed
+- [x] No Azure resources were modified
+- [x] Expected incremental cost remained `$0.00`
+- [x] Screenshot data was sanitized
 
 ---
 
 ## Outcome
 
-This lab successfully demonstrated the Azure monitoring, health, and optimization services included in the AZ-900 learning path.
+This lab documented the Azure monitoring, health, and optimization foundation required for cloud operations.
 
-Through Microsoft Learn and the Azure portal, I reviewed how Azure:
+The completed lab demonstrated:
 
-- Collects metrics and logs
-- Stores log data in Log Analytics workspaces
-- Evaluates alert conditions
-- Monitors application performance
-- Reports Azure service incidents
-- Reports individual resource health
-- Provides operational and security recommendations
-
-The lab remained discovery-only, created no new Azure resources, and introduced no expected incremental cost.
+- Understanding of Azure Monitor
+- Understanding of Azure Monitor Metrics
+- Understanding of Azure Monitor Logs
+- Understanding of Log Analytics workspaces
+- Understanding of Kusto Query Language concepts
+- Understanding of Azure Monitor Alerts
+- Understanding of action groups
+- Understanding of Application Insights
+- Understanding of Azure Service Health
+- Understanding of Azure Resource Health
+- Understanding of Azure Advisor
+- Understanding of Metrics and Logs differences
+- Understanding of Service Health and Resource Health differences
+- Awareness of monitoring-data sensitivity
+- Awareness of monitoring governance requirements
+- Awareness of monitoring cost drivers
+- Practical Azure Portal validation
+- Review of seven active Advisor security recommendations
+- No monitoring resources or configurations created
+- Expected incremental cost of `$0.00`
 
 ---
 
 ## Screenshot Inventory
 
-| Number | Screenshot | Description |
-|---:|---|---|
-| 01 | `01-azure-monitor-overview.png` | Microsoft Learn overview of Azure Monitor |
-| 02 | `02-azure-monitor-metrics-overview.png` | Microsoft Learn overview of Azure Monitor Metrics |
-| 03 | `03-azure-monitor-logs-overview.png` | Microsoft Learn overview of Azure Monitor Logs |
-| 04 | `04-log-analytics-overview.png` | Microsoft Learn overview of Log Analytics workspaces |
-| 05 | `05-azure-monitor-alerts-overview.png` | Microsoft Learn overview of Azure Monitor Alerts |
-| 06 | `06-application-insights-overview.png` | Microsoft Learn overview of Application Insights |
-| 07 | `07-azure-service-health-overview.png` | Microsoft Learn overview of Azure Service Health |
-| 08 | `08-azure-resource-health-overview.png` | Microsoft Learn overview of Azure Resource Health |
-| 09 | `09-azure-advisor-overview.png` | Microsoft Learn overview of Azure Advisor |
-| 10 | `10-azure-monitor-portal.png` | Azure Monitor overview in the Azure portal |
-| 11 | `11-azure-monitor-metrics-portal.png` | Azure Monitor Metrics interface |
-| 12 | `12-azure-monitor-logs-portal.png` | Azure Monitor Logs interface |
-| 13 | `13-azure-monitor-alerts-portal.png` | Azure Monitor Alerts interface with no fired alerts |
-| 14 | `14-azure-service-health-portal.png` | Service Health showing no active service issues |
-| 15 | `15-azure-resource-health-portal.png` | Resource Health interface with no registered resources |
-| 16 | `16-azure-advisor-portal.png` | Azure Advisor overview and recommendation categories |
-| 17 | `17-advisor-recommendations-portal.png` | Azure Advisor active security recommendations |
+| Screenshot | Description |
+|---|---|
+| `01-azure-monitor-overview.png` | Azure Monitor overview |
+| `02-azure-monitor-metrics-overview.png` | Azure Monitor Metrics overview |
+| `03-azure-monitor-logs-overview.png` | Azure Monitor Logs overview |
+| `04-log-analytics-overview.png` | Log Analytics workspace overview |
+| `05-azure-monitor-alerts-overview.png` | Azure Monitor Alerts workflow |
+| `06-application-insights-overview.png` | Application Insights overview |
+| `07-azure-service-health-overview.png` | Azure Service Health overview |
+| `08-azure-resource-health-overview.png` | Azure Resource Health overview |
+| `09-azure-advisor-overview.png` | Azure Advisor overview |
+| `10-azure-monitor-portal.png` | Azure Monitor Portal overview |
+| `11-azure-monitor-metrics-portal.png` | Azure Monitor Metrics interface |
+| `12-azure-monitor-logs-portal.png` | Azure Monitor Logs interface |
+| `13-azure-monitor-alerts-portal.png` | Azure Monitor Alerts interface with zero fired alerts |
+| `14-azure-service-health-portal.png` | Azure Service Health with no active service issues |
+| `15-azure-resource-health-portal.png` | Azure Resource Health with no available resources |
+| `16-azure-advisor-portal.png` | Azure Advisor category overview |
+| `17-advisor-recommendations-portal.png` | Active Azure Advisor security recommendations |
 
 ---
 
-## Screenshot Gallery
+## Screenshots
 
 ### Azure Monitor Overview
 
-![Azure Monitor overview](screenshots/01-azure-monitor-overview.png)
+![Azure Monitor Overview](screenshots/01-azure-monitor-overview.png)
 
 ### Azure Monitor Metrics Overview
 
-![Azure Monitor Metrics overview](screenshots/02-azure-monitor-metrics-overview.png)
+![Azure Monitor Metrics Overview](screenshots/02-azure-monitor-metrics-overview.png)
 
 ### Azure Monitor Logs Overview
 
-![Azure Monitor Logs overview](screenshots/03-azure-monitor-logs-overview.png)
+![Azure Monitor Logs Overview](screenshots/03-azure-monitor-logs-overview.png)
 
 ### Log Analytics Workspace Overview
 
-![Log Analytics workspace overview](screenshots/04-log-analytics-overview.png)
+![Log Analytics Workspace Overview](screenshots/04-log-analytics-overview.png)
 
 ### Azure Monitor Alerts Overview
 
-![Azure Monitor Alerts overview](screenshots/05-azure-monitor-alerts-overview.png)
+![Azure Monitor Alerts Overview](screenshots/05-azure-monitor-alerts-overview.png)
 
 ### Application Insights Overview
 
-![Application Insights overview](screenshots/06-application-insights-overview.png)
+![Application Insights Overview](screenshots/06-application-insights-overview.png)
 
 ### Azure Service Health Overview
 
-![Azure Service Health overview](screenshots/07-azure-service-health-overview.png)
+![Azure Service Health Overview](screenshots/07-azure-service-health-overview.png)
 
 ### Azure Resource Health Overview
 
-![Azure Resource Health overview](screenshots/08-azure-resource-health-overview.png)
+![Azure Resource Health Overview](screenshots/08-azure-resource-health-overview.png)
 
 ### Azure Advisor Overview
 
-![Azure Advisor overview](screenshots/09-azure-advisor-overview.png)
+![Azure Advisor Overview](screenshots/09-azure-advisor-overview.png)
 
 ### Azure Monitor Portal
 
-![Azure Monitor portal](screenshots/10-azure-monitor-portal.png)
+![Azure Monitor Portal](screenshots/10-azure-monitor-portal.png)
 
 ### Azure Monitor Metrics Portal
 
-![Azure Monitor Metrics portal](screenshots/11-azure-monitor-metrics-portal.png)
+![Azure Monitor Metrics Portal](screenshots/11-azure-monitor-metrics-portal.png)
 
 ### Azure Monitor Logs Portal
 
-![Azure Monitor Logs portal](screenshots/12-azure-monitor-logs-portal.png)
+![Azure Monitor Logs Portal](screenshots/12-azure-monitor-logs-portal.png)
 
 ### Azure Monitor Alerts Portal
 
-![Azure Monitor Alerts portal](screenshots/13-azure-monitor-alerts-portal.png)
+![Azure Monitor Alerts Portal](screenshots/13-azure-monitor-alerts-portal.png)
 
 ### Azure Service Health Portal
 
-![Azure Service Health portal](screenshots/14-azure-service-health-portal.png)
+![Azure Service Health Portal](screenshots/14-azure-service-health-portal.png)
 
 ### Azure Resource Health Portal
 
-![Azure Resource Health portal](screenshots/15-azure-resource-health-portal.png)
+![Azure Resource Health Portal](screenshots/15-azure-resource-health-portal.png)
 
 ### Azure Advisor Portal
 
-![Azure Advisor portal](screenshots/16-azure-advisor-portal.png)
+![Azure Advisor Portal](screenshots/16-azure-advisor-portal.png)
 
 ### Azure Advisor Recommendations Portal
 
-![Azure Advisor recommendations portal](screenshots/17-advisor-recommendations-portal.png)
+![Azure Advisor Recommendations Portal](screenshots/17-advisor-recommendations-portal.png)
 
 ---
 
 ## Next Lab
 
-**Lab 13 - MRTG Azure Fundamentals Capstone**
+The next lab is:
+
+```text
+Lab 13 - MRTG Azure Fundamentals Capstone
+```
+
+The final lab brings the series together by reviewing:
+
+- Azure subscription structure
+- Resource groups
+- Azure resources
+- Microsoft Entra ID
+- Azure RBAC
+- Resource tags
+- Azure Policy
+- Resource locks
+- Management groups
+- Azure deployments
+- Cost Management
+- Azure Monitor
+- Azure Service Health
+- Azure Resource Health
+- Azure Advisor
+- Overall Azure governance and operational readiness

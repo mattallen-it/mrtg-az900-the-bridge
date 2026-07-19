@@ -260,11 +260,11 @@ flowchart TD
 | 06 | [Azure Networking Foundation](labs/lab-06-azure-networking-foundation/) | VNets, subnets, NSGs, routing, DNS, VPN, ExpressRoute, and traffic distribution | Complete |
 | 07 | [Azure Storage Services](labs/lab-07-azure-storage-services/) | Storage accounts, blobs, files, queues, tables, disks, tiers, and redundancy | Complete |
 | 08 | [Microsoft Entra ID, RBAC, and Zero Trust](labs/lab-08-entra-id-rbac-and-zero-trust/) | Identity, authentication, authorization, Azure RBAC, least privilege, and Zero Trust | Complete |
-| 09 | [Azure Cost Management and Resource Organization](labs/lab-09-cost-management-and-resource-organization/) | Cost Analysis, budgets, cost alerts, resource groups, and tags | Complete |
-| 10 | [Azure Governance, Policy, and Compliance](labs/lab-10-governance-policy-and-compliance/) | Azure Policy, compliance, remediation, locks, management groups, and Microsoft Purview | Complete |
-| 11 | [Azure Management and Deployment Tools](labs/lab-11-management-and-deployment-tools/) | Azure Portal, Cloud Shell, CLI, PowerShell, ARM templates, Bicep, and Azure Arc | Complete |
-| 12 | [Azure Monitoring, Health, and Optimization](labs/lab-12-monitoring-health-and-optimization/) | Azure Monitor, Metrics, Logs, Alerts, Service Health, Resource Health, and Advisor | Complete |
-| 13 | [MRTG Azure Fundamentals Capstone](labs/lab-13-azure-fundamentals-capstone/) | Final identity, governance, cost, monitoring, and operational review | Complete |
+| 09 | [Azure Cost Management and Resource Organization](labs/lab-09-azure-cost-management-and-resource-organization/) | Cost Analysis, budgets, cost alerts, resource groups, and tags | Complete |
+| 10 | [Azure Governance, Policy, and Compliance](labs/lab-10-azure-governance-policy-and-compliance/) | Azure Policy, compliance, remediation, locks, management groups, and Microsoft Purview | Complete |
+| 11 | [Azure Management and Deployment Tools](labs/lab-11-azure-management-and-deployment-tools/) | Azure Portal, Cloud Shell, CLI, PowerShell, ARM templates, Bicep, and Azure Arc | Complete |
+| 12 | [Azure Monitoring, Health, and Optimization](labs/lab-12-azure-monitoring-health-and-optimization/) | Azure Monitor, Metrics, Logs, Alerts, Service Health, Resource Health, and Advisor | Complete |
+| 13 | [MRTG Azure Fundamentals Capstone](labs/lab-13-mrtg-azure-fundamentals-capstone/) | Final identity, governance, cost, monitoring, and operational review | Complete |
 
 ---
 
